@@ -1,0 +1,15 @@
+/*
+	VGA
+	---
+	
+	To use a VGA screen of 800x600 resolution we need the following settings
+	This is done at a clk speed of 40Mhz
+	In pixels			Horizontal			Vertical
+	Front Porch			40						1		
+	Back  Porch			88						23
+	Sync Pulse			128					4
+	Active Video		800					600
+*/
+module vga(
+		
+	)

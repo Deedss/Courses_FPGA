@@ -1,0 +1,10 @@
+	component nios is
+		port (
+			blue_out_export  : out std_logic_vector(7 downto 0);        -- export
+			clk_clk          : in  std_logic                    := 'X'; -- clk
+			green_out_export : out std_logic_vector(7 downto 0);        -- export
+			red_out_export   : out std_logic_vector(7 downto 0);        -- export
+			reset_reset_n    : in  std_logic                    := 'X'  -- reset_n
+		);
+	end component nios;
+
