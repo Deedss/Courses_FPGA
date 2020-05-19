@@ -1,0 +1,18 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+
+entity fifo_test is
+	generic()
+	
+	port()
+end fifo_test;
+
+architecture behaviour of fifo_test is
+begin
+
+
+
+
+
+end behaviour
