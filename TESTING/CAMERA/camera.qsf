@@ -48,5 +48,7 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
-set_global_assignment -name BDF_FILE camera.bdf
-set_global_assignment -name VHDL_FILE camera_in.vhd
+set_global_assignment -name VERILOG_FILE ov7670_174.v
+set_global_assignment -name VERILOG_FILE cam_buffer.v
+set_global_assignment -name VERILOG_FILE VGA_Controller.v
+set_global_assignment -name VERILOG_FILE DE1_SoC_Computer.v
