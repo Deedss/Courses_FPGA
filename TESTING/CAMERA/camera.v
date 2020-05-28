@@ -223,8 +223,6 @@ D8M_SET   ccd (
 
 
 //--- By Trigged VGA Controller --  
-
-
 VGA_Controller_trig	u1	(	
 	  .iCLK       ( MIPI_PIXEL_CLK_ ), 
      .H_Cont(H_Cont),  
@@ -235,9 +233,9 @@ VGA_Controller_trig	u1	(
 	  .iBlue      ( sCCD_B[7:0]   ),
 	  	
 		
-	  .oVGA_R     ( VGA_R ),
-	  .oVGA_G     ( VGA_G ),
-	  .oVGA_B     ( VGA_B ),
+	  .oVGA_R     ( VGA_R_A ),
+	  .oVGA_G     ( VGA_G_A ),
+	  .oVGA_B     ( VGA_B_A ),
      .oVGA_H_SYNC( VGA_HS ),
      .oVGA_V_SYNC( VGA_VS ),	  
 	  .oVGA_SYNC  ( VGA_SYNC_N  ),
@@ -246,51 +244,24 @@ VGA_Controller_trig	u1	(
 	  .iRST_N     ( RESET_N )	,	
 
 );
-//
-////------AOTO FOCUS ENABLE  --
-//AUTO_FOCUS_ON  adj( 
-//                      .CLK_50      ( CLOCK2_50 ), 
-//                      .I2C_RELEASE ( I2C_RELEASE ), 
-//                      .AUTO_FOC    ( AUTO_FOC )
-//               ) ;
-////------Auto focus ------- 
-//FOCUS_ADJ adl(
-//     .CLK_50        ( CLOCK2_50   ), 
-//     .RESET_N       ( I2C_RELEASE ), 
-//     .RESET_SUB_N   ( I2C_RELEASE ), 
-//     .AUTO_FOC      ( KEY[3] & AUTO_FOC ),   
-//     .SW_FUC_LINE   ( SW[3] ),   
-//     .SW_FUC_ALL_CEN( SW[3] ),
-//     .VIDEO_HS      ( VGA_HS),
-//     .VIDEO_VS      ( VGA_VS),
-//     .VIDEO_CLK     ( VGA_CLK),
-//     .VIDEO_DE      (READ_Request) ,
-//     .iR            ( VGA_R_A), 
-//     .iG            ( VGA_G_A), 
-//     .iB            ( VGA_B_A), 
-//     
-//     .oR            ( VGA_R), 
-//     .oG            ( VGA_G), 
-//     .oB            ( VGA_B), 
-//     
-//     .READY         (  READY),
-//     .SCL           ( CAMERA_I2C_SCL_AF ), 
-//     .SDA           ( CAMERA_I2C_SDA    )
-//);							
-//
-//
-//
-//
-////--Frame Counter -- 
-// FpsMonitor uFps2(
-//	  .clk50    ( CLOCK2_50 ),
-//	  .vs       ( VGA_VS    ),//LUT_MIPI_PIXEL_VS ), //60HZ
-//	  .fps      (  ),
-//	  .hex_fps_h( HEX1 ),
-//	  .hex_fps_l( HEX0 )
-//);
-//
-//
+
+wire[23:0] rgb_in; 
+wire[23:0] rgb_out;
+
+assign rgb_in[23:16] = VGA_R_A;
+assign rgb_in[15:8] = VGA_G_A;
+assign rgb_in[7:0] = VGA_B_A;
+
+nios nios1(
+		.clk_clk (CLOCK_50),        //     clk.clk
+		.rgb_in_export (rgb_in),  //  rgb_in.export
+		.rgb_out_export (rgb_out)// rgb_out.export
+);
+
+assign VGA_R = rgb_out[23:16];
+assign VGA_G = rgb_out[15:8];
+assign VGA_B = rgb_out[7:0];
+
 ////----7-SEG OFF----
 //assign  HEX2 = 7'h7F;
 //assign  HEX3 = 7'h7F;
@@ -298,7 +269,7 @@ VGA_Controller_trig	u1	(
 //assign  HEX5 = 7'h7F;
 //assign  HEX6 = 7'h7F;
 //assign  HEX7 = 7'h7F;
-//
+
 //--FREQUNCY TEST--
 CLOCKMEM  ck1 ( .CLK(VGA_CLK_25M    ),.CLK_FREQ  (25000000  ),.CK_1HZ (D8M_CK_HZ   ));
 CLOCKMEM  ck2 ( .CLK(MIPI_REFCLK    ),.CLK_FREQ  (20000000  ),.CK_1HZ (D8M_CK_HZ2  ));
