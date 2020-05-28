@@ -1,4 +1,4 @@
 eclipse.preferences.version=1
-newSoftwareExampleWizardPage.defaultLocation=C\:\\Users\\Gertjan\\OneDrive\\Projects\\Courses_FPGA\\TESTING\\CAMERA\\software\\print_rgb
+newSoftwareExampleWizardPage.defaultLocation=C\:\\Users\\Gertjan\\OneDrive\\Projects\\Courses_FPGA\\TESTING\\CAMERA\\software\\print_all
 newSoftwareExampleWizardPage.sopcinfoFile=C\:\\Users\\Gertjan\\OneDrive\\Projects\\Courses_FPGA\\TESTING\\CAMERA\\nios.sopcinfo
-newSoftwareExampleWizardPage2.newBspLocation=C\:\\Users\\Gertjan\\OneDrive\\Projects\\Courses_FPGA\\TESTING\\CAMERA\\software\\print_rgb_bsp
+newSoftwareExampleWizardPage2.newBspLocation=C\:\\Users\\Gertjan\\OneDrive\\Projects\\Courses_FPGA\\TESTING\\CAMERA\\software\\print_all_bsp

@@ -211,12 +211,11 @@ D8M_SET   ccd (
    .sCCD_B       ( sCCD_B )
 );
 
-
 //--- By Trigged VGA Controller --  
 VGA_Controller_trig	u1	(	
 	  .iCLK       ( MIPI_PIXEL_CLK_ ), 
-     .H_Cont(H_Cont),  
-     .V_Cont(V_Cont),  
+     .H_Cont		(H_Cont),  
+     .V_Cont		(V_Cont),  
 	  .READ_Request(READ_Request)	 , 	  
      .iRed       ( sCCD_R[7:0]   ),
 	  .iGreen     ( sCCD_G[7:0]   ),
@@ -243,14 +242,17 @@ VGA_Controller_trig	u1	(
 //);
 
 nios nios1(
-		.clk_clk 			(CLOCK_50),    //   clk.clk
-		.blue_in_port		(VGA_B_A),   	//  blue.in_port
-		.blue_out_port		(VGA_B),  		//      .out_port
+		.clk_clk 			(CLOCK_50),    // clk.clk
+		.blue_in_port		(VGA_B_A),   	// blue.in_port
+		.blue_out_port		(VGA_B),  		// .out_port
 		.green_in_port		(VGA_G_A),  	// green.in_port
-		.green_out_port	(VGA_G), 		//      .out_port
-		.red_in_port		(VGA_R_A),    	//   red.in_port
-		.red_out_port    	(VGA_R)			//      .out_port
+		.green_out_port	(VGA_G), 		// .out_port
+		.red_in_port		(VGA_R_A),    	// red.in_port
+		.red_out_port    	(VGA_R),			// .out_port
+		.v_cont_export		(V_Cont),		//	V_CONT
+		.h_cont_export		(H_Cont)			// H_CONT
 		);
+		
 
 
 ////----7-SEG OFF----

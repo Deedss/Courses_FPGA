@@ -164,11 +164,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "MIPI_PIXEL_D[2]",
+					"name" : "MIPI_PIXEL_D[3]",
 					"strict" : false
 				},
 				{
-					"name" : "MIPI_PIXEL_D[3]",
+					"name" : "MIPI_PIXEL_D[2]",
 					"strict" : false
 				},
 				{

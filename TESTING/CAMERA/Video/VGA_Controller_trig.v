@@ -13,7 +13,7 @@ module VGA_Controller_trig(
     output				oVGA_V_SYNC,
     output				oVGA_SYNC,
     output				oVGA_BLANK,
-	 output READ_Request , 
+	 output 				READ_Request,
 
     
     //	Control Signal

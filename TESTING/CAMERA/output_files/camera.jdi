@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="4dd74b671e3aadf32c93"/>
+    <hash md5_digest_80b="d8fdc81371673e9c0bd2"/>
   </project>
   <file_info>
     <file device="EP4CE115F29C7" path="camera.sof" usercode="0xFFFFFFFF"/>
@@ -139,7 +139,7 @@
   <sld_infos>
     <sld_info hpath="nios:nios1" name="nios1">
       <assignment_values>
-        <assignment_value text="QSYS_NAME nios HAS_SOPCINFO 1 GENERATION_ID 1590677219"/>
+        <assignment_value text="QSYS_NAME nios HAS_SOPCINFO 1 GENERATION_ID 1590684368"/>
       </assignment_values>
       <parameters/>
     </sld_info>

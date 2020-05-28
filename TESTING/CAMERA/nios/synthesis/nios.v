@@ -4,13 +4,15 @@
 
 `timescale 1 ps / 1 ps
 module nios (
-		input  wire [7:0] blue_in_port,   //  blue.in_port
-		output wire [7:0] blue_out_port,  //      .out_port
-		input  wire       clk_clk,        //   clk.clk
-		input  wire [7:0] green_in_port,  // green.in_port
-		output wire [7:0] green_out_port, //      .out_port
-		input  wire [7:0] red_in_port,    //   red.in_port
-		output wire [7:0] red_out_port    //      .out_port
+		input  wire [7:0]  blue_in_port,   //   blue.in_port
+		output wire [7:0]  blue_out_port,  //       .out_port
+		input  wire        clk_clk,        //    clk.clk
+		input  wire [7:0]  green_in_port,  //  green.in_port
+		output wire [7:0]  green_out_port, //       .out_port
+		input  wire [15:0] h_cont_export,  // h_cont.export
+		input  wire [7:0]  red_in_port,    //    red.in_port
+		output wire [7:0]  red_out_port,   //       .out_port
+		input  wire [15:0] v_cont_export   // v_cont.export
 	);
 
 	wire         nios2_gen2_0_debug_reset_request_reset;                      // nios2_gen2_0:debug_reset_request -> [rst_controller:reset_in0, rst_controller_001:reset_in0, rst_controller_001:reset_in1]
@@ -63,12 +65,32 @@ module nios (
 	wire   [1:0] mm_interconnect_0_blue_s1_address;                           // mm_interconnect_0:blue_s1_address -> blue:address
 	wire         mm_interconnect_0_blue_s1_write;                             // mm_interconnect_0:blue_s1_write -> blue:write_n
 	wire  [31:0] mm_interconnect_0_blue_s1_writedata;                         // mm_interconnect_0:blue_s1_writedata -> blue:writedata
+	wire  [31:0] mm_interconnect_0_h_cont_s1_readdata;                        // H_Cont:readdata -> mm_interconnect_0:H_Cont_s1_readdata
+	wire   [1:0] mm_interconnect_0_h_cont_s1_address;                         // mm_interconnect_0:H_Cont_s1_address -> H_Cont:address
+	wire  [31:0] mm_interconnect_0_v_cont_s1_readdata;                        // V_Cont:readdata -> mm_interconnect_0:V_Cont_s1_readdata
+	wire   [1:0] mm_interconnect_0_v_cont_s1_address;                         // mm_interconnect_0:V_Cont_s1_address -> V_Cont:address
 	wire         irq_mapper_receiver0_irq;                                    // jtag_uart_0:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] nios2_gen2_0_irq_irq;                                        // irq_mapper:sender_irq -> nios2_gen2_0:irq
-	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [blue:reset_n, green:reset_n, mm_interconnect_0:onchip_memory2_0_reset1_reset_bridge_in_reset_reset, onchip_memory2_0:reset, red:reset_n, rst_translator:in_reset]
+	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [H_Cont:reset_n, V_Cont:reset_n, blue:reset_n, green:reset_n, mm_interconnect_0:onchip_memory2_0_reset1_reset_bridge_in_reset_reset, onchip_memory2_0:reset, red:reset_n, rst_translator:in_reset]
 	wire         rst_controller_reset_out_reset_req;                          // rst_controller:reset_req -> [onchip_memory2_0:reset_req, rst_translator:reset_req_in]
 	wire         rst_controller_001_reset_out_reset;                          // rst_controller_001:reset_out -> [irq_mapper:reset, jtag_uart_0:rst_n, mm_interconnect_0:nios2_gen2_0_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, rst_translator_001:in_reset]
 	wire         rst_controller_001_reset_out_reset_req;                      // rst_controller_001:reset_req -> [nios2_gen2_0:reset_req, rst_translator_001:reset_req_in]
+
+	nios_H_Cont h_cont (
+		.clk      (clk_clk),                              //                 clk.clk
+		.reset_n  (~rst_controller_reset_out_reset),      //               reset.reset_n
+		.address  (mm_interconnect_0_h_cont_s1_address),  //                  s1.address
+		.readdata (mm_interconnect_0_h_cont_s1_readdata), //                    .readdata
+		.in_port  (h_cont_export)                         // external_connection.export
+	);
+
+	nios_H_Cont v_cont (
+		.clk      (clk_clk),                              //                 clk.clk
+		.reset_n  (~rst_controller_reset_out_reset),      //               reset.reset_n
+		.address  (mm_interconnect_0_v_cont_s1_address),  //                  s1.address
+		.readdata (mm_interconnect_0_v_cont_s1_readdata), //                    .readdata
+		.in_port  (v_cont_export)                         // external_connection.export
+	);
 
 	nios_blue blue (
 		.clk        (clk_clk),                              //                 clk.clk
@@ -188,6 +210,8 @@ module nios (
 		.green_s1_readdata                                   (mm_interconnect_0_green_s1_readdata),                         //                                              .readdata
 		.green_s1_writedata                                  (mm_interconnect_0_green_s1_writedata),                        //                                              .writedata
 		.green_s1_chipselect                                 (mm_interconnect_0_green_s1_chipselect),                       //                                              .chipselect
+		.H_Cont_s1_address                                   (mm_interconnect_0_h_cont_s1_address),                         //                                     H_Cont_s1.address
+		.H_Cont_s1_readdata                                  (mm_interconnect_0_h_cont_s1_readdata),                        //                                              .readdata
 		.jtag_uart_0_avalon_jtag_slave_address               (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_address),     //                 jtag_uart_0_avalon_jtag_slave.address
 		.jtag_uart_0_avalon_jtag_slave_write                 (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_write),       //                                              .write
 		.jtag_uart_0_avalon_jtag_slave_read                  (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_read),        //                                              .read
@@ -214,7 +238,9 @@ module nios (
 		.red_s1_write                                        (mm_interconnect_0_red_s1_write),                              //                                              .write
 		.red_s1_readdata                                     (mm_interconnect_0_red_s1_readdata),                           //                                              .readdata
 		.red_s1_writedata                                    (mm_interconnect_0_red_s1_writedata),                          //                                              .writedata
-		.red_s1_chipselect                                   (mm_interconnect_0_red_s1_chipselect)                          //                                              .chipselect
+		.red_s1_chipselect                                   (mm_interconnect_0_red_s1_chipselect),                         //                                              .chipselect
+		.V_Cont_s1_address                                   (mm_interconnect_0_v_cont_s1_address),                         //                                     V_Cont_s1.address
+		.V_Cont_s1_readdata                                  (mm_interconnect_0_v_cont_s1_readdata)                         //                                              .readdata
 	);
 
 	nios_irq_mapper irq_mapper (
