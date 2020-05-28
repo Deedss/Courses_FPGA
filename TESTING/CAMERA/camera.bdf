@@ -22,7 +22,7 @@ https://fpgasoftware.intel.com/eula.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 152 144 328 160)
+	(rect 192 200 368 216)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "pin_name1" (rect 9 0 62 12)(font "Arial" ))
 	(pt 176 8)
