@@ -172,6 +172,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "MIPI_PIXEL_D[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[0]",
+					"strict" : false
+				},
+				{
 					"name" : "MIPI_PIXEL_D[4]",
 					"strict" : false
 				},
@@ -193,14 +201,6 @@
 				},
 				{
 					"name" : "MIPI_PIXEL_D[9]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[1]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[0]",
 					"strict" : false
 				},
 				{

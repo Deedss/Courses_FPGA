@@ -27,16 +27,6 @@ module camera(
 	//////////// SW //////////
 	input 		    [17:0]		SW,
 
-	//////////// SEG7 //////////
-	output		     [6:0]		HEX0,
-	output		     [6:0]		HEX1,
-	output		     [6:0]		HEX2,
-	output		     [6:0]		HEX3,
-	output		     [6:0]		HEX4,
-	output		     [6:0]		HEX5,
-	output		     [6:0]		HEX6,
-	output		     [6:0]		HEX7,
-
 	//////////// LCD //////////
 	output		          		LCD_BLON,
 	inout 		     [7:0]		LCD_DATA,
@@ -245,22 +235,23 @@ VGA_Controller_trig	u1	(
 
 );
 
-wire[23:0] rgb_in; 
-wire[23:0] rgb_out;
-
-assign rgb_in[23:16] = VGA_R_A;
-assign rgb_in[15:8] = VGA_G_A;
-assign rgb_in[7:0] = VGA_B_A;
+//
+//nios nios1(
+//		.clk_clk (CLOCK_50),        //     clk.clk
+//		.rgb_in_export (rgb_in),  //  rgb_in.export
+//		.rgb_out_export (rgb_out)// rgb_out.export
+//);
 
 nios nios1(
-		.clk_clk (CLOCK_50),        //     clk.clk
-		.rgb_in_export (rgb_in),  //  rgb_in.export
-		.rgb_out_export (rgb_out)// rgb_out.export
-);
+		.clk_clk 			(CLOCK_50),    //   clk.clk
+		.blue_in_port		(VGA_B_A),   	//  blue.in_port
+		.blue_out_port		(VGA_B),  		//      .out_port
+		.green_in_port		(VGA_G_A),  	// green.in_port
+		.green_out_port	(VGA_G), 		//      .out_port
+		.red_in_port		(VGA_R_A),    	//   red.in_port
+		.red_out_port    	(VGA_R)			//      .out_port
+		);
 
-assign VGA_R = rgb_out[23:16];
-assign VGA_G = rgb_out[15:8];
-assign VGA_B = rgb_out[7:0];
 
 ////----7-SEG OFF----
 //assign  HEX2 = 7'h7F;

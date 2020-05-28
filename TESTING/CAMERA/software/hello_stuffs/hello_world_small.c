@@ -81,18 +81,40 @@
 #include "sys/alt_stdio.h"
 #include "system.h"
 #include "altera_avalon_pio_regs.h"
+#include "stdio.h"
+
+
+void print_byte_as_bits(char val) {
+  for (int i = 7; 0 <= i; i--) {
+    printf("%c", (val & (1 << i)) ? '1' : '0');
+  }
+}
+
+void print_bits(char * ty, char * val, unsigned char * bytes, size_t num_bytes) {
+  printf("(%*s) %*s = [ ", 15, ty, 16, val);
+  for (size_t i = 0; i < num_bytes; i++) {
+    print_byte_as_bits(bytes[i]);
+    printf(" ");
+  }
+  printf("]\n");
+}
+
+#define SHOW(T,V) do { T x = V; print_bits(#T, #V, (unsigned char*) &x, sizeof(x)); } while(0)
 
 int main()
 { 
   alt_putstr("Hello from Nios II!\n");
 
-  int in, out;
+  int in;
   /* Event loop never exits. */
   while (1)
   {
 	  in = IORD_ALTERA_AVALON_PIO_DATA(RGB_IN_BASE);
-	  out = in;
-	  IOWR_ALTERA_AVALON_PIO_DATA(RGB_OUT_BASE, out);
+
+	  printf("%i \n", in);
+//	  SHOW(int, in);
+//	  out = in;
+//	  IOWR_ALTERA_AVALON_PIO_DATA(RGB_OUT_BASE, out);
   }
 
   return 0;

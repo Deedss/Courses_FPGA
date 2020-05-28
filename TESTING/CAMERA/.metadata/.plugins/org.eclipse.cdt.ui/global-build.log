@@ -1,27 +1,69 @@
-12:18:01 **** Incremental Build of configuration Nios II for project hello_stuffs ****
+17:02:25 **** Incremental Build of configuration Nios II for project print_rgb ****
 make all 
-Info: Building ../hello_stuffs_bsp/
-C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../hello_stuffs_bsp/
+Info: Building ../print_rgb_bsp/
+C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../print_rgb_bsp/
 [BSP build complete]
 Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc -xc -MP -MMD -c -I../hello_stuffs_bsp//HAL/inc -I../hello_stuffs_bsp/ -I../hello_stuffs_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
-Info: Linking hello_stuffs.elf
-nios2-elf-g++  -T'../hello_stuffs_bsp//linker.x' -msys-crt0='../hello_stuffs_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../hello_stuffs_bsp/  -msmallc  -Wl,-Map=hello_stuffs.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o hello_stuffs.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert hello_stuffs.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios --quartus_project_dir "c:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/CAMERA" --jdi ../..//output_files/camera.jdi --sopcinfo c:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/CAMERA/software/hello_stuffs_bsp/../../nios.sopcinfo
-Info: (hello_stuffs.elf) 628 Bytes program size (code + initialized data).
-Info:                    7560 Bytes free for stack + heap.
-Info: Creating hello_stuffs.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source hello_stuffs.elf >hello_stuffs.objdump
-[hello_stuffs build complete]
-12:21:08 **** Build of configuration Nios II for project hello_stuffs ****
+nios2-elf-gcc -xc -MP -MMD -c -I../print_rgb_bsp//HAL/inc -I../print_rgb_bsp/ -I../print_rgb_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
+Info: Linking print_rgb.elf
+nios2-elf-g++  -T'../print_rgb_bsp//linker.x' -msys-crt0='../print_rgb_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../print_rgb_bsp/  -msmallc  -Wl,-Map=print_rgb.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o print_rgb.elf obj/default/hello_world_small.o -lm -msys-lib=m
+nios2-elf-insert print_rgb.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios --quartus_project_dir "c:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/CAMERA" --jdi ../..//output_files/camera.jdi --sopcinfo c:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/CAMERA/software/print_rgb_bsp/../../nios.sopcinfo
+Info: (print_rgb.elf) 3456 Bytes program size (code + initialized data).
+Info:                 4496 Bytes free for stack + heap.
+Info: Creating print_rgb.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source print_rgb.elf >print_rgb.objdump
+[print_rgb build complete]
+17:02:32 **** Build of configuration Nios II for project print_rgb ****
 make all 
-Info: Building ../hello_stuffs_bsp/
-C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../hello_stuffs_bsp/
+Info: Building ../print_rgb_bsp/
+C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../print_rgb_bsp/
 [BSP build complete]
-[hello_stuffs build complete]
-12:21:26 **** Incremental Build of configuration Nios II for project hello_stuffs ****
+[print_rgb build complete]
+17:02:33 **** Incremental Build of configuration Nios II for project print_rgb ****
 make all 
-Info: Building ../hello_stuffs_bsp/
-C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../hello_stuffs_bsp/
+Info: Building ../print_rgb_bsp/
+C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../print_rgb_bsp/
 [BSP build complete]
-[hello_stuffs build complete]
+[print_rgb build complete]
+17:04:50 **** Build of configuration Nios II for project print_rgb ****
+make all 
+Info: Building ../print_rgb_bsp/
+C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../print_rgb_bsp/
+[BSP build complete]
+Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
+nios2-elf-gcc -xc -MP -MMD -c -I../print_rgb_bsp//HAL/inc -I../print_rgb_bsp/ -I../print_rgb_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
+Info: Linking print_rgb.elf
+nios2-elf-g++  -T'../print_rgb_bsp//linker.x' -msys-crt0='../print_rgb_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../print_rgb_bsp/  -msmallc  -Wl,-Map=print_rgb.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o print_rgb.elf obj/default/hello_world_small.o -lm -msys-lib=m
+nios2-elf-insert print_rgb.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios --quartus_project_dir "c:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/CAMERA" --jdi ../..//output_files/camera.jdi --sopcinfo c:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/CAMERA/software/print_rgb_bsp/../../nios.sopcinfo
+Info: (print_rgb.elf) 3460 Bytes program size (code + initialized data).
+Info:                 4492 Bytes free for stack + heap.
+Info: Creating print_rgb.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source print_rgb.elf >print_rgb.objdump
+[print_rgb build complete]
+17:04:52 **** Incremental Build of configuration Nios II for project print_rgb ****
+make all 
+Info: Building ../print_rgb_bsp/
+C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../print_rgb_bsp/
+[BSP build complete]
+[print_rgb build complete]
+17:09:11 **** Build of configuration Nios II for project print_rgb ****
+make all 
+Info: Building ../print_rgb_bsp/
+C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../print_rgb_bsp/
+[BSP build complete]
+Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
+nios2-elf-gcc -xc -MP -MMD -c -I../print_rgb_bsp//HAL/inc -I../print_rgb_bsp/ -I../print_rgb_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
+Info: Linking print_rgb.elf
+nios2-elf-g++  -T'../print_rgb_bsp//linker.x' -msys-crt0='../print_rgb_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../print_rgb_bsp/  -msmallc  -Wl,-Map=print_rgb.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o print_rgb.elf obj/default/hello_world_small.o -lm -msys-lib=m
+nios2-elf-insert print_rgb.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios --quartus_project_dir "c:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/CAMERA" --jdi ../..//output_files/camera.jdi --sopcinfo c:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/CAMERA/software/print_rgb_bsp/../../nios.sopcinfo
+Info: (print_rgb.elf) 3452 Bytes program size (code + initialized data).
+Info:                 4500 Bytes free for stack + heap.
+Info: Creating print_rgb.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source print_rgb.elf >print_rgb.objdump
+[print_rgb build complete]
+17:09:13 **** Incremental Build of configuration Nios II for project print_rgb ****
+make all 
+Info: Building ../print_rgb_bsp/
+C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../print_rgb_bsp/
+[BSP build complete]
+[print_rgb build complete]
