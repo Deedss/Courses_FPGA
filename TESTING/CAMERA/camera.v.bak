@@ -1,0 +1,51 @@
+module camera(
+//////////// CLOCK //////////
+	input 		          		CLOCK2_50,
+	input 		          		CLOCK3_50,
+	input 		          		CLOCK_50,
+
+	//////////// Sma //////////
+	input 		          		SMA_CLKIN,
+	output		          		SMA_CLKOUT,
+
+	//////////// LED //////////
+	output		     [8:0]		LEDG,
+	output		    [17:0]		LEDR,
+
+	//////////// KEY //////////
+	input 		     [3:0]		KEY,
+
+	//////////// SW //////////
+	input 		    [17:0]		SW,
+
+	//////////// RS232 //////////
+	input 		          		UART_CTS,
+	output		          		UART_RTS,
+	input 		          		UART_RXD,
+	output		          		UART_TXD,
+
+	//////////// VGA //////////
+	output		          		VGA_BLANK_N,
+	output		     [7:0]		VGA_B,
+	output		          		VGA_CLK,
+	output		     [7:0]		VGA_G,
+	output		          		VGA_HS,
+	output		     [7:0]		VGA_R,
+	output		          		VGA_SYNC_N,
+	output		          		VGA_VS,
+
+	//////////// GPIO, GPIO connect to D8M-GPIO //////////
+	inout 		          		CAMERA_I2C_SCL,
+	inout 		          		CAMERA_I2C_SDA,
+	output		          		CAMERA_PWDN_n,
+	output		          		MIPI_CS_n,
+	inout 		          		MIPI_I2C_SCL,
+	inout 		          		MIPI_I2C_SDA,
+	output		          		MIPI_MCLK,
+	input 		          		MIPI_PIXEL_CLK,
+	input 		     [9:0]		MIPI_PIXEL_D,
+	input 		          		MIPI_PIXEL_HS,
+	input 		          		MIPI_PIXEL_VS,
+	output		          		MIPI_REFCLK,
+	output		          		MIPI_RESET_n
+);
