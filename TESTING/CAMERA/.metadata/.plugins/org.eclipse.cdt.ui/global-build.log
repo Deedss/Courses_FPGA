@@ -1,71 +1,4 @@
-14:31:35 **** Incremental Build of configuration Nios II for project print9 ****
-make all 
-Info: Building ../print9_bsp/
-C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../print9_bsp/
-[BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc -xc -MP -MMD -c -I../print9_bsp//HAL/inc -I../print9_bsp/ -I../print9_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
-Info: Linking print9.elf
-nios2-elf-g++  -T'../print9_bsp//linker.x' -msys-crt0='../print9_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../print9_bsp/  -msmallc  -Wl,-Map=print9.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o print9.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert print9.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios --quartus_project_dir "c:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/CAMERA" --jdi ../..//output_files/camera.jdi --sopcinfo c:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/CAMERA/software/print9_bsp/../../nios.sopcinfo
-Info: (print9.elf) 684 Bytes program size (code + initialized data).
-Info:              7504 Bytes free for stack + heap.
-Info: Creating print9.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source print9.elf >print9.objdump
-[print9 build complete]
-14:31:41 **** Build of configuration Nios II for project print9 ****
-make all 
-Info: Building ../print9_bsp/
-C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../print9_bsp/
-[BSP build complete]
-[print9 build complete]
-14:31:46 **** Incremental Build of configuration Nios II for project print9 ****
-make all 
-Info: Building ../print9_bsp/
-C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../print9_bsp/
-[BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc -xc -MP -MMD -c -I../print9_bsp//HAL/inc -I../print9_bsp/ -I../print9_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
-hello_world_small.c: In function 'main':
-hello_world_small.c:89:12: warning: type defaults to 'int' in declaration of 'R' [-Wimplicit-int]
-   volatile R, G, B;
-            ^
-hello_world_small.c:89:15: warning: type defaults to 'int' in declaration of 'G' [-Wimplicit-int]
-   volatile R, G, B;
-               ^
-hello_world_small.c:89:18: warning: type defaults to 'int' in declaration of 'B' [-Wimplicit-int]
-   volatile R, G, B;
-                  ^
-Info: Linking print9.elf
-nios2-elf-g++  -T'../print9_bsp//linker.x' -msys-crt0='../print9_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../print9_bsp/  -msmallc  -Wl,-Map=print9.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o print9.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert print9.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios --quartus_project_dir "c:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/CAMERA" --jdi ../..//output_files/camera.jdi --sopcinfo c:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/CAMERA/software/print9_bsp/../../nios.sopcinfo
-Info: (print9.elf) 684 Bytes program size (code + initialized data).
-Info:              7504 Bytes free for stack + heap.
-Info: Creating print9.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source print9.elf >print9.objdump
-[print9 build complete]
-14:31:57 **** Build of configuration Nios II for project print9 ****
-make all 
-Info: Building ../print9_bsp/
-C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../print9_bsp/
-[BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc -xc -MP -MMD -c -I../print9_bsp//HAL/inc -I../print9_bsp/ -I../print9_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
-Info: Linking print9.elf
-nios2-elf-g++  -T'../print9_bsp//linker.x' -msys-crt0='../print9_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../print9_bsp/  -msmallc  -Wl,-Map=print9.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o print9.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert print9.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios --quartus_project_dir "c:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/CAMERA" --jdi ../..//output_files/camera.jdi --sopcinfo c:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/CAMERA/software/print9_bsp/../../nios.sopcinfo
-Info: (print9.elf) 684 Bytes program size (code + initialized data).
-Info:              7504 Bytes free for stack + heap.
-Info: Creating print9.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source print9.elf >print9.objdump
-[print9 build complete]
-14:31:59 **** Incremental Build of configuration Nios II for project print9 ****
-make all 
-Info: Building ../print9_bsp/
-C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../print9_bsp/
-[BSP build complete]
-[print9 build complete]
-14:32:19 **** Build of configuration Nios II for project print9 ****
+19:12:43 **** Build of configuration Nios II for project print9 ****
 make all 
 Info: Building ../print9_bsp/
 C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../print9_bsp/
@@ -80,7 +13,25 @@ Info:              7528 Bytes free for stack + heap.
 Info: Creating print9.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source print9.elf >print9.objdump
 [print9 build complete]
-14:32:22 **** Incremental Build of configuration Nios II for project print9 ****
+19:12:59 **** Build of configuration Nios II for project print9 ****
+make all 
+Info: Building ../print9_bsp/
+C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../print9_bsp/
+[BSP build complete]
+[print9 build complete]
+19:13:01 **** Incremental Build of configuration Nios II for project print9 ****
+make all 
+Info: Building ../print9_bsp/
+C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../print9_bsp/
+[BSP build complete]
+[print9 build complete]
+19:17:41 **** Build of configuration Nios II for project print9 ****
+make all 
+Info: Building ../print9_bsp/
+C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../print9_bsp/
+[BSP build complete]
+[print9 build complete]
+19:17:42 **** Incremental Build of configuration Nios II for project print9 ****
 make all 
 Info: Building ../print9_bsp/
 C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../print9_bsp/

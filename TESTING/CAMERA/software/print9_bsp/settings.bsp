@@ -2,10 +2,10 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Jun 1, 2020 2:29:14 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1591014554542</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Jun 1, 2020 7:12:06 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1591031526446</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\Gertjan\OneDrive\Projects\Courses_FPGA\TESTING\CAMERA\software\print9_bsp</BspGeneratedLocation>
-        <BspSettingsFile>.\settings.bsp</BspSettingsFile>
+        <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\nios.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>nios2_gen2_0</Cpu>

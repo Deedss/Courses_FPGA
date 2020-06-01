@@ -211,6 +211,18 @@ D8M_SET   ccd (
    .sCCD_B       ( sCCD_B )
 );
 
+nios nios1(
+		.clk_clk 			(CLOCK_50),   			// clk.clk
+		.blue_in_port		(sCCD_B), 				// blue.in_port
+		.blue_out_port		(VGA_B_A),  				// .out_port
+		.green_in_port		(sCCD_G), 				// green.in_port
+		.green_out_port	(VGA_G_A), 				// .out_port
+		.red_in_port		(sCCD_R), 				// red.in_port
+		.red_out_port    	(VGA_R_A),					// .out_port
+		.sw_in_port			(SW[17:0]),				// SWITCHES
+		.sw_out_port		(LEDR[17:0]),			// LEDR
+		);
+
 //--- By Trigged VGA Controller --  
 VGA_Controller_trig	u1	(	
 	  .iCLK       ( MIPI_PIXEL_CLK_ ), 
@@ -222,9 +234,9 @@ VGA_Controller_trig	u1	(
 	  .iBlue      ( sCCD_B[7:0]  ),
 	  	
 		
-	  .oVGA_R     ( VGA_R_A ),
-	  .oVGA_G     ( VGA_G_A ),
-	  .oVGA_B     ( VGA_B_A ),
+	  .oVGA_R     ( VGA_R ),
+	  .oVGA_G     ( VGA_G ),
+	  .oVGA_B     ( VGA_B ),
      .oVGA_H_SYNC( VGA_HS ),
      .oVGA_V_SYNC( VGA_VS ),	  
 	  .oVGA_SYNC  ( VGA_SYNC_N  ),
@@ -234,18 +246,7 @@ VGA_Controller_trig	u1	(
 
 );
 
-nios nios1(
-		.clk_clk 			(CLOCK_50),   			// clk.clk
-		.blue_in_port		(VGA_B_A), 				// blue.in_port
-		.blue_out_port		(VGA_B),  				// .out_port
-		.green_in_port		(VGA_G_A), 				// green.in_port
-		.green_out_port	(VGA_G), 				// .out_port
-		.red_in_port		(VGA_R_A), 				// red.in_port
-		.red_out_port    	(VGA_R),					// .out_port
-		.sw_in_port			(SW[17:0]),				// SWITCHES
-		.sw_out_port		(LEDR[17:0]),			// LEDR
-		.vid_clk_clk		(VGA_CLK_25M)		   // vid_clk.clk
-		);
+
 
 		
 ////----7-SEG OFF----

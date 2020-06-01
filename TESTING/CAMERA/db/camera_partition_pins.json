@@ -216,6 +216,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "CLOCK_50",
+					"strict" : false
+				},
+				{
 					"name" : "CLOCK2_50",
 					"strict" : false
 				},
@@ -228,7 +232,43 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK_50",
+					"name" : "MIPI_PIXEL_D[2]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[3]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[4]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[5]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[6]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[7]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[8]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[9]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[0]",
 					"strict" : false
 				},
 				{
@@ -305,46 +345,6 @@
 				},
 				{
 					"name" : "MIPI_PIXEL_CLK",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[2]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[3]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[1]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[0]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[4]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[5]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[6]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[7]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[8]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[9]",
 					"strict" : false
 				},
 				{
