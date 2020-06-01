@@ -8,6 +8,8 @@
 			h_cont_export  : in  std_logic_vector(15 downto 0) := (others => 'X'); -- export
 			red_in_port    : in  std_logic_vector(7 downto 0)  := (others => 'X'); -- in_port
 			red_out_port   : out std_logic_vector(7 downto 0);                     -- out_port
+			sw_in_port     : in  std_logic_vector(17 downto 0) := (others => 'X'); -- in_port
+			sw_out_port    : out std_logic_vector(17 downto 0);                    -- out_port
 			v_cont_export  : in  std_logic_vector(15 downto 0) := (others => 'X')  -- export
 		);
 	end component nios;
@@ -22,6 +24,8 @@
 			h_cont_export  => CONNECTED_TO_h_cont_export,  -- h_cont.export
 			red_in_port    => CONNECTED_TO_red_in_port,    --    red.in_port
 			red_out_port   => CONNECTED_TO_red_out_port,   --       .out_port
+			sw_in_port     => CONNECTED_TO_sw_in_port,     --     sw.in_port
+			sw_out_port    => CONNECTED_TO_sw_out_port,    --       .out_port
 			v_cont_export  => CONNECTED_TO_v_cont_export   -- v_cont.export
 		);
 

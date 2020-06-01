@@ -1,0 +1,9 @@
+18:43:29 **** Incremental Build of configuration Nios II for project print_rbg_count ****
+make all 
+Info: Building ../print_rbg_count_bsp/
+C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../print_rbg_count_bsp/
+[BSP build complete]
+[print_rbg_count build complete]
+
+18:43:30 Build Finished (took 1s.114ms)
+

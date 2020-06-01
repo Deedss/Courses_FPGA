@@ -1,0 +1,9 @@
+12:40:43 **** Incremental Build of configuration Nios II for project print4 ****
+make all 
+Info: Building ../print4_bsp/
+C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../print4_bsp/
+[BSP build complete]
+[print4 build complete]
+
+12:40:44 Build Finished (took 949ms)
+

@@ -211,15 +211,17 @@ D8M_SET   ccd (
    .sCCD_B       ( sCCD_B )
 );
 
+
+
 //--- By Trigged VGA Controller --  
 VGA_Controller_trig	u1	(	
 	  .iCLK       ( MIPI_PIXEL_CLK_ ), 
      .H_Cont		(H_Cont),  
      .V_Cont		(V_Cont),  
 	  .READ_Request(READ_Request)	 , 	  
-     .iRed       ( sCCD_R[7:0]   ),
-	  .iGreen     ( sCCD_G[7:0]   ),
-	  .iBlue      ( sCCD_B[7:0]   ),
+     .iRed       ( sCCD_R[7:0]  ),
+	  .iGreen     ( sCCD_G[7:0]  ),
+	  .iBlue      ( sCCD_B[7:0]  ),
 	  	
 		
 	  .oVGA_R     ( VGA_R_A ),
@@ -234,34 +236,27 @@ VGA_Controller_trig	u1	(
 
 );
 
-//
-//nios nios1(
-//		.clk_clk (CLOCK_50),        //     clk.clk
-//		.rgb_in_export (rgb_in),  //  rgb_in.export
-//		.rgb_out_export (rgb_out)// rgb_out.export
-//);
-
 nios nios1(
 		.clk_clk 			(CLOCK_50),    // clk.clk
-		.blue_in_port		(VGA_B_A),   	// blue.in_port
-		.blue_out_port		(VGA_B),  		// .out_port
-		.green_in_port		(VGA_G_A),  	// green.in_port
+		.blue_in_port		(VGA_B_A), // blue.in_port
+		.blue_out_port		(VGA_B),  	// .out_port
+		.green_in_port		(VGA_G_A), // green.in_port
 		.green_out_port	(VGA_G), 		// .out_port
-		.red_in_port		(VGA_R_A),    	// red.in_port
-		.red_out_port    	(VGA_R),			// .out_port
+		.red_in_port		(VGA_R_A), // red.in_port
+		.red_out_port    	(VGA_R),		// .out_port
 		.v_cont_export		(V_Cont),		//	V_CONT
-		.h_cont_export		(H_Cont)			// H_CONT
+		.h_cont_export		(H_Cont),		// H_CONT
+		.sw_in_port			(SW[17:0]),		// SWITCHES
+		.sw_out_port		(LEDR[17:0])	// LEDR
 		);
 		
-
-
 ////----7-SEG OFF----
-//assign  HEX2 = 7'h7F;
-//assign  HEX3 = 7'h7F;
-//assign  HEX4 = 7'h7F;
-//assign  HEX5 = 7'h7F;
-//assign  HEX6 = 7'h7F;
-//assign  HEX7 = 7'h7F;
+assign  HEX2 = 7'h7F;
+assign  HEX3 = 7'h7F;
+assign  HEX4 = 7'h7F;
+assign  HEX5 = 7'h7F;
+assign  HEX6 = 7'h7F;
+assign  HEX7 = 7'h7F;
 
 //--FREQUNCY TEST--
 CLOCKMEM  ck1 ( .CLK(VGA_CLK_25M    ),.CLK_FREQ  (25000000  ),.CK_1HZ (D8M_CK_HZ   ));

@@ -8,6 +8,8 @@ module nios (
 	h_cont_export,
 	red_in_port,
 	red_out_port,
+	sw_in_port,
+	sw_out_port,
 	v_cont_export);	
 
 	input	[7:0]	blue_in_port;
@@ -18,5 +20,7 @@ module nios (
 	input	[15:0]	h_cont_export;
 	input	[7:0]	red_in_port;
 	output	[7:0]	red_out_port;
+	input	[17:0]	sw_in_port;
+	output	[17:0]	sw_out_port;
 	input	[15:0]	v_cont_export;
 endmodule

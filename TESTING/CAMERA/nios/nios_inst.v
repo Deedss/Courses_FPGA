@@ -7,6 +7,8 @@
 		.h_cont_export  (<connected-to-h_cont_export>),  // h_cont.export
 		.red_in_port    (<connected-to-red_in_port>),    //    red.in_port
 		.red_out_port   (<connected-to-red_out_port>),   //       .out_port
+		.sw_in_port     (<connected-to-sw_in_port>),     //     sw.in_port
+		.sw_out_port    (<connected-to-sw_out_port>),    //       .out_port
 		.v_cont_export  (<connected-to-v_cont_export>)   // v_cont.export
 	);
 
