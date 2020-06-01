@@ -211,8 +211,6 @@ D8M_SET   ccd (
    .sCCD_B       ( sCCD_B )
 );
 
-
-
 //--- By Trigged VGA Controller --  
 VGA_Controller_trig	u1	(	
 	  .iCLK       ( MIPI_PIXEL_CLK_ ), 
@@ -237,18 +235,18 @@ VGA_Controller_trig	u1	(
 );
 
 nios nios1(
-		.clk_clk 			(CLOCK_50),    // clk.clk
-		.blue_in_port		(VGA_B_A), // blue.in_port
-		.blue_out_port		(VGA_B),  	// .out_port
-		.green_in_port		(VGA_G_A), // green.in_port
-		.green_out_port	(VGA_G), 		// .out_port
-		.red_in_port		(VGA_R_A), // red.in_port
-		.red_out_port    	(VGA_R),		// .out_port
-		.v_cont_export		(V_Cont),		//	V_CONT
-		.h_cont_export		(H_Cont),		// H_CONT
-		.sw_in_port			(SW[17:0]),		// SWITCHES
-		.sw_out_port		(LEDR[17:0])	// LEDR
+		.clk_clk 			(CLOCK_50),   			// clk.clk
+		.blue_in_port		(VGA_B_A), 				// blue.in_port
+		.blue_out_port		(VGA_B),  				// .out_port
+		.green_in_port		(VGA_G_A), 				// green.in_port
+		.green_out_port	(VGA_G), 				// .out_port
+		.red_in_port		(VGA_R_A), 				// red.in_port
+		.red_out_port    	(VGA_R),					// .out_port
+		.sw_in_port			(SW[17:0]),				// SWITCHES
+		.sw_out_port		(LEDR[17:0]),			// LEDR
+		.vid_clk_clk		(VGA_CLK_25M)		   // vid_clk.clk
 		);
+
 		
 ////----7-SEG OFF----
 assign  HEX2 = 7'h7F;

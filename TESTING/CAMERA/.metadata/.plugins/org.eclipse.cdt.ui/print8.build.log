@@ -1,0 +1,9 @@
+14:18:55 **** Incremental Build of configuration Nios II for project print8 ****
+make all 
+Info: Building ../print8_bsp/
+C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../print8_bsp/
+[BSP build complete]
+[print8 build complete]
+
+14:18:56 Build Finished (took 907ms)
+

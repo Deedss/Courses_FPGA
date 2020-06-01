@@ -9,27 +9,11 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
-   element H_Cont
-   {
-      datum _sortIndex
-      {
-         value = "7";
-         type = "int";
-      }
-   }
-   element H_Cont.s1
-   {
-      datum baseAddress
-      {
-         value = "20512";
-         type = "String";
-      }
-   }
    element SW
    {
       datum _sortIndex
       {
-         value = "9";
+         value = "3";
          type = "int";
       }
    }
@@ -37,23 +21,7 @@
    {
       datum baseAddress
       {
-         value = "20480";
-         type = "String";
-      }
-   }
-   element V_Cont
-   {
-      datum _sortIndex
-      {
-         value = "8";
-         type = "int";
-      }
-   }
-   element V_Cont.s1
-   {
-      datum baseAddress
-      {
-         value = "20496";
+         value = "20528";
          type = "String";
       }
    }
@@ -61,7 +29,7 @@
    {
       datum _sortIndex
       {
-         value = "6";
+         value = "8";
          type = "int";
       }
    }
@@ -69,7 +37,7 @@
    {
       datum baseAddress
       {
-         value = "20528";
+         value = "20512";
          type = "String";
       }
    }
@@ -85,7 +53,7 @@
    {
       datum _sortIndex
       {
-         value = "5";
+         value = "7";
          type = "int";
       }
    }
@@ -93,7 +61,7 @@
    {
       datum baseAddress
       {
-         value = "20544";
+         value = "20496";
          type = "String";
       }
    }
@@ -101,7 +69,7 @@
    {
       datum _sortIndex
       {
-         value = "3";
+         value = "1";
          type = "int";
       }
    }
@@ -109,7 +77,15 @@
    {
       datum baseAddress
       {
-         value = "20584";
+         value = "20552";
+         type = "String";
+      }
+   }
+   element nios
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
          type = "String";
       }
    }
@@ -117,7 +93,7 @@
    {
       datum _sortIndex
       {
-         value = "1";
+         value = "4";
          type = "int";
       }
    }
@@ -133,7 +109,7 @@
    {
       datum _sortIndex
       {
-         value = "2";
+         value = "5";
          type = "int";
       }
    }
@@ -149,7 +125,7 @@
    {
       datum _sortIndex
       {
-         value = "4";
+         value = "6";
          type = "int";
       }
    }
@@ -157,8 +133,16 @@
    {
       datum baseAddress
       {
-         value = "20560";
+         value = "20480";
          type = "String";
+      }
+   }
+   element vid_clk
+   {
+      datum _sortIndex
+      {
+         value = "2";
+         type = "int";
       }
    }
 }
@@ -194,40 +178,17 @@
    type="conduit"
    dir="end" />
  <interface
-   name="h_cont"
-   internal="H_Cont.external_connection"
-   type="conduit"
-   dir="end" />
- <interface
    name="red"
    internal="red.external_connection"
    type="conduit"
    dir="end" />
  <interface name="sw" internal="SW.external_connection" type="conduit" dir="end" />
- <interface
-   name="v_cont"
-   internal="V_Cont.external_connection"
-   type="conduit"
-   dir="end" />
- <module name="H_Cont" kind="altera_avalon_pio" version="18.1" enabled="1">
-  <parameter name="bitClearingEdgeCapReg" value="false" />
-  <parameter name="bitModifyingOutReg" value="false" />
-  <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="50000000" />
-  <parameter name="direction" value="Input" />
-  <parameter name="edgeType" value="RISING" />
-  <parameter name="generateIRQ" value="false" />
-  <parameter name="irqType" value="LEVEL" />
-  <parameter name="resetValue" value="0" />
-  <parameter name="simDoTestBenchWiring" value="false" />
-  <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="16" />
- </module>
+ <interface name="vid_clk" internal="vid_clk.clk_in" type="clock" dir="end" />
  <module name="SW" kind="altera_avalon_pio" version="18.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="50000000" />
+  <parameter name="clockRate" value="25000000" />
   <parameter name="direction" value="InOut" />
   <parameter name="edgeType" value="RISING" />
   <parameter name="generateIRQ" value="false" />
@@ -237,25 +198,11 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="18" />
  </module>
- <module name="V_Cont" kind="altera_avalon_pio" version="18.1" enabled="1">
-  <parameter name="bitClearingEdgeCapReg" value="false" />
-  <parameter name="bitModifyingOutReg" value="false" />
-  <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="50000000" />
-  <parameter name="direction" value="Input" />
-  <parameter name="edgeType" value="RISING" />
-  <parameter name="generateIRQ" value="false" />
-  <parameter name="irqType" value="LEVEL" />
-  <parameter name="resetValue" value="0" />
-  <parameter name="simDoTestBenchWiring" value="false" />
-  <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="16" />
- </module>
  <module name="blue" kind="altera_avalon_pio" version="18.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="50000000" />
+  <parameter name="clockRate" value="25000000" />
   <parameter name="direction" value="InOut" />
   <parameter name="edgeType" value="RISING" />
   <parameter name="generateIRQ" value="false" />
@@ -275,7 +222,7 @@
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="50000000" />
+  <parameter name="clockRate" value="25000000" />
   <parameter name="direction" value="InOut" />
   <parameter name="edgeType" value="RISING" />
   <parameter name="generateIRQ" value="false" />
@@ -309,15 +256,15 @@
    kind="altera_nios2_gen2"
    version="18.1"
    enabled="1">
-  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="1" />
-  <parameter name="AUTO_CLK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="2" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="2" />
   <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
   <parameter name="bht_ramBlockType" value="Automatic" />
   <parameter name="breakOffset" value="32" />
   <parameter name="breakSlave" value="None" />
   <parameter name="cdx_enabled" value="false" />
-  <parameter name="clockFrequency" value="50000000" />
+  <parameter name="clockFrequency" value="25000000" />
   <parameter name="cpuArchRev" value="1" />
   <parameter name="cpuID" value="0" />
   <parameter name="cpuReset" value="false" />
@@ -328,7 +275,7 @@
   <parameter name="dataAddrWidth" value="15" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x2000' end='0x4000' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x4800' end='0x5000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='SW.s1' start='0x5000' end='0x5010' type='altera_avalon_pio.s1' /><slave name='V_Cont.s1' start='0x5010' end='0x5020' type='altera_avalon_pio.s1' /><slave name='H_Cont.s1' start='0x5020' end='0x5030' type='altera_avalon_pio.s1' /><slave name='blue.s1' start='0x5030' end='0x5040' type='altera_avalon_pio.s1' /><slave name='green.s1' start='0x5040' end='0x5050' type='altera_avalon_pio.s1' /><slave name='red.s1' start='0x5050' end='0x5060' type='altera_avalon_pio.s1' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x5068' end='0x5070' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x2000' end='0x4000' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x4800' end='0x5000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='red.s1' start='0x5000' end='0x5010' type='altera_avalon_pio.s1' /><slave name='green.s1' start='0x5010' end='0x5020' type='altera_avalon_pio.s1' /><slave name='blue.s1' start='0x5020' end='0x5030' type='altera_avalon_pio.s1' /><slave name='SW.s1' start='0x5030' end='0x5040' type='altera_avalon_pio.s1' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x5048' end='0x5050' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -367,7 +314,7 @@
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="impl" value="Tiny" />
   <parameter name="instAddrWidth" value="15" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x2000' end='0x4000' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x4800' end='0x5000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x5068' end='0x5070' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x2000' end='0x4000' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x4800' end='0x5000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x5048' end='0x5050' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
   <parameter name="instructionMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="instructionMasterHighPerformanceMapParam" value="" />
   <parameter name="instruction_master_high_performance_paddr_base" value="0" />
@@ -522,7 +469,7 @@
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="50000000" />
+  <parameter name="clockRate" value="25000000" />
   <parameter name="direction" value="InOut" />
   <parameter name="edgeType" value="RISING" />
   <parameter name="generateIRQ" value="false" />
@@ -532,13 +479,19 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="8" />
  </module>
+ <module name="vid_clk" kind="clock_source" version="18.1" enabled="1">
+  <parameter name="clockFrequency" value="25000000" />
+  <parameter name="clockFrequencyKnown" value="true" />
+  <parameter name="inputClockFrequency" value="0" />
+  <parameter name="resetSynchronousEdges" value="NONE" />
+ </module>
  <connection
    kind="avalon"
    version="18.1"
    start="nios2_gen2_0.data_master"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x5068" />
+  <parameter name="baseAddress" value="0x5048" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -548,60 +501,6 @@
    end="nios2_gen2_0.debug_mem_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x4800" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="nios2_gen2_0.data_master"
-   end="onchip_memory2_0.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="nios2_gen2_0.data_master"
-   end="red.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x5050" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="nios2_gen2_0.data_master"
-   end="green.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x5040" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="nios2_gen2_0.data_master"
-   end="blue.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x5030" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="nios2_gen2_0.data_master"
-   end="H_Cont.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x5020" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="nios2_gen2_0.data_master"
-   end="V_Cont.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x5010" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -610,7 +509,43 @@
    start="nios2_gen2_0.data_master"
    end="SW.s1">
   <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x5030" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="nios2_gen2_0.data_master"
+   end="blue.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x5020" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="nios2_gen2_0.data_master"
+   end="green.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x5010" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="nios2_gen2_0.data_master"
+   end="red.s1">
+  <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x5000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="nios2_gen2_0.data_master"
+   end="onchip_memory2_0.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x2000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -619,7 +554,7 @@
    start="nios2_gen2_0.instruction_master"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x5068" />
+  <parameter name="baseAddress" value="0x5048" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -640,18 +575,20 @@
   <parameter name="baseAddress" value="0x2000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
- <connection kind="clock" version="18.1" start="clk_0.clk" end="nios2_gen2_0.clk" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="jtag_uart_0.clk" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="red.clk" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="green.clk" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="blue.clk" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="H_Cont.clk" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="V_Cont.clk" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="SW.clk" />
  <connection
    kind="clock"
    version="18.1"
-   start="clk_0.clk"
+   start="vid_clk.clk"
+   end="nios2_gen2_0.clk" />
+ <connection kind="clock" version="18.1" start="vid_clk.clk" end="red.clk" />
+ <connection kind="clock" version="18.1" start="vid_clk.clk" end="green.clk" />
+ <connection kind="clock" version="18.1" start="vid_clk.clk" end="blue.clk" />
+ <connection kind="clock" version="18.1" start="vid_clk.clk" end="SW.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="jtag_uart_0.clk" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="vid_clk.clk"
    end="onchip_memory2_0.clk1" />
  <connection
    kind="interrupt"
@@ -663,32 +600,25 @@
  <connection
    kind="reset"
    version="18.1"
-   start="clk_0.clk_reset"
-   end="nios2_gen2_0.reset" />
+   start="vid_clk.clk_reset"
+   end="green.reset" />
+ <connection kind="reset" version="18.1" start="vid_clk.clk_reset" end="red.reset" />
  <connection
    kind="reset"
    version="18.1"
-   start="clk_0.clk_reset"
-   end="jtag_uart_0.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="red.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="blue.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="green.reset" />
+   start="vid_clk.clk_reset"
+   end="blue.reset" />
+ <connection kind="reset" version="18.1" start="vid_clk.clk_reset" end="SW.reset" />
  <connection
    kind="reset"
    version="18.1"
-   start="clk_0.clk_reset"
-   end="H_Cont.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="clk_0.clk_reset"
-   end="V_Cont.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="SW.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="clk_0.clk_reset"
+   start="vid_clk.clk_reset"
    end="onchip_memory2_0.reset1" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="nios2_gen2_0.debug_reset_request"
+   end="vid_clk.clk_in_reset" />
  <connection
    kind="reset"
    version="18.1"

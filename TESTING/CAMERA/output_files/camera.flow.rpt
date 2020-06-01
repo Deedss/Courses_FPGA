@@ -1,5 +1,5 @@
 Flow report for camera
-Mon Jun 01 12:30:30 2020
+Mon Jun 01 14:28:53 2020
 Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 
 
@@ -41,17 +41,17 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Jun 01 12:30:25 2020       ;
+; Flow Status                        ; Successful - Mon Jun 01 14:28:47 2020       ;
 ; Quartus Prime Version              ; 18.1.1 Build 646 04/11/2019 SJ Lite Edition ;
 ; Revision Name                      ; camera                                      ;
 ; Top-level Entity Name              ; camera                                      ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 3,979 / 114,480 ( 3 % )                     ;
-;     Total combinational functions  ; 3,754 / 114,480 ( 3 % )                     ;
-;     Dedicated logic registers      ; 1,737 / 114,480 ( 2 % )                     ;
-; Total registers                    ; 1737                                        ;
+; Total logic elements               ; 4,051 / 114,480 ( 4 % )                     ;
+;     Total combinational functions  ; 3,748 / 114,480 ( 3 % )                     ;
+;     Dedicated logic registers      ; 1,866 / 114,480 ( 2 % )                     ;
+; Total registers                    ; 1866                                        ;
 ; Total pins                         ; 231 / 529 ( 44 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 199,680 / 3,981,312 ( 5 % )                 ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/01/2020 12:28:51 ;
+; Start date & time ; 06/01/2020 14:27:15 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; camera              ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+--------------------------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+--------------------------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 193675815635334.159100733107920                        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 193675815635334.159101443504924                        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; nios/synthesis/../nios.cmp                             ; --            ; --          ; --         ;
@@ -84,6 +84,7 @@ https://fpgasoftware.intel.com/eula.
 ; MISC_FILE                           ; Video/pll_test_bb.v                                    ; --            ; --          ; --         ;
 ; MISC_FILE                           ; Video/pll_test.ppf                                     ; --            ; --          ; --         ;
 ; MISC_FILE                           ; int_line_bb.v                                          ; --            ; --          ; --         ;
+; MISC_FILE                           ; fifo_pll_bb.v                                          ; --            ; --          ; --         ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                                   ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family)                 ; --            ; --          ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                 ; --            ; --          ; Top        ;
@@ -93,7 +94,7 @@ https://fpgasoftware.intel.com/eula.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                           ; --            ; --          ; --         ;
 ; SLD_FILE                            ; nios/synthesis/nios.regmap                             ; --            ; --          ; --         ;
 ; SLD_FILE                            ; nios/synthesis/nios.debuginfo                          ; --            ; --          ; --         ;
-; SLD_INFO                            ; QSYS_NAME nios HAS_SOPCINFO 1 GENERATION_ID 1591007243 ; --            ; nios        ; --         ;
+; SLD_INFO                            ; QSYS_NAME nios HAS_SOPCINFO 1 GENERATION_ID 1591014312 ; --            ; nios        ; --         ;
 ; SOPCINFO_FILE                       ; nios/synthesis/../../nios.sopcinfo                     ; --            ; --          ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                     ; --            ; --          ; --         ;
 +-------------------------------------+--------------------------------------------------------+---------------+-------------+------------+
@@ -104,11 +105,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:00     ; 1.0                     ; 4941 MB             ; 00:01:23                           ;
-; Fitter               ; 00:00:23     ; 1.1                     ; 5890 MB             ; 00:00:35                           ;
-; Assembler            ; 00:00:05     ; 1.0                     ; 4702 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:04     ; 1.2                     ; 4915 MB             ; 00:00:05                           ;
-; Total                ; 00:01:32     ; --                      ; --                  ; 00:02:07                           ;
+; Analysis & Synthesis ; 00:00:55     ; 1.0                     ; 4940 MB             ; 00:01:13                           ;
+; Fitter               ; 00:00:27     ; 1.1                     ; 5895 MB             ; 00:00:47                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 4704 MB             ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:05     ; 1.2                     ; 4914 MB             ; 00:00:04                           ;
+; Total                ; 00:01:30     ; --                      ; --                  ; 00:02:08                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -1,0 +1,18 @@
+13:39:53 **** Incremental Build of configuration Nios II for project print6 ****
+make all 
+Info: Building ../print6_bsp/
+C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../print6_bsp/
+[BSP build complete]
+Info: Linking print6.elf
+nios2-elf-g++  -T'../print6_bsp//linker.x' -msys-crt0='../print6_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../print6_bsp/   -Wl,-Map=print6.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o print6.elf obj/default/hello_world.o -lm -msys-lib=m
+c:/software/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: print6.elf section `.text' will not fit in region `onchip_memory2_0'
+c:/software/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: address 0x92c4 of print6.elf section `.rwdata' is not within region `onchip_memory2_0'
+c:/software/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: address 0xae84 of print6.elf section `.bss' is not within region `onchip_memory2_0'
+c:/software/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: address 0x92c4 of print6.elf section `.rwdata' is not within region `onchip_memory2_0'
+c:/software/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: address 0xae84 of print6.elf section `.bss' is not within region `onchip_memory2_0'
+c:/software/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: region `onchip_memory2_0' overflowed by 28292 bytes
+collect2.exe: error: ld returned 1 exit status
+make: *** [print6.elf] Error 1
+
+13:39:54 Build Finished (took 1s.3ms)
+
