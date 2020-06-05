@@ -21,6 +21,16 @@ module camera(
 	//////////// KEY //////////
 	input 		     [3:0]		KEY,
 
+	//////////// SEG7 //////////
+	output		     [6:0]		HEX0,
+	output		     [6:0]		HEX1,
+	output		     [6:0]		HEX2,
+	output		     [6:0]		HEX3,
+	output		     [6:0]		HEX4,
+	output		     [6:0]		HEX5,
+	output		     [6:0]		HEX6,
+	output		     [6:0]		HEX7,
+
 	//////////// EX_IO //////////
 	inout 		     [6:0]		EX_IO,
 
@@ -246,9 +256,15 @@ VGA_Controller_trig	u1	(
 
 );
 
+//--Frame Counter -- 
+ FpsMonitor uFps2(
+	  .clk50    ( CLOCK2_50 ),
+	  .vs       ( VGA_VS    ),//LUT_MIPI_PIXEL_VS ), //60HZ
+	  .fps      (  ),
+	  .hex_fps_h( HEX1 ),
+	  .hex_fps_l( HEX0 )
+);
 
-
-		
 ////----7-SEG OFF----
 assign  HEX2 = 7'h7F;
 assign  HEX3 = 7'h7F;
