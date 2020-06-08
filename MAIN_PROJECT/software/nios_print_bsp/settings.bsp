@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Jun 5, 2020 3:40:52 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1591364452618</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Jun 8, 2020 2:12:52 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1591618372863</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\Gertjan\OneDrive\Projects\Courses_FPGA\MAIN_PROJECT\software\nios_print_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\nios.sopcinfo</SopcDesignFile>

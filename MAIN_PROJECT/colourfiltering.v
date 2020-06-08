@@ -192,8 +192,8 @@ pll_test  ref(
 	   .inclk0    ( CLOCK2_50 ),
 	   .areset       ( 1'b0 ),
 	   .c0  ( MIPI_REFCLK ),    //20Mhz
-	   .c1  ( VGA_CLK_25M )     //25Mhz
-);
+	   .c1  ( VGA_CLK_25M )    //25Mhz
+		);
 
 //--- D8M RAWDATA to RGB ---
 D8M_SET   ccd (
@@ -214,57 +214,18 @@ D8M_SET   ccd (
    .sCCD_B       ( sCCD_B )
 );
 
-///// Setting up FIFO BUFFER FOR CAMERA TO NIOS
-//wire [23:0] f1_data;
-//wire [23:0] f1_q;
-//wire 			f1_rdreq;
-//wire		 	f1_wrreq;
-//wire [14:0] f1_usedw;
-//
-//assign f1_data[23:16] = sCCD_R;
-//assign f1_data[15:8] = sCCD_G;
-//assign f1_data[7:0] = sCCD_B;
-//
-//fifo_pll f1(.clock (CLOCK_50), .data(f1_data), .rdreq(f1_rdreq), .wrreq(f1_wrreq), .q(f1_q), .usedw(f1_usedw));
-
-nios nios1(
-	.clk_clk 			(CLOCK_50),   			// clk.clk
-	.blue_in_port		(sCCD_B), 				// blue.in_port
-	.blue_out_port		(VGA_B_A),  				// .out_port
-	.green_in_port		(sCCD_G), 				// green.in_port
-	.green_out_port	(VGA_G_A), 				// .out_port
-	.red_in_port		(sCCD_R), 				// red.in_port
-	.red_out_port    	(VGA_R_A),					// .out_port
-	.sw_in_port			(SW[17:0]),				// SWITCHES
-	.sw_out_port		(LEDR[17:0]),			// LEDR
-	.vid_clk_clk     	(VGA_CLK)			// vid_clk.clk
-);
-//
-///// Setting up FIFO BUFFER FOR NIOS TO VGA
-//wire [23:0] f2_data;
-//wire [23:0] f2_q;
-//wire 			f2_rdreq;
-//wire		 	f2_wrreq;
-//wire [14:0] f2_usedw;
-//
-//assign f2_data[23:16] = VGA_R_A;
-//assign f2_data[15:8] = VGA_G_A;
-//assign f2_data[7:0] = VGA_B_A;
-//
-//fifo_pll f2(.clock (CLOCK_50), .data(f2_data), .rdreq(f2_rdreq), .wrreq(f2_wrreq), .q(f2_q), .usedw(f2_usedw));
-
 //--- By Trigged VGA Controller --  
 VGA_Controller_trig	u1	(	
-	  .iCLK       ( MIPI_PIXEL_CLK_ ), 
+	  .iCLK       ( VGA_CLK_25M ), 
      .H_Cont		(H_Cont),  
      .V_Cont		(V_Cont),  
 	  .READ_Request(READ_Request)	 , 	  
-     .iRed       ( VGA_R_A ),
-	  .iGreen     ( VGA_G_A  ),
-	  .iBlue      ( VGA_B_A ),		
-	  .oVGA_R     ( VGA_R ),
-	  .oVGA_G     ( VGA_G ),
-	  .oVGA_B     ( VGA_B ),
+     .iRed       ( sCCD_R ),
+	  .iGreen     ( sCCD_G  ),
+	  .iBlue      ( sCCD_B ),		
+	  .oVGA_R     ( VGA_R_A ),
+	  .oVGA_G     ( VGA_G_A ),
+	  .oVGA_B     ( VGA_B_A ),
      .oVGA_H_SYNC( VGA_HS ),
      .oVGA_V_SYNC( VGA_VS ),	  
 	  .oVGA_SYNC  ( VGA_SYNC_N  ),
@@ -272,6 +233,18 @@ VGA_Controller_trig	u1	(
 	  .oVGA_CLOCK ( VGA_CLK     ),
 	  .iRST_N     ( RESET_N )	,	
 
+);
+
+nios nios1(
+	.clk_clk 			(CLOCK_50),   			// clk.clk
+	.blue_in_port		(VGA_B_A), 				// blue.in_port
+	.blue_out_port		(VGA_B),  				// .out_port
+	.green_in_port		(VGA_G_A), 				// green.in_port
+	.green_out_port	(VGA_G), 				// .out_port
+	.red_in_port		(VGA_R_A), 				// red.in_port
+	.red_out_port    	(VGA_R),					// .out_port
+	.sw_in_port			(SW[17:0]),				// SWITCHES
+	.sw_out_port		(LEDR[17:0])			// LEDR
 );
 
 //--Frame Counter -- 

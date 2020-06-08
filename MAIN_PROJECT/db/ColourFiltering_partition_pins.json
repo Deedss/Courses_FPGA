@@ -168,10 +168,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "VGA_CLK",
-					"strict" : false
-				},
-				{
 					"name" : "VGA_G[0]",
 					"strict" : false
 				},
@@ -272,6 +268,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "CLOCK_50",
+					"strict" : false
+				},
+				{
 					"name" : "CLOCK2_50",
 					"strict" : false
 				},
@@ -281,10 +281,6 @@
 				},
 				{
 					"name" : "MIPI_PIXEL_HS",
-					"strict" : false
-				},
-				{
-					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{
@@ -364,11 +360,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "MIPI_PIXEL_D[2]",
+					"name" : "MIPI_PIXEL_D[3]",
 					"strict" : false
 				},
 				{
-					"name" : "MIPI_PIXEL_D[3]",
+					"name" : "MIPI_PIXEL_D[2]",
 					"strict" : false
 				},
 				{

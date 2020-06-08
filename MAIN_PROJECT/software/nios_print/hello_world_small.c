@@ -83,11 +83,39 @@
 #include "altera_avalon_pio_regs.h"
 #include "stdio.h"
 
+int R, G, B;
+int SWITCHES;
+
+void redFilter(int *R){
+	if(*R < 127) {
+		*R *= 2;
+	}
+	return;
+}
+
+void greenFilter(int *G){
+	if(*G < 127) {
+		*G = *G * 2;
+	}
+	return;
+}
+
+void blueFilter(int *B){
+	if(*B < 127) {
+		*B = *B * 2;
+	}
+	return;
+}
+
+int grayScale(int *R, int *G, int *B){
+	int GRAY = ((*R+*G+*B)/3);
+	return GRAY;
+}
+
 int main()
 {
   alt_putstr("Hello from Nios II!\n");
-  int R, G, B;
-  int SWITCHES;
+
   /* Event loop never exits. */
   while (1)
   {
@@ -95,6 +123,19 @@ int main()
 	G = IORD_ALTERA_AVALON_PIO_DATA(GREEN_BASE);
 	B = IORD_ALTERA_AVALON_PIO_DATA(BLUE_BASE);
 	SWITCHES = IORD_ALTERA_AVALON_PIO_DATA(SW_BASE);
+
+	if (SWITCHES == 1){
+		redFilter(&R);
+	}
+	else if (SWITCHES == 2){
+		greenFilter(&G);
+	}
+	else if (SWITCHES == 4){
+		blueFilter(&B);
+	}
+	else if (SWITCHES == 8){
+		R = B = G = grayScale(&R, &G, &B);
+	}
 
 	IOWR_ALTERA_AVALON_PIO_DATA(RED_BASE, R);
 	IOWR_ALTERA_AVALON_PIO_DATA(GREEN_BASE, G);
