@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VGA_V2
-Fri May 15 13:31:06 2020
+Wed Jun 10 20:18:56 2020
 Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 
 
@@ -49,7 +49,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri May 15 13:31:06 2020       ;
+; Analysis & Synthesis Status        ; Successful - Wed Jun 10 20:18:56 2020       ;
 ; Quartus Prime Version              ; 18.1.1 Build 646 04/11/2019 SJ Lite Edition ;
 ; Revision Name                      ; VGA_V2                                      ;
 ; Top-level Entity Name              ; VGA_V2                                      ;
@@ -174,15 +174,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                      ; Library ;
 +----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------+---------+
-; vga.vhd                          ; yes             ; User VHDL File                     ; C:/Users/Gertjan/OneDrive/Projects/VGAV2/vga.vhd                                  ;         ;
-; altpll0.vhd                      ; yes             ; User Wizard-Generated File         ; C:/Users/Gertjan/OneDrive/Projects/VGAV2/altpll0.vhd                              ;         ;
-; VGA_V2.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Gertjan/OneDrive/Projects/VGAV2/VGA_V2.bdf                               ;         ;
+; vga.vhd                          ; yes             ; User VHDL File                     ; C:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/VGAV2/vga.vhd             ;         ;
+; altpll0.vhd                      ; yes             ; User Wizard-Generated File         ; C:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/VGAV2/altpll0.vhd         ;         ;
+; VGA_V2.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/VGAV2/VGA_V2.bdf          ;         ;
 ; altpll.tdf                       ; yes             ; Megafunction                       ; c:/software/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf        ;         ;
 ; aglobal181.inc                   ; yes             ; Megafunction                       ; c:/software/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc    ;         ;
 ; stratix_pll.inc                  ; yes             ; Megafunction                       ; c:/software/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_pll.inc   ;         ;
 ; stratixii_pll.inc                ; yes             ; Megafunction                       ; c:/software/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratixii_pll.inc ;         ;
 ; cycloneii_pll.inc                ; yes             ; Megafunction                       ; c:/software/intelfpga_lite/18.1/quartus/libraries/megafunctions/cycloneii_pll.inc ;         ;
-; db/altpll0_altpll.v              ; yes             ; Auto-Generated Megafunction        ; C:/Users/Gertjan/OneDrive/Projects/VGAV2/db/altpll0_altpll.v                      ;         ;
+; db/altpll0_altpll.v              ; yes             ; Auto-Generated Megafunction        ; C:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/VGAV2/db/altpll0_altpll.v ;         ;
 +----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------+---------+
 
 
@@ -727,25 +727,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
-    Info: Processing started: Fri May 15 13:30:55 2020
+    Info: Processing started: Wed Jun 10 20:18:42 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGA_V2 -c VGA_V2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file vga.vhd
-    Info (12022): Found design unit 1: VGA-Behavior File: C:/Users/Gertjan/OneDrive/Projects/VGAV2/vga.vhd Line: 39
-    Info (12023): Found entity 1: VGA File: C:/Users/Gertjan/OneDrive/Projects/VGAV2/vga.vhd Line: 4
+    Info (12022): Found design unit 1: VGA-Behavior File: C:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/VGAV2/vga.vhd Line: 39
+    Info (12023): Found entity 1: VGA File: C:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/VGAV2/vga.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file altpll0.vhd
-    Info (12022): Found design unit 1: altpll0-SYN File: C:/Users/Gertjan/OneDrive/Projects/VGAV2/altpll0.vhd Line: 52
-    Info (12023): Found entity 1: altpll0 File: C:/Users/Gertjan/OneDrive/Projects/VGAV2/altpll0.vhd Line: 43
+    Info (12022): Found design unit 1: altpll0-SYN File: C:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/VGAV2/altpll0.vhd Line: 52
+    Info (12023): Found entity 1: altpll0 File: C:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/VGAV2/altpll0.vhd Line: 43
 Info (12021): Found 1 design units, including 1 entities, in source file vga_v2.bdf
     Info (12023): Found entity 1: VGA_V2
 Info (12127): Elaborating entity "VGA_V2" for the top level hierarchy
 Info (12128): Elaborating entity "VGA" for hierarchy "VGA:inst1"
-Warning (10492): VHDL Process Statement warning at vga.vhd(54): signal "reset_n" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Gertjan/OneDrive/Projects/VGAV2/vga.vhd Line: 54
+Warning (10492): VHDL Process Statement warning at vga.vhd(54): signal "reset_n" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/VGAV2/vga.vhd Line: 54
 Info (12128): Elaborating entity "altpll0" for hierarchy "altpll0:inst"
-Info (12128): Elaborating entity "altpll" for hierarchy "altpll0:inst|altpll:altpll_component" File: C:/Users/Gertjan/OneDrive/Projects/VGAV2/altpll0.vhd Line: 134
-Info (12130): Elaborated megafunction instantiation "altpll0:inst|altpll:altpll_component" File: C:/Users/Gertjan/OneDrive/Projects/VGAV2/altpll0.vhd Line: 134
-Info (12133): Instantiated megafunction "altpll0:inst|altpll:altpll_component" with the following parameter: File: C:/Users/Gertjan/OneDrive/Projects/VGAV2/altpll0.vhd Line: 134
+Info (12128): Elaborating entity "altpll" for hierarchy "altpll0:inst|altpll:altpll_component" File: C:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/VGAV2/altpll0.vhd Line: 134
+Info (12130): Elaborated megafunction instantiation "altpll0:inst|altpll:altpll_component" File: C:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/VGAV2/altpll0.vhd Line: 134
+Info (12133): Instantiated megafunction "altpll0:inst|altpll:altpll_component" with the following parameter: File: C:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/VGAV2/altpll0.vhd Line: 134
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "5"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -801,7 +801,7 @@ Info (12133): Instantiated megafunction "altpll0:inst|altpll:altpll_component" w
     Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altpll0_altpll.v
-    Info (12023): Found entity 1: altpll0_altpll File: C:/Users/Gertjan/OneDrive/Projects/VGAV2/db/altpll0_altpll.v Line: 30
+    Info (12023): Found entity 1: altpll0_altpll File: C:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/TESTING/VGAV2/db/altpll0_altpll.v Line: 30
 Info (12128): Elaborating entity "altpll0_altpll" for hierarchy "altpll0:inst|altpll:altpll_component|altpll0_altpll:auto_generated" File: c:/software/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "VGA_BLANK_N" is stuck at VCC
@@ -831,9 +831,9 @@ Info (21057): Implemented 104 device resources after synthesis - the final resou
     Info (21061): Implemented 73 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 4816 megabytes
-    Info: Processing ended: Fri May 15 13:31:06 2020
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:23
+    Info: Peak virtual memory: 4804 megabytes
+    Info: Processing ended: Wed Jun 10 20:18:56 2020
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:25
 
 

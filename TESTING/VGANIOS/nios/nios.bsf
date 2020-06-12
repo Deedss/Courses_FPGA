@@ -1,0 +1,186 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 256 432)
+	(text "nios" (rect 117 -1 132 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 416 20 428)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_clk" (rect 0 0 27 12)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 46 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 96 72)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "reset_reset_n" (rect 0 0 56 12)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 101 82 112)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 96 112)(line_width 1))
+	)
+	(port
+		(pt 0 168)
+		(output)
+		(text "sram_ADDR[19..0]" (rect 0 0 81 12)(font "Arial" (font_size 8)))
+		(text "sram_ADDR[19..0]" (rect 4 157 100 168)(font "Arial" (font_size 8)))
+		(line (pt 0 168)(pt 96 168)(line_width 3))
+	)
+	(port
+		(pt 0 184)
+		(output)
+		(text "sram_LB_N" (rect 0 0 51 12)(font "Arial" (font_size 8)))
+		(text "sram_LB_N" (rect 4 173 58 184)(font "Arial" (font_size 8)))
+		(line (pt 0 184)(pt 96 184)(line_width 1))
+	)
+	(port
+		(pt 0 200)
+		(output)
+		(text "sram_UB_N" (rect 0 0 53 12)(font "Arial" (font_size 8)))
+		(text "sram_UB_N" (rect 4 189 58 200)(font "Arial" (font_size 8)))
+		(line (pt 0 200)(pt 96 200)(line_width 1))
+	)
+	(port
+		(pt 0 216)
+		(output)
+		(text "sram_CE_N" (rect 0 0 54 12)(font "Arial" (font_size 8)))
+		(text "sram_CE_N" (rect 4 205 58 216)(font "Arial" (font_size 8)))
+		(line (pt 0 216)(pt 96 216)(line_width 1))
+	)
+	(port
+		(pt 0 232)
+		(output)
+		(text "sram_OE_N" (rect 0 0 54 12)(font "Arial" (font_size 8)))
+		(text "sram_OE_N" (rect 4 221 58 232)(font "Arial" (font_size 8)))
+		(line (pt 0 232)(pt 96 232)(line_width 1))
+	)
+	(port
+		(pt 0 248)
+		(output)
+		(text "sram_WE_N" (rect 0 0 57 12)(font "Arial" (font_size 8)))
+		(text "sram_WE_N" (rect 4 237 58 248)(font "Arial" (font_size 8)))
+		(line (pt 0 248)(pt 96 248)(line_width 1))
+	)
+	(port
+		(pt 0 288)
+		(output)
+		(text "vga_out_CLK" (rect 0 0 59 12)(font "Arial" (font_size 8)))
+		(text "vga_out_CLK" (rect 4 277 70 288)(font "Arial" (font_size 8)))
+		(line (pt 0 288)(pt 96 288)(line_width 1))
+	)
+	(port
+		(pt 0 304)
+		(output)
+		(text "vga_out_HS" (rect 0 0 51 12)(font "Arial" (font_size 8)))
+		(text "vga_out_HS" (rect 4 293 64 304)(font "Arial" (font_size 8)))
+		(line (pt 0 304)(pt 96 304)(line_width 1))
+	)
+	(port
+		(pt 0 320)
+		(output)
+		(text "vga_out_VS" (rect 0 0 53 12)(font "Arial" (font_size 8)))
+		(text "vga_out_VS" (rect 4 309 64 320)(font "Arial" (font_size 8)))
+		(line (pt 0 320)(pt 96 320)(line_width 1))
+	)
+	(port
+		(pt 0 336)
+		(output)
+		(text "vga_out_BLANK" (rect 0 0 73 12)(font "Arial" (font_size 8)))
+		(text "vga_out_BLANK" (rect 4 325 82 336)(font "Arial" (font_size 8)))
+		(line (pt 0 336)(pt 96 336)(line_width 1))
+	)
+	(port
+		(pt 0 352)
+		(output)
+		(text "vga_out_SYNC" (rect 0 0 66 12)(font "Arial" (font_size 8)))
+		(text "vga_out_SYNC" (rect 4 341 76 352)(font "Arial" (font_size 8)))
+		(line (pt 0 352)(pt 96 352)(line_width 1))
+	)
+	(port
+		(pt 0 368)
+		(output)
+		(text "vga_out_R[7..0]" (rect 0 0 67 12)(font "Arial" (font_size 8)))
+		(text "vga_out_R[7..0]" (rect 4 357 94 368)(font "Arial" (font_size 8)))
+		(line (pt 0 368)(pt 96 368)(line_width 3))
+	)
+	(port
+		(pt 0 384)
+		(output)
+		(text "vga_out_G[7..0]" (rect 0 0 66 12)(font "Arial" (font_size 8)))
+		(text "vga_out_G[7..0]" (rect 4 373 94 384)(font "Arial" (font_size 8)))
+		(line (pt 0 384)(pt 96 384)(line_width 3))
+	)
+	(port
+		(pt 0 400)
+		(output)
+		(text "vga_out_B[7..0]" (rect 0 0 64 12)(font "Arial" (font_size 8)))
+		(text "vga_out_B[7..0]" (rect 4 389 94 400)(font "Arial" (font_size 8)))
+		(line (pt 0 400)(pt 96 400)(line_width 3))
+	)
+	(port
+		(pt 0 152)
+		(bidir)
+		(text "sram_DQ[15..0]" (rect 0 0 64 12)(font "Arial" (font_size 8)))
+		(text "sram_DQ[15..0]" (rect 4 141 88 152)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 96 152)(line_width 3))
+	)
+	(drawing
+		(text "clk" (rect 81 43 180 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 101 67 220 144)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 67 83 164 179)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 101 107 244 224)(font "Arial" (color 0 0 0)))
+		(text "sram" (rect 67 123 158 259)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "DQ" (rect 101 147 214 304)(font "Arial" (color 0 0 0)))
+		(text "ADDR" (rect 101 163 226 336)(font "Arial" (color 0 0 0)))
+		(text "LB_N" (rect 101 179 226 368)(font "Arial" (color 0 0 0)))
+		(text "UB_N" (rect 101 195 226 400)(font "Arial" (color 0 0 0)))
+		(text "CE_N" (rect 101 211 226 432)(font "Arial" (color 0 0 0)))
+		(text "OE_N" (rect 101 227 226 464)(font "Arial" (color 0 0 0)))
+		(text "WE_N" (rect 101 243 226 496)(font "Arial" (color 0 0 0)))
+		(text "vga_out" (rect 51 259 144 531)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "CLK" (rect 101 283 220 576)(font "Arial" (color 0 0 0)))
+		(text "HS" (rect 101 299 214 608)(font "Arial" (color 0 0 0)))
+		(text "VS" (rect 101 315 214 640)(font "Arial" (color 0 0 0)))
+		(text "BLANK" (rect 101 331 232 672)(font "Arial" (color 0 0 0)))
+		(text "SYNC" (rect 101 347 226 704)(font "Arial" (color 0 0 0)))
+		(text "R" (rect 101 363 208 736)(font "Arial" (color 0 0 0)))
+		(text "G" (rect 101 379 208 768)(font "Arial" (color 0 0 0)))
+		(text "B" (rect 101 395 208 800)(font "Arial" (color 0 0 0)))
+		(text " nios " (rect 236 416 508 842)(font "Arial" ))
+		(line (pt 96 32)(pt 160 32)(line_width 1))
+		(line (pt 160 32)(pt 160 416)(line_width 1))
+		(line (pt 96 416)(pt 160 416)(line_width 1))
+		(line (pt 96 32)(pt 96 416)(line_width 1))
+		(line (pt 97 52)(pt 97 76)(line_width 1))
+		(line (pt 98 52)(pt 98 76)(line_width 1))
+		(line (pt 97 92)(pt 97 116)(line_width 1))
+		(line (pt 98 92)(pt 98 116)(line_width 1))
+		(line (pt 97 132)(pt 97 252)(line_width 1))
+		(line (pt 98 132)(pt 98 252)(line_width 1))
+		(line (pt 97 268)(pt 97 404)(line_width 1))
+		(line (pt 98 268)(pt 98 404)(line_width 1))
+		(line (pt 0 0)(pt 256 0)(line_width 1))
+		(line (pt 256 0)(pt 256 432)(line_width 1))
+		(line (pt 0 432)(pt 256 432)(line_width 1))
+		(line (pt 0 0)(pt 0 432)(line_width 1))
+	)
+)

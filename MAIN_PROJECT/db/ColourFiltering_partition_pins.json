@@ -268,11 +268,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK_50",
+					"name" : "CLOCK2_50",
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK2_50",
+					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{
@@ -360,11 +360,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "MIPI_PIXEL_D[3]",
+					"name" : "MIPI_PIXEL_D[2]",
 					"strict" : false
 				},
 				{
-					"name" : "MIPI_PIXEL_D[2]",
+					"name" : "MIPI_PIXEL_D[3]",
 					"strict" : false
 				},
 				{

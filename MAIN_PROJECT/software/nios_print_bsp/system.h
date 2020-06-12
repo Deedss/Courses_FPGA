@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'nios'
  * SOPC Builder design path: ../../nios.sopcinfo
  *
- * Generated: Mon Jun 08 14:12:05 CEST 2020
+ * Generated: Fri Jun 12 15:16:11 CEST 2020
  */
 
 /*
@@ -137,6 +137,7 @@
 #define __ALTERA_AVALON_ONCHIP_MEMORY2
 #define __ALTERA_AVALON_PIO
 #define __ALTERA_NIOS2_GEN2
+#define __ALTPLL
 
 
 /*
@@ -182,24 +183,38 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart_0"
-#define ALT_STDERR_BASE 0x5048
+#define ALT_STDERR_BASE 0x5058
 #define ALT_STDERR_DEV jtag_uart_0
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart_0"
-#define ALT_STDIN_BASE 0x5048
+#define ALT_STDIN_BASE 0x5058
 #define ALT_STDIN_DEV jtag_uart_0
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart_0"
-#define ALT_STDOUT_BASE 0x5048
+#define ALT_STDOUT_BASE 0x5058
 #define ALT_STDOUT_DEV jtag_uart_0
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
 #define ALT_STDOUT_TYPE "altera_avalon_jtag_uart"
 #define ALT_SYSTEM_NAME "nios"
+
+
+/*
+ * altpll_0 configuration
+ *
+ */
+
+#define ALTPLL_0_BASE 0x5040
+#define ALTPLL_0_IRQ -1
+#define ALTPLL_0_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define ALTPLL_0_NAME "/dev/altpll_0"
+#define ALTPLL_0_SPAN 16
+#define ALTPLL_0_TYPE "altpll"
+#define ALT_MODULE_CLASS_altpll_0 altpll
 
 
 /*
@@ -273,7 +288,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
-#define JTAG_UART_0_BASE 0x5048
+#define JTAG_UART_0_BASE 0x5058
 #define JTAG_UART_0_IRQ 0
 #define JTAG_UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_0_NAME "/dev/jtag_uart_0"

@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Jun 8, 2020 2:12:52 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1591618372863</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Jun 12, 2020 3:16:11 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1591967771252</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\Gertjan\OneDrive\Projects\Courses_FPGA\MAIN_PROJECT\software\nios_print_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\nios.sopcinfo</SopcDesignFile>
@@ -929,8 +929,14 @@
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>altpll_0</slaveDescriptor>
+                <addressRange>0x00005040 - 0x0000504F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x00005048 - 0x0000504F</addressRange>
+                <addressRange>0x00005058 - 0x0000505F</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

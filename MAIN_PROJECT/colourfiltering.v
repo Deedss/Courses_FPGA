@@ -5,10 +5,6 @@ module colourfiltering(
 	input 		          		CLOCK3_50,
 	input 		          		CLOCK_50,
 
-	//////////// Sma //////////
-	input 		          		SMA_CLKIN,
-	output		          		SMA_CLKOUT,
-
 	//////////// LED //////////
 	output		     [8:0]		LEDG,
 	output		    [17:0]		LEDR,
@@ -25,20 +21,9 @@ module colourfiltering(
 	output		     [6:0]		HEX5,
 	output		     [6:0]		HEX6,
 	output		     [6:0]		HEX7,
-
-	//////////// EX_IO //////////
-	inout 		     [6:0]		EX_IO,
-
+	
 	//////////// SW //////////
 	input 		    [17:0]		SW,
-
-	//////////// LCD //////////
-	output		          		LCD_BLON,
-	inout 		     [7:0]		LCD_DATA,
-	output		          		LCD_EN,
-	output		          		LCD_ON,
-	output		          		LCD_RS,
-	output		          		LCD_RW,
 
 	//////////// RS232 //////////
 	input 		          		UART_CTS,
@@ -55,35 +40,6 @@ module colourfiltering(
 	output		     [7:0]		VGA_R,
 	output		          		VGA_SYNC_N,
 	output		          		VGA_VS,
-
-	//////////// I2C for EEPROM //////////
-	output		          		EEP_I2C_SCLK,
-	inout 		          		EEP_I2C_SDAT,
-
-	//////////// I2C for Audio Tv-Decoder  //////////
-	output		          		I2C_SCLK,
-	inout 		          		I2C_SDAT,
-
-	//////////// SDRAM //////////
-	output		    [12:0]		DRAM_ADDR,
-	output		     [1:0]		DRAM_BA,
-	output		          		DRAM_CAS_N,
-	output		          		DRAM_CKE,
-	output		          		DRAM_CLK,
-	output		          		DRAM_CS_N,
-	inout 		    [31:0]		DRAM_DQ,
-	output		     [3:0]		DRAM_DQM,
-	output		          		DRAM_RAS_N,
-	output		          		DRAM_WE_N,
-
-	//////////// SRAM //////////
-	output		    [19:0]		SRAM_ADDR,
-	output		          		SRAM_CE_N,
-	inout 		    [15:0]		SRAM_DQ,
-	output		          		SRAM_LB_N,
-	output		          		SRAM_OE_N,
-	output		          		SRAM_UB_N,
-	output		          		SRAM_WE_N,
 
 	//////////// GPIO, GPIO connect to D8M-GPIO //////////
 	inout 		          		CAMERA_I2C_SCL,
@@ -215,7 +171,8 @@ D8M_SET   ccd (
 );
 
 //--- By Trigged VGA Controller --  
-VGA_Controller_trig	u1	(	
+VGA_Controller_trig	u1	(
+	  .CLOCK_50   (CLOCK_50),
 	  .iCLK       ( VGA_CLK_25M ), 
      .H_Cont		(H_Cont),  
      .V_Cont		(V_Cont),  
@@ -223,28 +180,17 @@ VGA_Controller_trig	u1	(
      .iRed       ( sCCD_R ),
 	  .iGreen     ( sCCD_G  ),
 	  .iBlue      ( sCCD_B ),		
-	  .oVGA_R     ( VGA_R_A ),
-	  .oVGA_G     ( VGA_G_A ),
-	  .oVGA_B     ( VGA_B_A ),
+	  .oVGA_R     ( VGA_R ),
+	  .oVGA_G     ( VGA_G ),
+	  .oVGA_B     ( VGA_B ),
      .oVGA_H_SYNC( VGA_HS ),
      .oVGA_V_SYNC( VGA_VS ),	  
 	  .oVGA_SYNC  ( VGA_SYNC_N  ),
 	  .oVGA_BLANK ( VGA_BLANK_N ),
 	  .oVGA_CLOCK ( VGA_CLK     ),
 	  .iRST_N     ( RESET_N )	,	
-
-);
-
-nios nios1(
-	.clk_clk 			(CLOCK_50),   			// clk.clk
-	.blue_in_port		(VGA_B_A), 				// blue.in_port
-	.blue_out_port		(VGA_B),  				// .out_port
-	.green_in_port		(VGA_G_A), 				// green.in_port
-	.green_out_port	(VGA_G), 				// .out_port
-	.red_in_port		(VGA_R_A), 				// red.in_port
-	.red_out_port    	(VGA_R),					// .out_port
-	.sw_in_port			(SW[17:0]),				// SWITCHES
-	.sw_out_port		(LEDR[17:0])			// LEDR
+	  .SW				(SW[17:0]),
+	  .LEDR			(LEDR[17:0])
 );
 
 //--Frame Counter -- 

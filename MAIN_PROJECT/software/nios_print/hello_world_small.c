@@ -83,33 +83,34 @@
 #include "altera_avalon_pio_regs.h"
 #include "stdio.h"
 
-int R, G, B;
+uint R, G, B;
 int SWITCHES;
 
-void redFilter(int *R){
-	if(*R < 127) {
-		*R *= 2;
-	}
+void redFilter(uint *G, uint *B){
+	*G = 0;
+	*B = 0;
 	return;
 }
 
-void greenFilter(int *G){
-	if(*G < 127) {
-		*G = *G * 2;
-	}
+void greenFilter(uint *R, uint *B){
+	*R = 0;
+	*B = 0;
 	return;
 }
 
-void blueFilter(int *B){
-	if(*B < 127) {
-		*B = *B * 2;
-	}
+void blueFilter(uint *R, uint *G){
+	*R = 0;
+	*G = 0;
 	return;
 }
 
-int grayScale(int *R, int *G, int *B){
-	int GRAY = ((*R+*G+*B)/3);
-	return GRAY;
+void grayScale(uint *R, uint *G, uint *B){
+	/**
+	 * GRAYSCALE is calculated by forming a weighted sum of the Red, Green, and Blue colour and dividing it by 3
+	 * This value then replaces the old RGB value;	 *
+	 */
+	*R = *G = *B = ((*R + *G + *B) / 3);
+	return;
 }
 
 int main()
@@ -124,23 +125,24 @@ int main()
 	B = IORD_ALTERA_AVALON_PIO_DATA(BLUE_BASE);
 	SWITCHES = IORD_ALTERA_AVALON_PIO_DATA(SW_BASE);
 
-	if (SWITCHES == 1){
-		redFilter(&R);
+	if(R >= 0 && G >= 0 && B >= 0){
+		if (SWITCHES == 1){
+			redFilter(&G, &B);
+		}
+		else if (SWITCHES == 2){
+			greenFilter(&R, &B);
+		}
+		else if (SWITCHES == 4){
+			blueFilter(&R, &G);
+		}
+		else if (SWITCHES == 8){
+			grayScale(&R, &G, &B);
+		}
+		IOWR_ALTERA_AVALON_PIO_DATA(RED_BASE, R);
+		IOWR_ALTERA_AVALON_PIO_DATA(GREEN_BASE, G);
+		IOWR_ALTERA_AVALON_PIO_DATA(BLUE_BASE, B);
+		IOWR_ALTERA_AVALON_PIO_DATA(SW_BASE, SWITCHES);
 	}
-	else if (SWITCHES == 2){
-		greenFilter(&G);
-	}
-	else if (SWITCHES == 4){
-		blueFilter(&B);
-	}
-	else if (SWITCHES == 8){
-		R = B = G = grayScale(&R, &G, &B);
-	}
-
-	IOWR_ALTERA_AVALON_PIO_DATA(RED_BASE, R);
-	IOWR_ALTERA_AVALON_PIO_DATA(GREEN_BASE, G);
-	IOWR_ALTERA_AVALON_PIO_DATA(BLUE_BASE, B);
-	IOWR_ALTERA_AVALON_PIO_DATA(SW_BASE, SWITCHES);
   }
   return 0;
 }
