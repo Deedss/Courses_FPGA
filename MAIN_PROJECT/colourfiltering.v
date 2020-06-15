@@ -172,7 +172,6 @@ D8M_SET   ccd (
 
 //--- By Trigged VGA Controller --  
 VGA_Controller_trig	u1	(
-	  .CLOCK_50   (CLOCK_50),
 	  .iCLK       ( VGA_CLK_25M ), 
      .H_Cont		(H_Cont),  
      .V_Cont		(V_Cont),  
@@ -180,18 +179,34 @@ VGA_Controller_trig	u1	(
      .iRed       ( sCCD_R ),
 	  .iGreen     ( sCCD_G  ),
 	  .iBlue      ( sCCD_B ),		
-	  .oVGA_R     ( VGA_R ),
-	  .oVGA_G     ( VGA_G ),
-	  .oVGA_B     ( VGA_B ),
+	  .oVGA_R     ( VGA_R_A ),
+	  .oVGA_G     ( VGA_G_A ),
+	  .oVGA_B     ( VGA_B_A ),
      .oVGA_H_SYNC( VGA_HS ),
      .oVGA_V_SYNC( VGA_VS ),	  
 	  .oVGA_SYNC  ( VGA_SYNC_N  ),
 	  .oVGA_BLANK ( VGA_BLANK_N ),
 	  .oVGA_CLOCK ( VGA_CLK     ),
-	  .iRST_N     ( RESET_N )	,	
-	  .SW				(SW[17:0]),
-	  .LEDR			(LEDR[17:0])
+	  .iRST_N     ( RESET_N )	
 );
+
+					
+nios nios1(
+	.clk_clk 			(CLOCK_50),   				// clk.clk
+	.blue_in_port		(VGA_B_A), 				// blue.in_port
+	.blue_out_port		(VGA_B),  				// .out_port
+	.green_in_port		(VGA_G_A), 				// green.in_port
+	.green_out_port	(VGA_G), 				// .out_port
+	.red_in_port		(VGA_R_A), 					// red.in_port
+	.red_out_port    	(VGA_R),				// .out_port
+	.sw_in_port			(SW[17:0]),				// SWITCHES
+	.sw_out_port		(LEDR[17:0]),			// LEDR
+	.sd_card_export	(SD_CMD),               // SD_CMD
+	.sd_card_export1	(SD_DAT),              //        SD_DAT
+	.sd_card_export2	(SD_DAT3),              //        SD_DAT3
+	.sd_card_writeresponsevalid_n (sD_CLK) //        SD_CLK
+);								  
+								  
 
 //--Frame Counter -- 
  FpsMonitor uFps2(

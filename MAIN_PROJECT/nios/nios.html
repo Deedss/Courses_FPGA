@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2020.06.12.15:12:12</td>
+    <td class="l">2020.06.15.19:58:31</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -90,6 +90,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      <a href="#module_nios2_gen2_0"><b>nios2_gen2_0</b>
      </a> Nios II 18.1
      <br/>All Components
+     <br/>&#160;&#160;
+     <a href="#module_Altera_UP_SD_Card_Avalon_Interface_0"><b>Altera_UP_SD_Card_Avalon_Interface_0</b>
+     </a> Altera_UP_SD_Card_Avalon_Interface 18.0
      <br/>&#160;&#160;
      <a href="#module_SW"><b>SW</b>
      </a> altera_avalon_pio 18.1
@@ -129,6 +132,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    <tr>
     <td class="masterl">&#160;data_master</td>
     <td class="masterr">&#160;instruction_master</td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_Altera_UP_SD_Card_Avalon_Interface_0"><b>Altera_UP_SD_Card_Avalon_Interface_0</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">avalon_sdcard_slave&#160;</td>
+    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -235,6 +251,75 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
    </tr>
   </table>
+  <a name="module_Altera_UP_SD_Card_Avalon_Interface_0"> </a>
+  <div>
+   <hr/>
+   <h2>Altera_UP_SD_Card_Avalon_Interface_0</h2>Altera_UP_SD_Card_Avalon_Interface v18.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="8">Altera_UP_SD_Card_Avalon_Interface_0</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_sdcard_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_altpll_0">altpll_0</a>
+      </td>
+      <td class="from">c0&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
   <a name="module_SW"> </a>
   <div>
    <hr/>
@@ -451,7 +536,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="27">altpll_0</td>
+      <td class="main" rowspan="30">altpll_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;pll_slave</td>
@@ -560,6 +645,22 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td class="from">c0&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
        <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_Altera_UP_SD_Card_Avalon_Interface_0">Altera_UP_SD_Card_Avalon_Interface_0</a>
       </td>
      </tr>
      <tr>
@@ -1487,7 +1588,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
       </td>
       <td class="from">debug_reset_request&#160;&#160;</td>
-      <td class="main" rowspan="27">clk_0</td>
+      <td class="main" rowspan="30">clk_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk_in_reset</td>
@@ -1604,6 +1705,22 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td class="from">clk_reset&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
        <a href="#module_blue">blue</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_Altera_UP_SD_Card_Avalon_Interface_0">Altera_UP_SD_Card_Avalon_Interface_0</a>
       </td>
      </tr>
      <tr>
@@ -2051,7 +2168,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_altpll_0">altpll_0</a>
       </td>
       <td class="from">c0&#160;&#160;</td>
-      <td class="main" rowspan="34">nios2_gen2_0</td>
+      <td class="main" rowspan="37">nios2_gen2_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
@@ -2100,6 +2217,22 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td></td>
       <td class="to">&#160;&#160;irq</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_Altera_UP_SD_Card_Avalon_Interface_0">Altera_UP_SD_Card_Avalon_Interface_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_sdcard_slave</td>
      </tr>
      <tr style="height:6px">
       <td></td>
@@ -2922,7 +3055,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">dataSlaveMapParam</td>
-        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='onchip_memory2_0.s1' start='0x2000' end='0x4000' type='altera_avalon_onchip_memory2.s1' /&gt;&lt;slave name='nios2_gen2_0.debug_mem_slave' start='0x4800' end='0x5000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='red.s1' start='0x5000' end='0x5010' type='altera_avalon_pio.s1' /&gt;&lt;slave name='green.s1' start='0x5010' end='0x5020' type='altera_avalon_pio.s1' /&gt;&lt;slave name='blue.s1' start='0x5020' end='0x5030' type='altera_avalon_pio.s1' /&gt;&lt;slave name='SW.s1' start='0x5030' end='0x5040' type='altera_avalon_pio.s1' /&gt;&lt;slave name='altpll_0.pll_slave' start='0x5040' end='0x5050' type='altpll.pll_slave' /&gt;&lt;slave name='jtag_uart_0.avalon_jtag_slave' start='0x5058' end='0x5060' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;/address-map&gt;</td>
+        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='Altera_UP_SD_Card_Avalon_Interface_0.avalon_sdcard_slave' start='0x0' end='0x400' type='Altera_UP_SD_Card_Avalon_Interface.avalon_sdcard_slave' /&gt;&lt;slave name='onchip_memory2_0.s1' start='0x2000' end='0x4000' type='altera_avalon_onchip_memory2.s1' /&gt;&lt;slave name='nios2_gen2_0.debug_mem_slave' start='0x4800' end='0x5000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='red.s1' start='0x5000' end='0x5010' type='altera_avalon_pio.s1' /&gt;&lt;slave name='green.s1' start='0x5010' end='0x5020' type='altera_avalon_pio.s1' /&gt;&lt;slave name='blue.s1' start='0x5020' end='0x5030' type='altera_avalon_pio.s1' /&gt;&lt;slave name='SW.s1' start='0x5030' end='0x5040' type='altera_avalon_pio.s1' /&gt;&lt;slave name='altpll_0.pll_slave' start='0x5040' end='0x5050' type='altpll.pll_slave' /&gt;&lt;slave name='jtag_uart_0.avalon_jtag_slave' start='0x5058' end='0x5060' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;/address-map&gt;</td>
        </tr>
        <tr>
         <td class="parametername">tightlyCoupledDataMaster0MapParam</td>
@@ -3627,7 +3760,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   <table class="blueBar">
    <tr>
     <td class="l">generation took 0.01 seconds</td>
-    <td class="r">rendering took 0.07 seconds</td>
+    <td class="r">rendering took 0.08 seconds</td>
    </tr>
   </table>
  </body>
