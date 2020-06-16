@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY colourfiltering
+set_global_assignment -name TOP_LEVEL_ENTITY VGA_Controller_trig
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:01:58  JUNE 05, 2020"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.1 Lite Edition"
@@ -52,9 +52,6 @@ set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
 #============================================================
 # CLOCK
 #============================================================
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK2_50
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK3_50
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
 set_location_assignment PIN_AG14 -to CLOCK2_50
 set_location_assignment PIN_AG15 -to CLOCK3_50
 set_location_assignment PIN_Y2 -to CLOCK_50
@@ -62,62 +59,6 @@ set_location_assignment PIN_Y2 -to CLOCK_50
 #============================================================
 # SEG7
 #============================================================
-set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[0]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[1]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX6[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX6[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX6[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX6[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX6[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX6[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX6[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX7[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX7[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX7[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX7[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX7[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX7[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX7[6]
 set_location_assignment PIN_G18 -to HEX0[0]
 set_location_assignment PIN_F22 -to HEX0[1]
 set_location_assignment PIN_E17 -to HEX0[2]
@@ -178,33 +119,6 @@ set_location_assignment PIN_AA14 -to HEX7[6]
 #============================================================
 # LED
 #============================================================
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[0]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[1]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[2]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[3]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[4]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[5]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[6]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[7]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[8]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[0]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[1]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[2]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[3]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[4]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[5]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[6]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[7]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[8]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[9]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[10]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[11]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[12]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[13]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[14]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[15]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[16]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[17]
 set_location_assignment PIN_E21 -to LEDG[0]
 set_location_assignment PIN_E22 -to LEDG[1]
 set_location_assignment PIN_E25 -to LEDG[2]
@@ -236,10 +150,6 @@ set_location_assignment PIN_H15 -to LEDR[17]
 #============================================================
 # KEY
 #============================================================
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[3]
 set_location_assignment PIN_M23 -to KEY[0]
 set_location_assignment PIN_M21 -to KEY[1]
 set_location_assignment PIN_N21 -to KEY[2]
@@ -248,24 +158,6 @@ set_location_assignment PIN_R24 -to KEY[3]
 #============================================================
 # SW
 #============================================================
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[8]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[9]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[10]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[11]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[12]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[13]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[14]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[15]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[16]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[17]
 set_location_assignment PIN_AB28 -to SW[0]
 set_location_assignment PIN_AC28 -to SW[1]
 set_location_assignment PIN_AC27 -to SW[2]
@@ -288,35 +180,6 @@ set_location_assignment PIN_Y23 -to SW[17]
 #============================================================
 # VGA
 #============================================================
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_BLANK_N
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_CLK
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_HS
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_SYNC_N
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS
 set_location_assignment PIN_F11 -to VGA_BLANK_N
 set_location_assignment PIN_B10 -to VGA_B[0]
 set_location_assignment PIN_A10 -to VGA_B[1]
@@ -348,30 +211,19 @@ set_location_assignment PIN_C10 -to VGA_SYNC_N
 set_location_assignment PIN_C13 -to VGA_VS
 
 #============================================================
+# SDCARD
+#============================================================
+set_location_assignment PIN_AE13 -to SD_CLK
+set_location_assignment PIN_AD14 -to SD_CMD
+set_location_assignment PIN_AC14 -to SD_DAT[3]
+set_location_assignment PIN_AB14 -to SD_DAT[2]
+set_location_assignment PIN_AF13 -to SD_DAT[1]
+set_location_assignment PIN_AE14 -to SD_DAT[0]
+set_location_assignment PIN_AF14 -to SD_WP_N
+
+#============================================================
 # GPIO, GPIO connect to D8M-GPIO
 #============================================================
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CAMERA_I2C_SCL
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CAMERA_I2C_SDA
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CAMERA_PWDN_n
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_CS_n
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_I2C_SCL
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_I2C_SDA
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_MCLK
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_CLK
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_D[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_D[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_D[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_D[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_D[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_D[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_D[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_D[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_D[8]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_D[9]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_HS
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_VS
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_REFCLK
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_RESET_n
 set_location_assignment PIN_AG22 -to CAMERA_I2C_SCL
 set_location_assignment PIN_AE24 -to CAMERA_I2C_SDA
 set_location_assignment PIN_AE25 -to CAMERA_PWDN_n
@@ -404,9 +256,6 @@ set_location_assignment PIN_AH25 -to MIPI_RESET_n
 
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VERILOG_FILE nios/synthesis/submodules/DE2_115_SD_CARD_NIOS_sw.v
 set_global_assignment -name VERILOG_FILE nios/synthesis/submodules/DE2_115_SD_CARD_NIOS_sd_wp_n.v
 set_global_assignment -name VERILOG_FILE nios/synthesis/submodules/DE2_115_SD_CARD_NIOS_sd_dat.v
@@ -438,4 +287,166 @@ set_global_assignment -name SDC_FILE colourfiltering.sdc
 set_global_assignment -name QIP_FILE int_line.qip
 set_global_assignment -name QIP_FILE Video/pll_test.qip
 set_global_assignment -name QIP_FILE Video/fifo_pll.qip
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK2_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK3_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
+set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX6[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX6[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX6[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX6[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX6[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX6[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX6[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX7[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX7[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX7[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX7[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX7[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX7[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX7[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[4]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[5]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[7]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[8]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[4]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[5]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[7]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[8]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[9]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[10]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[11]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[12]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[13]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[14]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[15]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[16]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[17]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[16]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[17]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_BLANK_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_HS
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_SYNC_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CAMERA_I2C_SCL
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CAMERA_I2C_SDA
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CAMERA_PWDN_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_CS_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_I2C_SCL
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_I2C_SDA
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_MCLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_D[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_D[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_D[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_D[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_D[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_D[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_D[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_D[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_D[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_D[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_HS
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_VS
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_REFCLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_RESET_n
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

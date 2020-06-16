@@ -8,6 +8,14 @@
   </columns>
  </systemtable>
  <library expandedCategories="Library,Project" />
- <window width="2560" height="1410" x="0" y="0" />
+ <window width="1920" height="1040" x="0" y="0" />
  <hdlexample language="VERILOG" />
+ <clocktable>
+  <columns>
+   <clockname preferredWidth="483" />
+   <clocksource preferredWidth="483" />
+   <frequency preferredWidth="464" />
+  </columns>
+ </clocktable>
+ <generation synthesis="VERILOG" />
 </preferences>

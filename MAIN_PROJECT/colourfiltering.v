@@ -3,8 +3,14 @@ module colourfiltering(
 	//////////// CLOCK //////////
 	input 		          		CLOCK2_50,
 	input 		          		CLOCK3_50,
-	input 		          		CLOCK_50,
-
+	input   							CLOCK_50, 
+	
+	//sd
+	inout   [3:0] SD_DAT,
+	input   SD_WP_N,
+	inout   SD_CMD, 
+	output  SD_CLK,
+	
 	//////////// LED //////////
 	output		     [8:0]		LEDG,
 	output		    [17:0]		LEDR,
@@ -190,7 +196,11 @@ VGA_Controller_trig	u1	(
 	  .oVGA_CLOCK ( VGA_CLK     ),
 	  .iRST_N     ( RESET_N )	,	
 	  .SW				(SW[17:0]),
-	  .LEDR			(LEDR[17:0])
+	  .LEDR			(LEDR[17:0]),
+	  .SD_DAT (SD_DAT[3:0]),
+	  .SD_WP_N (SD_WP_N),
+	  .SD_CMD (SD_CMD), 
+	  .SD_CLK (SD_CLK)
 );
 
 //--Frame Counter -- 

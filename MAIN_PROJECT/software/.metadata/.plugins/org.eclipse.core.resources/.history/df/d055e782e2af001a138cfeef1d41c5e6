@@ -1,0 +1,105 @@
+#include "sys/alt_stdio.h"
+#include "terasic/terasic_includes.h"
+#include "terasic/FatFileSystem.h"
+
+//int main()
+//{
+//	alt_putstr("jemama");
+//	return 0;
+//}
+
+//bool Fat_Test(FAT_HANDLE hFat, char *pDumpFile){
+//    bool bSuccess;
+//    int nCount = 0;
+//    FAT_BROWSE_HANDLE hBrowse;
+//    FILE_CONTEXT FileContext;
+//
+//    bSuccess = Fat_FileBrowseBegin(hFat, &hBrowse);
+//    if (bSuccess){
+//        while(Fat_FileBrowseNext(&hBrowse, &FileContext)){
+//            if (FileContext.bLongFilename){
+//                alt_u16 *pData16;
+//                alt_u8 *pData8;
+//                pData16 = (alt_u16 *)FileContext.szName;
+//                pData8 = FileContext.szName;
+//                printf("[%d]", nCount);
+//                while(*pData16){
+//                    if (*pData8)
+//                        printf("%c", *pData8);
+//                    pData8++;
+//                    if (*pData8)
+//                        printf("%c", *pData8);
+//                    pData8++;
+//                    //
+//                    pData16++;
+//                }
+//                printf("\n");
+//            }else{
+//                printf("[%d]%s\n", nCount, FileContext.szName);
+//            }
+//            nCount++;
+//        }
+//    }
+//    if (bSuccess && pDumpFile && strlen(pDumpFile)){
+//        FAT_FILE_HANDLE hFile;
+//        hFile =  Fat_FileOpen(hFat, pDumpFile);
+//        if (hFile){
+//            char szRead[256];
+//            int nReadSize, nFileSize, nTotalReadSize=0;
+//            nFileSize = Fat_FileSize(hFile);
+//            if (nReadSize > sizeof(szRead))
+//                nReadSize = sizeof(szRead);
+//            printf("%s dump:\n", pDumpFile);
+//            while(bSuccess && nTotalReadSize < nFileSize){
+//                nReadSize = sizeof(szRead);
+//                if (nReadSize > (nFileSize - nTotalReadSize))
+//                    nReadSize = (nFileSize - nTotalReadSize);
+//                //
+//                if (Fat_FileRead(hFile, szRead, nReadSize)){
+//                    int i;
+//                    for(i=0;i<nReadSize;i++){
+//                        printf("%c", szRead[i]);
+//                    }
+//                    nTotalReadSize += nReadSize;
+//                }else{
+//                    bSuccess = FALSE;
+//                    printf("\nFaied to read the file \"%s\"\n", pDumpFile);
+//                }
+//            } // while
+//            if (bSuccess)
+//                printf("\n");
+//            Fat_FileClose(hFile);
+//        }else{
+//            bSuccess = FALSE;
+//            printf("Cannot find the file \"%s\"\n", pDumpFile);
+//        }
+//    }
+//
+//    return bSuccess;
+//}
+
+
+int main()
+{
+    FAT_HANDLE hFat;
+
+    printf("========== DE2-115 SDCARD Demo ==========\n");
+
+    while(1){
+        printf("Processing...\r\n");
+        hFat = Fat_Mount(FAT_SD_CARD, 0);
+        if (hFat){
+            printf("sdcard mount success!\n");
+            printf("Root Directory Item Count:%d\n", Fat_FileCount(hFat));
+            Fat_Test(hFat, "test.txt");
+            Fat_Unmount(hFat);
+
+            printf("===== Test Done =====\r\nPress KEY3 to test again.\r\n");
+        }else{
+            printf("Failed to mount the SDCARD!\r\nPlease insert the SDCARD into DE2-115 board and press KEY3.\r\n");
+        }
+    }
+
+
+  return 0;
+}

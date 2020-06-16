@@ -7,6 +7,10 @@ module VGA_Controller_trig(
     input		[7:0]	iRed,
     input		[7:0]	iGreen,
     input		[7:0]	iBlue,
+	inout   [3:0] SD_DAT,
+	input   SD_WP_N,
+	inout   SD_CMD, 
+	output  SD_CLK,
     output		[7:0]	oVGA_R,
     output		[7:0]	oVGA_G,
     output		[7:0]	oVGA_B,
@@ -69,8 +73,13 @@ nios nios1(
 	.red_in_port		(iRed), 					// red.in_port
 	.red_out_port    	(nVGA_R),				// .out_port
 	.sw_in_port			(SW[17:0]),				// SWITCHES
-	.sw_out_port		(LEDR[17:0])			// LEDR
-);								  
+	.sw_out_port		(LEDR[17:0]),			// LEDR
+	.sd_clk_external_connection_export  (SD_CLK),  //  sd_clk_external_connection.export
+   .sd_cmd_external_connection_export  (SD_CMD),  //  sd_cmd_external_connection.export
+   .sd_dat_external_connection_export  (SD_DAT[3:0]),  //  sd_dat_external_connection.export
+   .sd_wp_n_external_connection_export (SD_WP_N), // sd_wp_n_external_connection.export
+);		
+						  
 								  
 
 ////////////////////////////////////////////////////////
@@ -104,10 +113,10 @@ module SDC_Top (
     sdc_sys0 u0 (
         .clk_clk            (CLOCK_50),
         .reset_reset_n      (1'b1),
-        .sd_card_b_SD_dat   (SD_DAT),
-        .sd_card_o_SD_clock (SD_CLOCK),
-        .sd_card_b_SD_cmd   (SD_CMD),
-        .sd_card_b_SD_dat3  (SD_DAT3)
+        .bro_b_SD_dat   (SD_DAT),
+        .bro_o_SD_clock (SD_CLOCK),
+        .bro_b_SD_cmd   (SD_CMD),
+        .bro_b_SD_dat3  (SD_DAT3)
     );
  
 endmodule

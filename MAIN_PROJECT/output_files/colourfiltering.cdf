@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("C:/Users/Gertjan/OneDrive/Projects/Courses_FPGA/MAIN_PROJECT/output_files/") File("colourfiltering.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("C:/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/output_files/") File("colourfiltering.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

@@ -1,0 +1,32 @@
+#include "sys/alt_stdio.h"
+#include "terasic/terasic_includes.h"
+#include "terasic/FatFileSystem.h"
+
+//int main()
+//{
+//	alt_putstr("jemama");
+//	return 0;
+//}
+
+int main()
+{
+    FAT_HANDLE hFat;
+
+
+    while(1){
+        hFat = Fat_Mount(FAT_SD_CARD, 0);
+        if (hFat){
+            printf("sdcard mount success!\n");
+            printf("Root Directory Item Count:%d\n", Fat_FileCount(hFat));
+            Fat_Test(hFat, "test.txt");
+            Fat_Unmount(hFat);
+
+            printf("===== Test Done =====\r\nPress KEY3 to test again.\r\n");
+        }else{
+            printf("Failed to mount the SDCARD!\r\nPlease insert the SDCARD into DE2-115 board and press KEY3.\r\n");
+        }
+    } // while
+
+
+  return 0;
+}

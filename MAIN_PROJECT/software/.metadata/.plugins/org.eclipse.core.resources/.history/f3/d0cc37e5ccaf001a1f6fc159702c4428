@@ -1,0 +1,8 @@
+#include "sys/alt_stdio.h"
+#include "terasic_lib/terasic_includes.h"
+#include "terasic_fat/FatFileSystem.h"
+
+int main()
+{
+	alt_putstr("jemama");
+}
