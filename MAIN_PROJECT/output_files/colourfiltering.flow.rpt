@@ -1,5 +1,5 @@
 Flow report for colourfiltering
-Fri Jun 12 15:15:10 2020
+Tue Jun 16 10:55:22 2020
 Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 
 
@@ -41,20 +41,20 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Jun 12 15:15:05 2020       ;
+; Flow Status                        ; Successful - Tue Jun 16 10:55:17 2020       ;
 ; Quartus Prime Version              ; 18.1.1 Build 646 04/11/2019 SJ Lite Edition ;
 ; Revision Name                      ; colourfiltering                             ;
 ; Top-level Entity Name              ; colourfiltering                             ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 4,014 / 114,480 ( 4 % )                     ;
-;     Total combinational functions  ; 3,800 / 114,480 ( 3 % )                     ;
-;     Dedicated logic registers      ; 1,745 / 114,480 ( 2 % )                     ;
-; Total registers                    ; 1745                                        ;
-; Total pins                         ; 163 / 529 ( 31 % )                          ;
+; Total logic elements               ; 5,847 / 114,480 ( 5 % )                     ;
+;     Total combinational functions  ; 5,393 / 114,480 ( 5 % )                     ;
+;     Dedicated logic registers      ; 2,882 / 114,480 ( 3 % )                     ;
+; Total registers                    ; 2882                                        ;
+; Total pins                         ; 170 / 529 ( 32 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 199,680 / 3,981,312 ( 5 % )                 ;
+; Total memory bits                  ; 400,384 / 3,981,312 ( 10 % )                ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
 ; Total PLLs                         ; 2 / 4 ( 50 % )                              ;
 +------------------------------------+---------------------------------------------+
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/12/2020 15:13:25 ;
+; Start date & time ; 06/16/2020 10:53:34 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; colourfiltering     ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+--------------------------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+--------------------------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 193675815635334.159196760512932                        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 193675815635334.159229761404064                        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; nios/synthesis/../nios.cmp                             ; --            ; --          ; --         ;
@@ -94,7 +94,7 @@ https://fpgasoftware.intel.com/eula.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                           ; --            ; --          ; --         ;
 ; SLD_FILE                            ; nios/synthesis/nios.regmap                             ; --            ; --          ; --         ;
 ; SLD_FILE                            ; nios/synthesis/nios.debuginfo                          ; --            ; --          ; --         ;
-; SLD_INFO                            ; QSYS_NAME nios HAS_SOPCINFO 1 GENERATION_ID 1591967531 ; --            ; nios        ; --         ;
+; SLD_INFO                            ; QSYS_NAME nios HAS_SOPCINFO 1 GENERATION_ID 1592297364 ; --            ; nios        ; --         ;
 ; SOPCINFO_FILE                       ; nios/synthesis/../../nios.sopcinfo                     ; --            ; --          ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                     ; --            ; --          ; --         ;
 +-------------------------------------+--------------------------------------------------------+---------------+-------------+------------+
@@ -105,11 +105,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:02     ; 1.0                     ; 4947 MB             ; 00:01:23                           ;
-; Fitter               ; 00:00:27     ; 1.1                     ; 5897 MB             ; 00:00:46                           ;
-; Assembler            ; 00:00:05     ; 1.0                     ; 4701 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:04     ; 1.2                     ; 4913 MB             ; 00:00:04                           ;
-; Total                ; 00:01:38     ; --                      ; --                  ; 00:02:17                           ;
+; Analysis & Synthesis ; 00:01:00     ; 1.0                     ; 4975 MB             ; 00:01:21                           ;
+; Fitter               ; 00:00:33     ; 1.1                     ; 5922 MB             ; 00:00:57                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 4709 MB             ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:04     ; 1.2                     ; 4935 MB             ; 00:00:05                           ;
+; Total                ; 00:01:41     ; --                      ; --                  ; 00:02:27                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

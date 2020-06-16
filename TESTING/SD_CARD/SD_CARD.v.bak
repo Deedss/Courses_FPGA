@@ -1,0 +1,9 @@
+module SDC_TOP(
+	input   CLOCK_50, 
+	inout   SD_DAT, 
+	inout   SD_CMD, 
+	inout   SD_DAT3, 
+	output  SD_CLOCK
+);
+
+endmodule 

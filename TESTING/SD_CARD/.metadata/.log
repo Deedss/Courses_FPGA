@@ -1,0 +1,328 @@
+!SESSION 2020-06-16 11:10:57.542 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/software/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/software/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2020-06-16 11:11:48.393
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-06-16 11:12:33.605
+!MESSAGE Indexed 'test_sd_bsp' (84 sources, 153 headers) in 2.83 sec: 5,588 declarations; 10,638 references; 17 unresolved inclusions; 2 syntax errors; 58 unresolved names (0.36%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-06-16 11:12:34.344
+!MESSAGE Indexed 'test_sd' (1 sources, 0 headers) in 0.002 sec: 1 declarations; 1 references; 1 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:15:22.411
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x11420 --id=0x0 --timestamp=1592298016]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:15:25.091
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x11420 --id=0x0 --timestamp=1592298016 /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:15:50.401
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x11420 --id=0x0 --timestamp=1592298016]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:15:53.045
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x11420 --id=0x0 --timestamp=1592298016 /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:17:31.909
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x11420 --id=0x0 --timestamp=1592298016]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:17:34.613
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x11420 --id=0x0 --timestamp=1592298016 /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:20:22.401
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x11420 --id=0x0 --timestamp=1592298016]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:20:25.303
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x11420 --id=0x0 --timestamp=1592298016 /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:20:58.835
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:20:59.717
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x11420 --id=0x0 --timestamp=1592298016]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:21:02.206
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x11420 --id=0x0 --timestamp=1592298016 /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:21:24.719
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:21:25.498
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x11420 --id=0x0 --timestamp=1592298016]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:21:27.865
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x11420 --id=0x0 --timestamp=1592298016 /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+!SESSION 2020-06-16 11:34:36.298 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/software/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/software/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2020-06-16 11:34:59.744
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2020-06-16 11:35:08.137
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:37:00.601
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x11420 --id=0x0 --timestamp=1592298016]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:37:03.506
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x11420 --id=0x0 --timestamp=1592298016 /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:37:50.010
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:37:50.888
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x11420 --id=0x0 --timestamp=1592298016]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:37:53.449
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x11420 --id=0x0 --timestamp=1592298016 /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:38:27.539
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:38:28.446
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x11420 --id=0x0 --timestamp=1592298016]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:38:30.928
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x11420 --id=0x0 --timestamp=1592298016 /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:42:23.738
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:42:24.532
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x11420 --id=0x0 --timestamp=1592298016]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:42:27.378
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x11420 --id=0x0 --timestamp=1592298016 /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:43:34.567
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:43:35.300
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x11420 --id=0x0 --timestamp=1592298016]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:43:37.300
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x11420 --id=0x0 --timestamp=1592298016]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:43:38.033
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x11420 --id=0x0 --timestamp=1592298016 /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:43:39.769
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x11420 --id=0x0 --timestamp=1592298016 /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:44:51.306
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:44:51.308
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:44:52.177
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x11420 --id=0x0 --timestamp=1592298016]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:44:54.723
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x11420 --id=0x0 --timestamp=1592298016 /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:45:45.648
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:45:46.474
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x11420 --id=0x0 --timestamp=1592298016]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:45:48.971
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x11420 --id=0x0 --timestamp=1592298016 /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:49:21.755
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x11420 --id=0x0 --timestamp=1592298016]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 11:49:24.322
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x11420 --id=0x0 --timestamp=1592298016 /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:00:05.209
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x11420 --id=0x0 --timestamp=1592298016]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:00:07.792
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x11420 --id=0x0 --timestamp=1592298016 /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:02:28.278
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x11420 --id=0x0 --timestamp=1592298016]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:02:30.732
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x11420 --id=0x0 --timestamp=1592298016 /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:08:04.166
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x11420 --id=0x0 --timestamp=1592298016]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:08:06.821
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x11420 --id=0x0 --timestamp=1592298016 /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:14:48.269
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x11420 --id=0x0 --timestamp=1592298016]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:14:50.712
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x11420 --id=0x0 --timestamp=1592298016 /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:26:03.571
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:26:04.413
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x11420 --id=0x0 --timestamp=1592298016]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:26:07.058
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x11420 --id=0x0 --timestamp=1592298016 /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-16 12:45:47.264
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception: System timestamp mismatch - connected: "0", expected: "1592298016".
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.assertTrue(SystemConsoleConnectionModel.java:645)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateSystemId(SystemConsoleConnectionModel.java:631)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:511)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-16 12:45:47.309
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception: System timestamp mismatch - connected: "0", expected: "1592298016".
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.assertTrue(SystemConsoleConnectionModel.java:645)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateSystemId(SystemConsoleConnectionModel.java:631)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:511)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:46:09.787
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:46:11.909
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:47:30.366
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:47:31.027
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:47:33.069
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:47:51.772
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:47:52.342
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:47:54.685
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:49:19.002
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:49:19.643
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:49:21.995
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:50:02.361
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:50:02.987
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:50:05.307
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:50:20.559
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:50:21.533
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 12:50:26.799
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 13:00:20.756
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 13:00:22.860
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 13:01:32.920
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 13:01:35.022
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 13:01:53.521
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 13:01:54.089
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 13:01:56.148
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 13:02:18.305
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 13:02:19.086
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 13:02:21.068
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 13:23:03.762
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-16 13:23:05.857
+!MESSAGE Executing: [C:/software/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/TESTING/SD_CARD/software/test_sd/test_sd.elf]

@@ -39,9 +39,9 @@ module nios_onchip_memory2_0 (
   parameter INIT_FILE = "nios_onchip_memory2_0.hex";
 
 
-  output  [ 31: 0] readdata;
+  output  [127: 0] readdata;
   input   [ 10: 0] address;
-  input   [  3: 0] byteenable;
+  input   [ 15: 0] byteenable;
   input            chipselect;
   input            clk;
   input            clken;
@@ -49,11 +49,11 @@ module nios_onchip_memory2_0 (
   input            reset;
   input            reset_req;
   input            write;
-  input   [ 31: 0] writedata;
+  input   [127: 0] writedata;
 
 
 wire             clocken0;
-wire    [ 31: 0] readdata;
+wire    [127: 0] readdata;
 wire             wren;
   assign wren = chipselect & write;
   assign clocken0 = clken & ~reset_req;
@@ -78,8 +78,8 @@ wire             wren;
            the_altsyncram.ram_block_type = "AUTO",
            the_altsyncram.read_during_write_mode_mixed_ports = "DONT_CARE",
            the_altsyncram.read_during_write_mode_port_a = "DONT_CARE",
-           the_altsyncram.width_a = 32,
-           the_altsyncram.width_byteena_a = 4,
+           the_altsyncram.width_a = 128,
+           the_altsyncram.width_byteena_a = 16,
            the_altsyncram.widthad_a = 11;
 
   //s1, which is an e_avalon_slave

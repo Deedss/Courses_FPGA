@@ -248,6 +248,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "SD_DAT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SD_CMD",
+					"strict" : false
+				},
+				{
 					"name" : "CAMERA_I2C_SCL",
 					"strict" : false
 				},
@@ -360,11 +368,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "MIPI_PIXEL_D[2]",
+					"name" : "MIPI_PIXEL_D[3]",
 					"strict" : false
 				},
 				{
-					"name" : "MIPI_PIXEL_D[3]",
+					"name" : "MIPI_PIXEL_D[2]",
 					"strict" : false
 				},
 				{
