@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="9b52fdf4354eef2bd190"/>
+    <hash md5_digest_80b="66919c06cbbb3ff99290"/>
   </project>
   <file_info>
     <file device="EP4CE115F29C7" path="colourfiltering.sof" usercode="0xFFFFFFFF"/>
@@ -139,7 +139,7 @@
   <sld_infos>
     <sld_info hpath="VGA_Controller_trig:u1|nios:nios1" name="nios1">
       <assignment_values>
-        <assignment_value text="QSYS_NAME nios HAS_SOPCINFO 1 GENERATION_ID 1591967531"/>
+        <assignment_value text="QSYS_NAME nios HAS_SOPCINFO 1 GENERATION_ID 1592220358"/>
       </assignment_values>
       <parameters/>
     </sld_info>

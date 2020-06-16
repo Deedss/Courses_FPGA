@@ -1,0 +1,219 @@
+13:06:38 **** Incremental Build of configuration Nios II for project bruh ****
+make all 
+Info: Building ../bruh_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../bruh_bsp/
+[BSP build complete]
+Info: Compiling terasic_sdcard/sd_hal.c to obj/default/terasic_sdcard/sd_hal.o
+nios2-elf-gcc -xc -MP -MMD -c -I../bruh_bsp//HAL/inc -I../bruh_bsp/ -I../bruh_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/terasic_sdcard/sd_hal.o terasic_sdcard/sd_hal.c
+In file included from terasic_sdcard/..\terasic_lib\terasic_includes.h:43:0,
+                 from terasic_sdcard/sd_hal.c:33:
+terasic_sdcard/sd_hal.c: In function 'SDHAL_Init':
+terasic_sdcard/sd_hw.h:46:54: error: 'SD_CMD_BASE' undeclared (first use in this function)
+ #define SD_CMD_OUT  IOWR_ALTERA_AVALON_PIO_DIRECTION(SD_CMD_BASE, ALTERA_AVALON_PIO_DIRECTION_OUTPUT)
+                                                      ^
+../bruh_bsp//HAL/inc/io.h:70:23: note: in definition of macro '__IO_CALC_ADDRESS_NATIVE'
+   ((void *)(((alt_u8*)BASE) + ((REGNUM) * (SYSTEM_BUS_WIDTH/8))))
+                       ^
+../bruh_bsp//drivers/inc/altera_avalon_pio_regs.h:42:55: note: in expansion of macro 'IOWR'
+ #define IOWR_ALTERA_AVALON_PIO_DIRECTION(base, data)  IOWR(base, 1, data)
+                                                       ^
+terasic_sdcard/sd_hw.h:46:21: note: in expansion of macro 'IOWR_ALTERA_AVALON_PIO_DIRECTION'
+ #define SD_CMD_OUT  IOWR_ALTERA_AVALON_PIO_DIRECTION(SD_CMD_BASE, ALTERA_AVALON_PIO_DIRECTION_OUTPUT)
+                     ^
+terasic_sdcard/sd_hal.c:48:5: note: in expansion of macro 'SD_CMD_OUT'
+     SD_CMD_OUT;
+     ^
+terasic_sdcard/sd_hw.h:46:54: note: each undeclared identifier is reported only once for each function it appears in
+ #define SD_CMD_OUT  IOWR_ALTERA_AVALON_PIO_DIRECTION(SD_CMD_BASE, ALTERA_AVALON_PIO_DIRECTION_OUTPUT)
+                                                      ^
+../bruh_bsp//HAL/inc/io.h:70:23: note: in definition of macro '__IO_CALC_ADDRESS_NATIVE'
+   ((void *)(((alt_u8*)BASE) + ((REGNUM) * (SYSTEM_BUS_WIDTH/8))))
+                       ^
+../bruh_bsp//drivers/inc/altera_avalon_pio_regs.h:42:55: note: in expansion of macro 'IOWR'
+ #define IOWR_ALTERA_AVALON_PIO_DIRECTION(base, data)  IOWR(base, 1, data)
+                                                       ^
+terasic_sdcard/sd_hw.h:46:21: note: in expansion of macro 'IOWR_ALTERA_AVALON_PIO_DIRECTION'
+ #define SD_CMD_OUT  IOWR_ALTERA_AVALON_PIO_DIRECTION(SD_CMD_BASE, ALTERA_AVALON_PIO_DIRECTION_OUTPUT)
+                     ^
+terasic_sdcard/sd_hal.c:48:5: note: in expansion of macro 'SD_CMD_OUT'
+     SD_CMD_OUT;
+     ^
+terasic_sdcard/sd_hw.h:47:54: error: 'SD_DAT_BASE' undeclared (first use in this function)
+ #define SD_DAT_IN   IOWR_ALTERA_AVALON_PIO_DIRECTION(SD_DAT_BASE, ALTERA_AVALON_PIO_DIRECTION_INPUT)
+                                                      ^
+../bruh_bsp//HAL/inc/io.h:70:23: note: in definition of macro '__IO_CALC_ADDRESS_NATIVE'
+   ((void *)(((alt_u8*)BASE) + ((REGNUM) * (SYSTEM_BUS_WIDTH/8))))
+                       ^
+../bruh_bsp//drivers/inc/altera_avalon_pio_regs.h:42:55: note: in expansion of macro 'IOWR'
+ #define IOWR_ALTERA_AVALON_PIO_DIRECTION(base, data)  IOWR(base, 1, data)
+                                                       ^
+terasic_sdcard/sd_hw.h:47:21: note: in expansion of macro 'IOWR_ALTERA_AVALON_PIO_DIRECTION'
+ #define SD_DAT_IN   IOWR_ALTERA_AVALON_PIO_DIRECTION(SD_DAT_BASE, ALTERA_AVALON_PIO_DIRECTION_INPUT)
+                     ^
+terasic_sdcard/sd_hal.c:49:5: note: in expansion of macro 'SD_DAT_IN'
+     SD_DAT_IN;
+     ^
+terasic_sdcard/sd_hw.h:53:49: error: 'SD_CLK_BASE' undeclared (first use in this function)
+ #define SD_CLK_HIGH IOWR_ALTERA_AVALON_PIO_DATA(SD_CLK_BASE, 1)
+                                                 ^
+../bruh_bsp//HAL/inc/io.h:70:23: note: in definition of macro '__IO_CALC_ADDRESS_NATIVE'
+   ((void *)(((alt_u8*)BASE) + ((REGNUM) * (SYSTEM_BUS_WIDTH/8))))
+                       ^
+../bruh_bsp//drivers/inc/altera_avalon_pio_regs.h:38:55: note: in expansion of macro 'IOWR'
+ #define IOWR_ALTERA_AVALON_PIO_DATA(base, data)       IOWR(base, 0, data)
+                                                       ^
+terasic_sdcard/sd_hw.h:53:21: note: in expansion of macro 'IOWR_ALTERA_AVALON_PIO_DATA'
+ #define SD_CLK_HIGH IOWR_ALTERA_AVALON_PIO_DATA(SD_CLK_BASE, 1)
+                     ^
+terasic_sdcard/sd_hal.c:50:5: note: in expansion of macro 'SD_CLK_HIGH'
+     SD_CLK_HIGH;
+     ^
+terasic_sdcard/sd_hal.c: In function 'SDHAL_SendCmd':
+terasic_sdcard/sd_hw.h:46:54: error: 'SD_CMD_BASE' undeclared (first use in this function)
+ #define SD_CMD_OUT  IOWR_ALTERA_AVALON_PIO_DIRECTION(SD_CMD_BASE, ALTERA_AVALON_PIO_DIRECTION_OUTPUT)
+                                                      ^
+../bruh_bsp//HAL/inc/io.h:70:23: note: in definition of macro '__IO_CALC_ADDRESS_NATIVE'
+   ((void *)(((alt_u8*)BASE) + ((REGNUM) * (SYSTEM_BUS_WIDTH/8))))
+                       ^
+../bruh_bsp//drivers/inc/altera_avalon_pio_regs.h:42:55: note: in expansion of macro 'IOWR'
+ #define IOWR_ALTERA_AVALON_PIO_DIRECTION(base, data)  IOWR(base, 1, data)
+                                                       ^
+terasic_sdcard/sd_hw.h:46:21: note: in expansion of macro 'IOWR_ALTERA_AVALON_PIO_DIRECTION'
+ #define SD_CMD_OUT  IOWR_ALTERA_AVALON_PIO_DIRECTION(SD_CMD_BASE, ALTERA_AVALON_PIO_DIRECTION_OUTPUT)
+                     ^
+terasic_sdcard/sd_hal.c:60:5: note: in expansion of macro 'SD_CMD_OUT'
+     SD_CMD_OUT;
+     ^
+terasic_sdcard/sd_hw.h:52:49: error: 'SD_CLK_BASE' undeclared (first use in this function)
+ #define SD_CLK_LOW  IOWR_ALTERA_AVALON_PIO_DATA(SD_CLK_BASE, 0)
+                                                 ^
+../bruh_bsp//HAL/inc/io.h:70:23: note: in definition of macro '__IO_CALC_ADDRESS_NATIVE'
+   ((void *)(((alt_u8*)BASE) + ((REGNUM) * (SYSTEM_BUS_WIDTH/8))))
+                       ^
+../bruh_bsp//drivers/inc/altera_avalon_pio_regs.h:38:55: note: in expansion of macro 'IOWR'
+ #define IOWR_ALTERA_AVALON_PIO_DATA(base, data)       IOWR(base, 0, data)
+                                                       ^
+terasic_sdcard/sd_hw.h:52:21: note: in expansion of macro 'IOWR_ALTERA_AVALON_PIO_DATA'
+ #define SD_CLK_LOW  IOWR_ALTERA_AVALON_PIO_DATA(SD_CLK_BASE, 0)
+                     ^
+terasic_sdcard/sd_hal.c:65:13: note: in expansion of macro 'SD_CLK_LOW'
+             SD_CLK_LOW;
+             ^
+terasic_sdcard/sd_hal.c: In function 'SDHAL_GetResponse':
+terasic_sdcard/sd_hw.h:45:54: error: 'SD_CMD_BASE' undeclared (first use in this function)
+ #define SD_CMD_IN   IOWR_ALTERA_AVALON_PIO_DIRECTION(SD_CMD_BASE, ALTERA_AVALON_PIO_DIRECTION_INPUT)
+                                                      ^
+../bruh_bsp//HAL/inc/io.h:70:23: note: in definition of macro '__IO_CALC_ADDRESS_NATIVE'
+   ((void *)(((alt_u8*)BASE) + ((REGNUM) * (SYSTEM_BUS_WIDTH/8))))
+                       ^
+../bruh_bsp//drivers/inc/altera_avalon_pio_regs.h:42:55: note: in expansion of macro 'IOWR'
+ #define IOWR_ALTERA_AVALON_PIO_DIRECTION(base, data)  IOWR(base, 1, data)
+                                                       ^
+terasic_sdcard/sd_hw.h:45:21: note: in expansion of macro 'IOWR_ALTERA_AVALON_PIO_DIRECTION'
+ #define SD_CMD_IN   IOWR_ALTERA_AVALON_PIO_DIRECTION(SD_CMD_BASE, ALTERA_AVALON_PIO_DIRECTION_INPUT)
+                     ^
+terasic_sdcard/sd_hal.c:88:5: note: in expansion of macro 'SD_CMD_IN'
+     SD_CMD_IN;
+     ^
+terasic_sdcard/sd_hw.h:52:49: error: 'SD_CLK_BASE' undeclared (first use in this function)
+ #define SD_CLK_LOW  IOWR_ALTERA_AVALON_PIO_DATA(SD_CLK_BASE, 0)
+                                                 ^
+../bruh_bsp//HAL/inc/io.h:70:23: note: in definition of macro '__IO_CALC_ADDRESS_NATIVE'
+   ((void *)(((alt_u8*)BASE) + ((REGNUM) * (SYSTEM_BUS_WIDTH/8))))
+                       ^
+../bruh_bsp//drivers/inc/altera_avalon_pio_regs.h:38:55: note: in expansion of macro 'IOWR'
+ #define IOWR_ALTERA_AVALON_PIO_DATA(base, data)       IOWR(base, 0, data)
+                                                       ^
+terasic_sdcard/sd_hw.h:52:21: note: in expansion of macro 'IOWR_ALTERA_AVALON_PIO_DATA'
+ #define SD_CLK_LOW  IOWR_ALTERA_AVALON_PIO_DATA(SD_CLK_BASE, 0)
+                     ^
+terasic_sdcard/sd_hal.c:95:9: note: in expansion of macro 'SD_CLK_LOW'
+         SD_CLK_LOW;
+         ^
+terasic_sdcard/sd_hal.c: In function 'SDHAL_ReadData':
+terasic_sdcard/sd_hw.h:47:54: error: 'SD_DAT_BASE' undeclared (first use in this function)
+ #define SD_DAT_IN   IOWR_ALTERA_AVALON_PIO_DIRECTION(SD_DAT_BASE, ALTERA_AVALON_PIO_DIRECTION_INPUT)
+                                                      ^
+../bruh_bsp//HAL/inc/io.h:70:23: note: in definition of macro '__IO_CALC_ADDRESS_NATIVE'
+   ((void *)(((alt_u8*)BASE) + ((REGNUM) * (SYSTEM_BUS_WIDTH/8))))
+                       ^
+../bruh_bsp//drivers/inc/altera_avalon_pio_regs.h:42:55: note: in expansion of macro 'IOWR'
+ #define IOWR_ALTERA_AVALON_PIO_DIRECTION(base, data)  IOWR(base, 1, data)
+                                                       ^
+terasic_sdcard/sd_hw.h:47:21: note: in expansion of macro 'IOWR_ALTERA_AVALON_PIO_DIRECTION'
+ #define SD_DAT_IN   IOWR_ALTERA_AVALON_PIO_DIRECTION(SD_DAT_BASE, ALTERA_AVALON_PIO_DIRECTION_INPUT)
+                     ^
+terasic_sdcard/sd_hal.c:160:5: note: in expansion of macro 'SD_DAT_IN'
+     SD_DAT_IN;
+     ^
+terasic_sdcard/sd_hw.h:52:49: error: 'SD_CLK_BASE' undeclared (first use in this function)
+ #define SD_CLK_LOW  IOWR_ALTERA_AVALON_PIO_DATA(SD_CLK_BASE, 0)
+                                                 ^
+../bruh_bsp//HAL/inc/io.h:70:23: note: in definition of macro '__IO_CALC_ADDRESS_NATIVE'
+   ((void *)(((alt_u8*)BASE) + ((REGNUM) * (SYSTEM_BUS_WIDTH/8))))
+                       ^
+../bruh_bsp//drivers/inc/altera_avalon_pio_regs.h:38:55: note: in expansion of macro 'IOWR'
+ #define IOWR_ALTERA_AVALON_PIO_DATA(base, data)       IOWR(base, 0, data)
+                                                       ^
+terasic_sdcard/sd_hw.h:52:21: note: in expansion of macro 'IOWR_ALTERA_AVALON_PIO_DATA'
+ #define SD_CLK_LOW  IOWR_ALTERA_AVALON_PIO_DATA(SD_CLK_BASE, 0)
+                     ^
+terasic_sdcard/sd_hal.c:164:7: note: in expansion of macro 'SD_CLK_LOW'
+       SD_CLK_LOW;
+       ^
+terasic_sdcard/sd_hal.c: In function 'SDHAL_WriteData':
+terasic_sdcard/sd_hw.h:48:54: error: 'SD_DAT_BASE' undeclared (first use in this function)
+ #define SD_DAT_OUT  IOWR_ALTERA_AVALON_PIO_DIRECTION(SD_DAT_BASE, ALTERA_AVALON_PIO_DIRECTION_OUTPUT)
+                                                      ^
+../bruh_bsp//HAL/inc/io.h:70:23: note: in definition of macro '__IO_CALC_ADDRESS_NATIVE'
+   ((void *)(((alt_u8*)BASE) + ((REGNUM) * (SYSTEM_BUS_WIDTH/8))))
+                       ^
+../bruh_bsp//drivers/inc/altera_avalon_pio_regs.h:42:55: note: in expansion of macro 'IOWR'
+ #define IOWR_ALTERA_AVALON_PIO_DIRECTION(base, data)  IOWR(base, 1, data)
+                                                       ^
+terasic_sdcard/sd_hw.h:48:21: note: in expansion of macro 'IOWR_ALTERA_AVALON_PIO_DIRECTION'
+ #define SD_DAT_OUT  IOWR_ALTERA_AVALON_PIO_DIRECTION(SD_DAT_BASE, ALTERA_AVALON_PIO_DIRECTION_OUTPUT)
+                     ^
+terasic_sdcard/sd_hal.c:348:5: note: in expansion of macro 'SD_DAT_OUT'
+     SD_DAT_OUT;
+     ^
+terasic_sdcard/sd_hw.h:52:49: error: 'SD_CLK_BASE' undeclared (first use in this function)
+ #define SD_CLK_LOW  IOWR_ALTERA_AVALON_PIO_DATA(SD_CLK_BASE, 0)
+                                                 ^
+../bruh_bsp//HAL/inc/io.h:70:23: note: in definition of macro '__IO_CALC_ADDRESS_NATIVE'
+   ((void *)(((alt_u8*)BASE) + ((REGNUM) * (SYSTEM_BUS_WIDTH/8))))
+                       ^
+../bruh_bsp//drivers/inc/altera_avalon_pio_regs.h:38:55: note: in expansion of macro 'IOWR'
+ #define IOWR_ALTERA_AVALON_PIO_DATA(base, data)       IOWR(base, 0, data)
+                                                       ^
+terasic_sdcard/sd_hw.h:52:21: note: in expansion of macro 'IOWR_ALTERA_AVALON_PIO_DATA'
+ #define SD_CLK_LOW  IOWR_ALTERA_AVALON_PIO_DATA(SD_CLK_BASE, 0)
+                     ^
+terasic_sdcard/sd_hal.c:350:5: note: in expansion of macro 'SD_CLK_LOW'
+     SD_CLK_LOW;
+     ^
+terasic_sdcard/sd_hal.c:333:13: warning: variable 'DataCrc16' set but not used [-Wunused-but-set-variable]
+     alt_u16 DataCrc16;
+             ^
+In file included from terasic_sdcard/..\terasic_lib\terasic_includes.h:43:0,
+                 from terasic_sdcard/sd_hal.c:33:
+terasic_sdcard/sd_hal.c: In function 'SDHAL_DummyClock':
+terasic_sdcard/sd_hw.h:52:49: error: 'SD_CLK_BASE' undeclared (first use in this function)
+ #define SD_CLK_LOW  IOWR_ALTERA_AVALON_PIO_DATA(SD_CLK_BASE, 0)
+                                                 ^
+../bruh_bsp//HAL/inc/io.h:70:23: note: in definition of macro '__IO_CALC_ADDRESS_NATIVE'
+   ((void *)(((alt_u8*)BASE) + ((REGNUM) * (SYSTEM_BUS_WIDTH/8))))
+                       ^
+../bruh_bsp//drivers/inc/altera_avalon_pio_regs.h:38:55: note: in expansion of macro 'IOWR'
+ #define IOWR_ALTERA_AVALON_PIO_DATA(base, data)       IOWR(base, 0, data)
+                                                       ^
+terasic_sdcard/sd_hw.h:52:21: note: in expansion of macro 'IOWR_ALTERA_AVALON_PIO_DATA'
+ #define SD_CLK_LOW  IOWR_ALTERA_AVALON_PIO_DATA(SD_CLK_BASE, 0)
+                     ^
+terasic_sdcard/sd_hal.c:446:9: note: in expansion of macro 'SD_CLK_LOW'
+         SD_CLK_LOW;
+         ^
+make: *** [obj/default/terasic_sdcard/sd_hal.o] Error 1
+
+13:06:39 Build Finished (took 1s.113ms)
+

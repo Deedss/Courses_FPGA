@@ -92,3 +92,22 @@ assign mVGA_H_SYNC =	( ( H_Cont > (H_SYNC_FRONT ) )  &&  ( H_Cont <= (H_SYNC_CYC
 assign mVGA_V_SYNC =	( ( V_Cont > (V_SYNC_FRONT ) )  &&  ( V_Cont <= (V_SYNC_CYC + V_SYNC_FRONT)))?0 :1 ; 
 
 endmodule
+
+module SDC_Top (    
+            input   CLOCK_50, 
+            inout   SD_DAT, 
+            inout   SD_CMD, 
+            inout   SD_DAT3, 
+            output  SD_CLOCK
+        );
+ 
+    sdc_sys0 u0 (
+        .clk_clk            (CLOCK_50),
+        .reset_reset_n      (1'b1),
+        .sd_card_b_SD_dat   (SD_DAT),
+        .sd_card_o_SD_clock (SD_CLOCK),
+        .sd_card_b_SD_cmd   (SD_CMD),
+        .sd_card_b_SD_dat3  (SD_DAT3)
+    );
+ 
+endmodule

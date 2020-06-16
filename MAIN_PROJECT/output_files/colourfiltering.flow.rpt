@@ -1,5 +1,5 @@
 Flow report for colourfiltering
-Fri Jun 12 15:15:10 2020
+Mon Jun 15 13:30:01 2020
 Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Jun 12 15:15:05 2020       ;
+; Flow Status                        ; Successful - Mon Jun 15 13:29:57 2020       ;
 ; Quartus Prime Version              ; 18.1.1 Build 646 04/11/2019 SJ Lite Edition ;
 ; Revision Name                      ; colourfiltering                             ;
 ; Top-level Entity Name              ; colourfiltering                             ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 4,014 / 114,480 ( 4 % )                     ;
-;     Total combinational functions  ; 3,800 / 114,480 ( 3 % )                     ;
+; Total logic elements               ; 4,008 / 114,480 ( 4 % )                     ;
+;     Total combinational functions  ; 3,806 / 114,480 ( 3 % )                     ;
 ;     Dedicated logic registers      ; 1,745 / 114,480 ( 2 % )                     ;
 ; Total registers                    ; 1745                                        ;
 ; Total pins                         ; 163 / 529 ( 31 % )                          ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/12/2020 15:13:25 ;
+; Start date & time ; 06/15/2020 13:28:36 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; colourfiltering     ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+--------------------------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+--------------------------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 193675815635334.159196760512932                        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 10995770589203.159222051621556                         ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; nios/synthesis/../nios.cmp                             ; --            ; --          ; --         ;
@@ -94,7 +94,7 @@ https://fpgasoftware.intel.com/eula.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                           ; --            ; --          ; --         ;
 ; SLD_FILE                            ; nios/synthesis/nios.regmap                             ; --            ; --          ; --         ;
 ; SLD_FILE                            ; nios/synthesis/nios.debuginfo                          ; --            ; --          ; --         ;
-; SLD_INFO                            ; QSYS_NAME nios HAS_SOPCINFO 1 GENERATION_ID 1591967531 ; --            ; nios        ; --         ;
+; SLD_INFO                            ; QSYS_NAME nios HAS_SOPCINFO 1 GENERATION_ID 1592220358 ; --            ; nios        ; --         ;
 ; SOPCINFO_FILE                       ; nios/synthesis/../../nios.sopcinfo                     ; --            ; --          ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                     ; --            ; --          ; --         ;
 +-------------------------------------+--------------------------------------------------------+---------------+-------------+------------+
@@ -105,11 +105,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:02     ; 1.0                     ; 4947 MB             ; 00:01:23                           ;
-; Fitter               ; 00:00:27     ; 1.1                     ; 5897 MB             ; 00:00:46                           ;
-; Assembler            ; 00:00:05     ; 1.0                     ; 4701 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:04     ; 1.2                     ; 4913 MB             ; 00:00:04                           ;
-; Total                ; 00:01:38     ; --                      ; --                  ; 00:02:17                           ;
+; Analysis & Synthesis ; 00:00:49     ; 1.0                     ; 4953 MB             ; 00:01:05                           ;
+; Fitter               ; 00:00:22     ; 1.1                     ; 5905 MB             ; 00:00:38                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 4711 MB             ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.1                     ; 4921 MB             ; 00:00:03                           ;
+; Total                ; 00:01:18     ; --                      ; --                  ; 00:01:49                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -118,10 +118,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; Deedss           ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; Deedss           ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; Deedss           ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; Deedss           ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; XPS-Sidoi        ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; XPS-Sidoi        ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; XPS-Sidoi        ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; XPS-Sidoi        ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
