@@ -1,9 +1,9 @@
-13:23:01 **** Incremental Build of configuration Nios II for project test_sd ****
+15:16:51 **** Incremental Build of configuration Nios II for project test_sd ****
 make all 
 Info: Building ../test_sd_bsp/
 C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../test_sd_bsp/
 [BSP build complete]
 [test_sd build complete]
 
-13:23:03 Build Finished (took 1s.219ms)
+15:16:53 Build Finished (took 1s.506ms)
 

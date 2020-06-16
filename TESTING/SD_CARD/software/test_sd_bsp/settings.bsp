@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>16-Jun-2020 12:59:23</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1592305163393</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>16-Jun-2020 14:24:32</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1592310272428</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\Gertjan\OneDrive\Projects\FPGA\Courses_FPGA\TESTING\SD_CARD\software\test_sd_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\nios.sopcinfo</SopcDesignFile>

@@ -44,7 +44,7 @@
 
 module nios_mm_interconnect_0_router_001_default_decode
   #(
-     parameter DEFAULT_CHANNEL = 2,
+     parameter DEFAULT_CHANNEL = 1,
                DEFAULT_WR_CHANNEL = -1,
                DEFAULT_RD_CHANNEL = -1,
                DEFAULT_DESTID = 3 
@@ -134,9 +134,8 @@ module nios_mm_interconnect_0_router_001
     // Figure out the number of bits to mask off for each slave span
     // during address decoding
     // -------------------------------------------------------
-    localparam PAD0 = log2ceil(64'h800 - 64'h400); 
-    localparam PAD1 = log2ceil(64'h1800 - 64'h1000); 
-    localparam PAD2 = log2ceil(64'h18000 - 64'h10000); 
+    localparam PAD0 = log2ceil(64'h1800 - 64'h1000); 
+    localparam PAD1 = log2ceil(64'h18000 - 64'h10000); 
     // -------------------------------------------------------
     // Work out which address bits are significant based on the
     // address range of the slaves. If the required width is too
@@ -190,21 +189,15 @@ module nios_mm_interconnect_0_router_001
         // Sets the channel and destination ID based on the address
         // --------------------------------------------------
 
-    // ( 0x400 .. 0x800 )
-    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 17'h400   ) begin
-            src_channel = 4'b001;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 0;
-    end
-
     // ( 0x1000 .. 0x1800 )
-    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 17'h1000   ) begin
-            src_channel = 4'b010;
+    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 17'h1000   ) begin
+            src_channel = 4'b01;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
     end
 
     // ( 0x10000 .. 0x18000 )
-    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 17'h10000   ) begin
-            src_channel = 4'b100;
+    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 17'h10000   ) begin
+            src_channel = 4'b10;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 3;
     end
 
