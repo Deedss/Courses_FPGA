@@ -11,10 +11,10 @@ module nios (
 		output wire [7:0]  green_out_port,     //        .out_port
 		input  wire [7:0]  red_in_port,        //     red.in_port
 		output wire [7:0]  red_out_port,       //        .out_port
-		inout  wire        sd_card_b_SD_cmd,   // sd_card.b_SD_cmd
-		inout  wire        sd_card_b_SD_dat,   //        .b_SD_dat
-		inout  wire        sd_card_b_SD_dat3,  //        .b_SD_dat3
-		output wire        sd_card_o_SD_clock, //        .o_SD_clock
+		inout  wire        sd_card_b_sd_cmd,   // sd_card.b_sd_cmd
+		inout  wire        sd_card_b_sd_dat,   //        .b_sd_dat
+		inout  wire        sd_card_b_sd_dat3,  //        .b_sd_dat3
+		output wire        sd_card_o_sd_clock, //        .o_sd_clock
 		input  wire [17:0] sw_in_port,         //      sw.in_port
 		output wire [17:0] sw_out_port         //        .out_port
 	);
@@ -105,10 +105,10 @@ module nios (
 		.o_avalon_waitrequest (mm_interconnect_0_altera_up_sd_card_avalon_interface_0_avalon_sdcard_slave_waitrequest), //                    .waitrequest
 		.i_clock              (altpll_0_c0_clk),                                                                        //                 clk.clk
 		.i_reset_n            (~rst_controller_reset_out_reset),                                                        //               reset.reset_n
-		.b_SD_cmd             (sd_card_b_SD_cmd),                                                                       //         conduit_end.export
-		.b_SD_dat             (sd_card_b_SD_dat),                                                                       //                    .export
-		.b_SD_dat3            (sd_card_b_SD_dat3),                                                                      //                    .export
-		.o_SD_clock           (sd_card_o_SD_clock)                                                                      //                    .export
+		.b_SD_cmd             (sd_card_b_sd_cmd),                                                                       //         conduit_end.b_sd_cmd
+		.b_SD_dat             (sd_card_b_sd_dat),                                                                       //                    .b_sd_dat
+		.b_SD_dat3            (sd_card_b_sd_dat3),                                                                      //                    .b_sd_dat3
+		.o_SD_clock           (sd_card_o_sd_clock)                                                                      //                    .o_sd_clock
 	);
 
 	nios_SW sw (
@@ -158,7 +158,7 @@ module nios (
 		.out_port   (blue_out_port)                         //                    .export
 	);
 
-	nios_blue green (
+	nios_green green (
 		.clk        (altpll_0_c0_clk),                       //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),       //               reset.reset_n
 		.address    (mm_interconnect_0_green_s1_address),    //                  s1.address
@@ -226,7 +226,7 @@ module nios (
 		.freeze     (1'b0)                                              // (terminated)
 	);
 
-	nios_blue red (
+	nios_green red (
 		.clk        (altpll_0_c0_clk),                     //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),     //               reset.reset_n
 		.address    (mm_interconnect_0_red_s1_address),    //                  s1.address

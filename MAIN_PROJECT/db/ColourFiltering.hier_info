@@ -107,12 +107,12 @@ SW[14] => SW[14].IN1
 SW[15] => SW[15].IN1
 SW[16] => SW[16].IN1
 SW[17] => SW[17].IN1
-SD_DAT[0] <> nios:nios1.sd_card_b_SD_dat
-SD_DAT[1] <> nios:nios1.sd_card_b_SD_dat
-SD_DAT[2] <> nios:nios1.sd_card_b_SD_dat
-SD_DAT[3] <> nios:nios1.sd_card_b_SD_dat
-SD_CMD <> nios:nios1.sd_card_b_SD_cmd
-SD_DAT3 <> nios:nios1.sd_card_b_SD_dat3
+SD_DAT[0] <> nios:nios1.sd_card_b_sd_dat
+SD_DAT[1] <> <UNC>
+SD_DAT[2] <> <UNC>
+SD_DAT[3] <> nios:nios1.sd_card_b_sd_dat3
+SD_CMD <> nios:nios1.sd_card_b_sd_cmd
+SD_DAT3 <> <UNC>
 SD_CLOCK <= <GND>
 UART_CTS => ~NO_FANOUT~
 UART_RTS <= <GND>
@@ -4856,14 +4856,14 @@ green_in_port[4] => green_in_port[4].IN1
 green_in_port[5] => green_in_port[5].IN1
 green_in_port[6] => green_in_port[6].IN1
 green_in_port[7] => green_in_port[7].IN1
-green_out_port[0] <= nios_blue:green.out_port
-green_out_port[1] <= nios_blue:green.out_port
-green_out_port[2] <= nios_blue:green.out_port
-green_out_port[3] <= nios_blue:green.out_port
-green_out_port[4] <= nios_blue:green.out_port
-green_out_port[5] <= nios_blue:green.out_port
-green_out_port[6] <= nios_blue:green.out_port
-green_out_port[7] <= nios_blue:green.out_port
+green_out_port[0] <= nios_green:green.out_port
+green_out_port[1] <= nios_green:green.out_port
+green_out_port[2] <= nios_green:green.out_port
+green_out_port[3] <= nios_green:green.out_port
+green_out_port[4] <= nios_green:green.out_port
+green_out_port[5] <= nios_green:green.out_port
+green_out_port[6] <= nios_green:green.out_port
+green_out_port[7] <= nios_green:green.out_port
 red_in_port[0] => red_in_port[0].IN1
 red_in_port[1] => red_in_port[1].IN1
 red_in_port[2] => red_in_port[2].IN1
@@ -4872,18 +4872,18 @@ red_in_port[4] => red_in_port[4].IN1
 red_in_port[5] => red_in_port[5].IN1
 red_in_port[6] => red_in_port[6].IN1
 red_in_port[7] => red_in_port[7].IN1
-red_out_port[0] <= nios_blue:red.out_port
-red_out_port[1] <= nios_blue:red.out_port
-red_out_port[2] <= nios_blue:red.out_port
-red_out_port[3] <= nios_blue:red.out_port
-red_out_port[4] <= nios_blue:red.out_port
-red_out_port[5] <= nios_blue:red.out_port
-red_out_port[6] <= nios_blue:red.out_port
-red_out_port[7] <= nios_blue:red.out_port
-sd_card_b_SD_cmd <> Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0.b_SD_cmd
-sd_card_b_SD_dat <> Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0.b_SD_dat
-sd_card_b_SD_dat3 <> Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0.b_SD_dat3
-sd_card_o_SD_clock <= Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0.o_SD_clock
+red_out_port[0] <= nios_green:red.out_port
+red_out_port[1] <= nios_green:red.out_port
+red_out_port[2] <= nios_green:red.out_port
+red_out_port[3] <= nios_green:red.out_port
+red_out_port[4] <= nios_green:red.out_port
+red_out_port[5] <= nios_green:red.out_port
+red_out_port[6] <= nios_green:red.out_port
+red_out_port[7] <= nios_green:red.out_port
+sd_card_b_sd_cmd <> Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0.b_SD_cmd
+sd_card_b_sd_dat <> Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0.b_SD_dat
+sd_card_b_sd_dat3 <> Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0.b_SD_dat3
+sd_card_o_sd_clock <= Altera_UP_SD_Card_Avalon_Interface:altera_up_sd_card_avalon_interface_0.o_SD_clock
 sw_in_port[0] => sw_in_port[0].IN1
 sw_in_port[1] => sw_in_port[1].IN1
 sw_in_port[2] => sw_in_port[2].IN1
@@ -11525,7 +11525,7 @@ readdata[30] <= readdata[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 readdata[31] <= readdata[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|colourfiltering|nios:nios1|nios_blue:green
+|colourfiltering|nios:nios1|nios_green:green
 address[0] => Equal0.IN31
 address[1] => Equal0.IN30
 chipselect => always1.IN0
@@ -21503,7 +21503,7 @@ wren_a => ram_block1a126.PORTAWE
 wren_a => ram_block1a127.PORTAWE
 
 
-|colourfiltering|nios:nios1|nios_blue:red
+|colourfiltering|nios:nios1|nios_green:red
 address[0] => Equal0.IN31
 address[1] => Equal0.IN30
 chipselect => always1.IN0

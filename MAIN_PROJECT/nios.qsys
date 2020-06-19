@@ -216,10 +216,7 @@
    name="Altera_UP_SD_Card_Avalon_Interface_0"
    kind="Altera_UP_SD_Card_Avalon_Interface"
    version="18.0"
-   enabled="1">
-  <parameter name="AUTO_CLK_CLOCK_RATE" value="150000000" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
- </module>
+   enabled="1" />
  <module name="SW" kind="altera_avalon_pio" version="18.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
@@ -407,7 +404,7 @@
   <parameter name="captureEdge" value="false" />
   <parameter name="clockRate" value="150000000" />
   <parameter name="direction" value="InOut" />
-  <parameter name="edgeType" value="RISING" />
+  <parameter name="edgeType" value="FALLING" />
   <parameter name="generateIRQ" value="false" />
   <parameter name="irqType" value="LEVEL" />
   <parameter name="resetValue" value="0" />
@@ -427,7 +424,7 @@
   <parameter name="captureEdge" value="false" />
   <parameter name="clockRate" value="150000000" />
   <parameter name="direction" value="InOut" />
-  <parameter name="edgeType" value="RISING" />
+  <parameter name="edgeType" value="ANY" />
   <parameter name="generateIRQ" value="false" />
   <parameter name="irqType" value="LEVEL" />
   <parameter name="resetValue" value="0" />
@@ -674,7 +671,7 @@
   <parameter name="captureEdge" value="false" />
   <parameter name="clockRate" value="150000000" />
   <parameter name="direction" value="InOut" />
-  <parameter name="edgeType" value="RISING" />
+  <parameter name="edgeType" value="ANY" />
   <parameter name="generateIRQ" value="false" />
   <parameter name="irqType" value="LEVEL" />
   <parameter name="resetValue" value="0" />

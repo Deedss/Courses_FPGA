@@ -1,11 +1,11 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
-preplace inst nios.onchip_memory2_0 -pg 1 -lvl 13 -y 620
+preplace inst nios.onchip_memory2_0 -pg 1 -lvl 13 -y 600
 preplace inst nios.jtag_uart_0 -pg 1 -lvl 13 -y 200
 preplace inst nios.Altera_UP_SD_Card_Avalon_Interface_0 -pg 1 -lvl 12 -y 140
 preplace inst nios -pg 1 -lvl 1 -y 40 -regy -20
 preplace inst nios.altpll_0 -pg 1 -lvl 9 -y 170
-preplace inst nios.green -pg 1 -lvl 13 -y 520
+preplace inst nios.green -pg 1 -lvl 13 -y 480
 preplace inst nios.nios2_gen2_0.cpu -pg 1
 preplace inst nios.SW -pg 1 -lvl 13 -y 370
 preplace inst nios.clk_0 -pg 1 -lvl 11 -y 360
@@ -13,18 +13,18 @@ preplace inst nios.blue -pg 1 -lvl 13 -y 800
 preplace inst nios.nios2_gen2_0.reset_bridge -pg 1
 preplace inst nios.nios2_gen2_0.clock_bridge -pg 1
 preplace inst nios.nios2_gen2_0 -pg 1 -lvl 10 -y 70
-preplace inst nios.red -pg 1 -lvl 13 -y 700
-preplace netloc POINT_TO_POINT<net_container>nios</net_container>(MASTER)clk_0.clk,(SLAVE)altpll_0.inclk_interface) 1 8 4 2490 380 NJ 380 NJ 350 3710
-preplace netloc POINT_TO_POINT<net_container>nios</net_container>(SLAVE)clk_0.clk_in_reset,(MASTER)nios2_gen2_0.debug_reset_request) 1 10 1 3410
-preplace netloc EXPORT<net_container>nios</net_container>(SLAVE)nios.clk,(SLAVE)clk_0.clk_in) 1 0 11 NJ 400 NJ 400 NJ 400 NJ 400 NJ 400 NJ 400 NJ 400 NJ 400 NJ 400 NJ 400 NJ
-preplace netloc EXPORT<net_container>nios</net_container>(SLAVE)red.external_connection,(SLAVE)nios.red) 1 0 13 NJ 730 NJ 730 NJ 730 NJ 730 NJ 730 NJ 730 NJ 730 NJ 730 NJ 730 NJ 730 NJ 730 NJ 730 NJ
-preplace netloc EXPORT<net_container>nios</net_container>(SLAVE)nios.green,(SLAVE)green.external_connection) 1 0 13 NJ 550 NJ 550 NJ 550 NJ 550 NJ 550 NJ 550 NJ 550 NJ 550 NJ 550 NJ 550 NJ 550 NJ 550 NJ
-preplace netloc EXPORT<net_container>nios</net_container>(SLAVE)SW.external_connection,(SLAVE)nios.sw) 1 0 13 NJ 360 NJ 360 NJ 360 NJ 360 NJ 360 NJ 360 NJ 360 NJ 360 NJ 360 NJ 360 NJ 330 NJ 400 NJ
-preplace netloc POINT_TO_POINT<net_container>nios</net_container>(MASTER)nios2_gen2_0.irq,(SLAVE)jtag_uart_0.irq) 1 10 3 3350 280 NJ 280 NJ
-preplace netloc FAN_OUT<net_container>nios</net_container>(MASTER)altpll_0.c0,(SLAVE)jtag_uart_0.clk,(SLAVE)Altera_UP_SD_Card_Avalon_Interface_0.clk,(SLAVE)red.clk,(SLAVE)nios2_gen2_0.clk,(SLAVE)green.clk,(SLAVE)onchip_memory2_0.clk1,(SLAVE)blue.clk,(SLAVE)SW.clk) 1 9 4 2890 30 NJ 100 3690 130 4000
-preplace netloc INTERCONNECT<net_container>nios</net_container>(SLAVE)altpll_0.pll_slave,(SLAVE)jtag_uart_0.avalon_jtag_slave,(SLAVE)blue.s1,(SLAVE)onchip_memory2_0.s1,(SLAVE)Altera_UP_SD_Card_Avalon_Interface_0.avalon_sdcard_slave,(MASTER)nios2_gen2_0.instruction_master,(SLAVE)nios2_gen2_0.debug_mem_slave,(SLAVE)red.s1,(SLAVE)green.s1,(SLAVE)SW.s1,(MASTER)nios2_gen2_0.data_master) 1 8 5 2530 300 2910 210 3370 150 3710 250 3960
-preplace netloc EXPORT<net_container>nios</net_container>(SLAVE)nios.sd_card,(SLAVE)Altera_UP_SD_Card_Avalon_Interface_0.conduit_end) 1 0 12 NJ 260 NJ 260 NJ 260 NJ 260 NJ 260 NJ 260 NJ 260 NJ 260 NJ 260 NJ 260 NJ 260 NJ
-preplace netloc FAN_OUT<net_container>nios</net_container>(SLAVE)onchip_memory2_0.reset1,(SLAVE)altpll_0.inclk_interface_reset,(SLAVE)Altera_UP_SD_Card_Avalon_Interface_0.reset,(SLAVE)SW.reset,(SLAVE)green.reset,(SLAVE)jtag_uart_0.reset,(MASTER)clk_0.clk_reset,(SLAVE)red.reset,(SLAVE)nios2_gen2_0.reset,(SLAVE)blue.reset) 1 8 5 2510 280 2930 230 NJ 230 3730 420 4020
+preplace inst nios.red -pg 1 -lvl 13 -y 680
+preplace netloc EXPORT<net_container>nios</net_container>(SLAVE)Altera_UP_SD_Card_Avalon_Interface_0.conduit_end,(SLAVE)nios.sd_card) 1 0 12 NJ 260 NJ 260 NJ 260 NJ 260 NJ 260 NJ 260 NJ 260 NJ 260 NJ 260 NJ 260 NJ 260 NJ
+preplace netloc FAN_OUT<net_container>nios</net_container>(SLAVE)jtag_uart_0.clk,(SLAVE)onchip_memory2_0.clk1,(SLAVE)green.clk,(SLAVE)blue.clk,(SLAVE)SW.clk,(MASTER)altpll_0.c0,(SLAVE)red.clk,(SLAVE)nios2_gen2_0.clk,(SLAVE)Altera_UP_SD_Card_Avalon_Interface_0.clk) 1 9 4 2910 210 NJ 210 3730 270 4000
+preplace netloc EXPORT<net_container>nios</net_container>(SLAVE)nios.clk,(SLAVE)clk_0.clk_in) 1 0 11 NJ 370 NJ 370 NJ 370 NJ 370 NJ 370 NJ 370 NJ 370 NJ 370 NJ 370 NJ 370 NJ
+preplace netloc POINT_TO_POINT<net_container>nios</net_container>(SLAVE)altpll_0.inclk_interface,(MASTER)clk_0.clk) 1 8 4 2490 350 NJ 350 NJ 350 3710
+preplace netloc EXPORT<net_container>nios</net_container>(SLAVE)nios.red,(SLAVE)red.external_connection) 1 0 13 NJ 710 NJ 710 NJ 710 NJ 710 NJ 710 NJ 710 NJ 710 NJ 710 NJ 710 NJ 710 NJ 710 NJ 710 NJ
+preplace netloc EXPORT<net_container>nios</net_container>(SLAVE)nios.green,(SLAVE)green.external_connection) 1 0 13 NJ 510 NJ 510 NJ 510 NJ 510 NJ 510 NJ 510 NJ 510 NJ 510 NJ 510 NJ 510 NJ 510 NJ 510 NJ
+preplace netloc EXPORT<net_container>nios</net_container>(SLAVE)nios.sw,(SLAVE)SW.external_connection) 1 0 13 NJ 430 NJ 430 NJ 430 NJ 430 NJ 430 NJ 430 NJ 430 NJ 430 NJ 430 NJ 430 NJ 430 NJ 400 NJ
+preplace netloc INTERCONNECT<net_container>nios</net_container>(SLAVE)altpll_0.pll_slave,(MASTER)nios2_gen2_0.data_master,(SLAVE)red.s1,(SLAVE)Altera_UP_SD_Card_Avalon_Interface_0.avalon_sdcard_slave,(SLAVE)green.s1,(MASTER)nios2_gen2_0.instruction_master,(SLAVE)nios2_gen2_0.debug_mem_slave,(SLAVE)onchip_memory2_0.s1,(SLAVE)SW.s1,(SLAVE)jtag_uart_0.avalon_jtag_slave,(SLAVE)blue.s1) 1 8 5 2510 120 2890 30 3370 130 3750 130 3960
+preplace netloc FAN_OUT<net_container>nios</net_container>(SLAVE)altpll_0.inclk_interface_reset,(SLAVE)jtag_uart_0.reset,(SLAVE)nios2_gen2_0.reset,(SLAVE)onchip_memory2_0.reset1,(SLAVE)SW.reset,(SLAVE)blue.reset,(SLAVE)Altera_UP_SD_Card_Avalon_Interface_0.reset,(SLAVE)red.reset,(SLAVE)green.reset,(MASTER)clk_0.clk_reset) 1 8 5 2530 280 2930 280 NJ 280 3750 290 4020
+preplace netloc POINT_TO_POINT<net_container>nios</net_container>(MASTER)nios2_gen2_0.debug_reset_request,(SLAVE)clk_0.clk_in_reset) 1 10 1 3350
+preplace netloc FAN_OUT<net_container>nios</net_container>(SLAVE)red.irq,(SLAVE)green.irq,(SLAVE)blue.irq,(SLAVE)jtag_uart_0.irq,(MASTER)nios2_gen2_0.irq) 1 10 3 NJ 160 NJ 250 3980
 preplace netloc EXPORT<net_container>nios</net_container>(SLAVE)blue.external_connection,(SLAVE)nios.blue) 1 0 13 NJ 830 NJ 830 NJ 830 NJ 830 NJ 830 NJ 830 NJ 830 NJ 830 NJ 830 NJ 830 NJ 830 NJ 830 NJ
 levelinfo -pg 1 0 60 4230
 levelinfo -hier nios 70 90 400 680 1070 1440 1710 2120 2470 2700 3110 3520 3800 4070 4220

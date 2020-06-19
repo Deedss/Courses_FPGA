@@ -96,8 +96,8 @@ char buffer[512] = "WELCOME TO THE INTERFACE!!\r\n\0";
 /**
  * SOBEL OPERATORS
  */
-int sobel_h[3][3] = {-1, -2, -1, 0, 0, 0, 1, 2, 1}; //Horizontal
-int sobel_v[3][3] = {-1, 0, 1, -2, 0, 2, -1, 0, 1}; //Vertical
+int sobel_h[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}}; //Horizontal
+int sobel_v[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}}; //Vertical
 
 /***
  * FUNCTIONS TO USE
@@ -125,7 +125,13 @@ void grayScale(uint *R, uint *G, uint *B){
 	 * GRAYSCALE is calculated by forming a weighted sum of the Red, Green, and Blue colour and dividing it by 3
 	 * This value then replaces the old RGB value;	 *
 	 */
-	*R = *G = *B = ((*R + *G + *B) / 3);
+	// Calculating Average Gray
+	*R = *G = *B = (*R + *B + *G) / 3;
+
+	/* Calculating by Luminosity */
+//	*R = 0.2989 * *R;
+//  *G = 0.5870 * *G;
+//	*B = 0.1140 * *B;
 	return;
 }
 
@@ -153,51 +159,17 @@ void Sobel(int image[640][480], int out[640][480]){
 	 */
 	for(r = 0; r < 640; r++){
 		for(c = 0; c < 480; c++){
-			out[r][c] = sqrt(pow(ox[r][c], 2) + pow(oy[r][c], 2));
+//			out[r][c] = sqrt(pow(ox[r][c], 2) + pow(oy[r][c], 2));
 		}
 	}
 
 	return;
 }
 
+
 int main()
 {
   alt_putstr("Hello from Nios II!\n");
-  printf("SD Card Access Test\n");
-
-  alt_up_sd_card_dev *sd_card_dev = alt_up_sd_card_open_dev(ALTERA_UP_SD_CARD_AVALON_INTERFACE_0_NAME);
-
-  if(sd_card_dev != 0)
-    {
-        if(alt_up_sd_card_is_Present())
-        {
-            if(alt_up_sd_card_is_FAT16())
-                printf("Card is FAT16\n");
-            else
-                printf("Card is not FAT16\n");
-
-            sd_fileh = alt_up_sd_card_fopen("file.txt", true);
-
-            if (sd_fileh < 0)
-                printf("Problem creating file. Error %i", sd_fileh);
-            else
-            {
-                printf("SD Accessed Successfully, writing data...");
-                int index = 0;
-                while (buffer[index] != '\0')
-                {
-                    alt_up_sd_card_write(sd_fileh, buffer[index]);
-                    index = index + 1;
-                }
-                printf("Done!\n");
-
-                printf("Closing File...");
-                alt_up_sd_card_fclose(sd_fileh);
-                printf("Done!\n");
-            }
-        }
-    }
-
   /* Event loop never exits. */
 
   while (1)

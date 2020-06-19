@@ -1,9 +1,25 @@
-10:48:10 **** Incremental Build of configuration Nios II for project colour_nios ****
+11:11:12 **** Incremental Build of configuration Nios II for project colour_nios ****
 make all 
 Info: Building ../colour_nios_bsp/
 C:/Software/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../colour_nios_bsp/
 [BSP build complete]
+Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
+nios2-elf-gcc -xc -MP -MMD -c -I../colour_nios_bsp//HAL/inc -I../colour_nios_bsp/ -I../colour_nios_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
+hello_world_small.c: In function 'Sobel':
+hello_world_small.c:141:6: warning: variable 'oy' set but not used [-Wunused-but-set-variable]
+  int oy[640][480];
+      ^
+hello_world_small.c:140:6: warning: variable 'ox' set but not used [-Wunused-but-set-variable]
+  int ox[640][480];
+      ^
+Info: Linking colour_nios.elf
+nios2-elf-g++  -T'../colour_nios_bsp//linker.x' -msys-crt0='../colour_nios_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../colour_nios_bsp/  -msmallc  -Wl,-Map=colour_nios.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o colour_nios.elf obj/default/hello_world_small.o -lm -msys-lib=m
+nios2-elf-insert colour_nios.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios --quartus_project_dir "c:/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/MAIN_PROJECT" --jdi ../..//output_files/colourfiltering.jdi --sopcinfo c:/Users/Gertjan/OneDrive/Projects/FPGA/Courses_FPGA/MAIN_PROJECT/software/colour_nios_bsp/../../nios.sopcinfo
+Info: (colour_nios.elf) 2356 Bytes program size (code + initialized data).
+Info:                   28 KBytes free for stack + heap.
+Info: Creating colour_nios.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source colour_nios.elf >colour_nios.objdump
 [colour_nios build complete]
 
-10:48:11 Build Finished (took 1s.292ms)
+11:11:15 Build Finished (took 2s.117ms)
 

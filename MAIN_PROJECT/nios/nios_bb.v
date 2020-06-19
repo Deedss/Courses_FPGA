@@ -7,10 +7,10 @@ module nios (
 	green_out_port,
 	red_in_port,
 	red_out_port,
-	sd_card_b_SD_cmd,
-	sd_card_b_SD_dat,
-	sd_card_b_SD_dat3,
-	sd_card_o_SD_clock,
+	sd_card_b_sd_cmd,
+	sd_card_b_sd_dat,
+	sd_card_b_sd_dat3,
+	sd_card_o_sd_clock,
 	sw_in_port,
 	sw_out_port);	
 
@@ -21,10 +21,10 @@ module nios (
 	output	[7:0]	green_out_port;
 	input	[7:0]	red_in_port;
 	output	[7:0]	red_out_port;
-	inout		sd_card_b_SD_cmd;
-	inout		sd_card_b_SD_dat;
-	inout		sd_card_b_SD_dat3;
-	output		sd_card_o_SD_clock;
+	inout		sd_card_b_sd_cmd;
+	inout		sd_card_b_sd_dat;
+	inout		sd_card_b_sd_dat3;
+	output		sd_card_o_sd_clock;
 	input	[17:0]	sw_in_port;
 	output	[17:0]	sw_out_port;
 endmodule

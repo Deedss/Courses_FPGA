@@ -207,10 +207,10 @@ nios nios1(
 	.red_out_port    	(VGA_R),				// .out_port
 	.sw_in_port			(SW[17:0]),				// SWITCHES
 	.sw_out_port		(LEDR[17:0]),			// LEDR
-	.sd_card_b_SD_cmd	(SD_CMD),               // SD_CMD
-	.sd_card_b_SD_dat	(SD_DAT),              //        SD_DAT
-	.sd_card_b_SD_dat3	(SD_DAT3),              //        SD_DAT3
-	.sd_card_o_SD_clock (sD_CLK) //        SD_CLK
+	.sd_card_b_sd_cmd	(SD_CMD),   // sd_card.b_sd_cmd
+	.sd_card_b_sd_dat	(SD_DAT[0]),   //        .b_sd_dat
+	.sd_card_b_sd_dat3(SD_DAT[3]),  //        .b_sd_dat3
+	.sd_card_o_sd_clock	(SD_CLK), //        .o_sd_clock
 );								  
 								  
 

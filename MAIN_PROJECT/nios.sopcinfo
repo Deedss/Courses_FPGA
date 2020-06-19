@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="nios" kind="nios" version="1.0" fabric="QSYS">
  <!-- Format version 18.1 646 (Future versions may contain additional information.) -->
- <!-- 2020.06.16.10:49:24 -->
+ <!-- 2020.06.19.11:01:26 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1592297364</value>
+  <value>1592557285</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -102,33 +102,13 @@
    path="Altera_UP_SD_Card_Avalon_Interface_0">
   <!-- Describes a single module. Module parameters are
 the requested settings for a module instance. -->
-  <parameter name="AUTO_DEVICE_FAMILY">
-   <type>java.lang.String</type>
-   <value>CYCLONEIVE</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-   <sysinfo_type>DEVICE_FAMILY</sysinfo_type>
-  </parameter>
-  <parameter name="AUTO_CLK_CLOCK_RATE">
-   <type>java.lang.Long</type>
-   <value>150000000</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-   <sysinfo_type>CLOCK_RATE</sysinfo_type>
-   <sysinfo_arg>clk</sysinfo_arg>
-  </parameter>
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
-   <value>Cyclone IV E</value>
+   <value>UNKNOWN</value>
    <derived>false</derived>
    <enabled>true</enabled>
-   <visible>false</visible>
+   <visible>true</visible>
    <valid>true</valid>
-   <sysinfo_type>DEVICE_FAMILY</sysinfo_type>
   </parameter>
   <parameter name="generateLegacySim">
    <type>boolean</type>
@@ -142,6 +122,10 @@ the requested settings for a module instance. -->
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
+   <assignment>
+    <name>embeddedsw.configuration.isFlash</name>
+    <value>0</value>
+   </assignment>
    <assignment>
     <name>embeddedsw.configuration.isMemoryDevice</name>
     <value>false</value>
@@ -553,22 +537,6 @@ parameters are a RESULT of the module parameters. -->
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
-   <parameter name="clockRateKnown">
-    <type>java.lang.Boolean</type>
-    <value>true</value>
-    <derived>true</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="clockRate">
-    <type>java.lang.Long</type>
-    <value>150000000</value>
-    <derived>true</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
    <type>clock</type>
    <isStart>false</isStart>
    <port>
@@ -665,25 +633,25 @@ parameters are a RESULT of the module parameters. -->
     <name>b_SD_cmd</name>
     <direction>Bidir</direction>
     <width>1</width>
-    <role>export</role>
+    <role>b_sd_cmd</role>
    </port>
    <port>
     <name>b_SD_dat</name>
     <direction>Bidir</direction>
     <width>1</width>
-    <role>export</role>
+    <role>b_sd_dat</role>
    </port>
    <port>
     <name>b_SD_dat3</name>
     <direction>Bidir</direction>
     <width>1</width>
-    <role>export</role>
+    <role>b_sd_dat3</role>
    </port>
    <port>
     <name>o_SD_clock</name>
     <direction>Output</direction>
     <width>1</width>
-    <role>export</role>
+    <role>o_sd_clock</role>
    </port>
   </interface>
  </module>
@@ -3508,7 +3476,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="edgeType">
    <type>java.lang.String</type>
-   <value>RISING</value>
+   <value>FALLING</value>
    <derived>false</derived>
    <enabled>false</enabled>
    <visible>true</visible>
@@ -4592,7 +4560,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="edgeType">
    <type>java.lang.String</type>
-   <value>RISING</value>
+   <value>ANY</value>
    <derived>false</derived>
    <enabled>false</enabled>
    <visible>true</visible>
@@ -10253,7 +10221,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="edgeType">
    <type>java.lang.String</type>
-   <value>RISING</value>
+   <value>ANY</value>
    <derived>false</derived>
    <enabled>false</enabled>
    <visible>true</visible>
