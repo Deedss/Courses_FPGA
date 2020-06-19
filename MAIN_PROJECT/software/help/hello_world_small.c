@@ -1,12 +1,95 @@
 #include "sys/alt_stdio.h"
 #include "terasic/terasic_includes.h"
 #include "terasic/FatFileSystem.h"
+#include "altera_avalon_pio_regs.h"
+#include "stdio.h"
 
-//int main()
-//{
-//	alt_putstr("jemama");
-//	return 0;
-//}
+/****
+ * VARIABLES
+ */
+uint R, G, B;
+int SWITCHES;
+
+short int sd_fileh;
+char buffer[512] = "WELCOME TO THE INTERFACE!!\r\n\0";
+
+/**
+ * SOBEL OPERATORS
+ */
+int sobel_h[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}}; //Horizontal
+int sobel_v[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}}; //Vertical
+
+/***
+ * FUNCTIONS TO USE
+ */
+void redFilter(uint *G, uint *B){
+	*G = 0;
+	*B = 0;
+	return;
+}
+
+void greenFilter(uint *R, uint *B){
+	*R = 0;
+	*B = 0;
+	return;
+}
+
+void blueFilter(uint *R, uint *G){
+	*R = 0;
+	*G = 0;
+	return;
+}
+
+void grayScale(uint *R, uint *G, uint *B){
+	/**
+	 * GRAYSCALE is calculated by forming a weighted sum of the Red, Green, and Blue colour and dividing it by 3
+	 * This value then replaces the old RGB value;	 *
+	 */
+	// Calculating Average Gray
+	*R = *G = *B = (*R + *B + *G) / 3;
+
+	/* Calculating by Luminosity */
+//	*R = 0.2989 * *R;
+//  *G = 0.5870 * *G;
+//	*B = 0.1140 * *B;
+	return;
+}
+
+void Sobel(int image[640][480], int out[640][480]){
+	int r, c, j, i, accx, accy;
+	int ox[640][480];
+	int oy[640][480];
+	for (r = 0; r < 640; r++){
+		for(c = 0; c< 480; c++){
+			accx = 0;
+			accy = 0;
+			for (j=0; j< 3; j++){
+				for(i = 0; i < 3; i++){
+					accx += sobel_h[j][i] * image[r + (j-1)][c + (i-1)];
+					accy += sobel_v[j][i] * image[r + (j-1)][c + (i-1)];
+				}
+			}
+			ox[r][c] = accx;
+			oy[r][c] = accy;
+		}
+	}
+
+	/**
+	 * Calculate the gradient for all pixels and place them in the array
+	 */
+	for(r = 0; r < 640; r++){
+		for(c = 0; c < 480; c++){
+//			out[r][c] = sqrt(pow(ox[r][c], 2) + pow(oy[r][c], 2));
+		}
+	}
+
+	return;
+}
+
+/**
+ * sd kaart bende
+ */
+//test if partition on sd card is fat and readable
 
 bool Fat_Test(FAT_HANDLE hFat, char *pDumpFile){
     bool bSuccess;
@@ -14,6 +97,7 @@ bool Fat_Test(FAT_HANDLE hFat, char *pDumpFile){
     FAT_BROWSE_HANDLE hBrowse;
     FILE_CONTEXT FileContext;
 
+    //get files stored on the sd card
     bSuccess = Fat_FileBrowseBegin(hFat, &hBrowse);
     if (bSuccess){
         while(Fat_FileBrowseNext(&hBrowse, &FileContext)){
@@ -30,7 +114,6 @@ bool Fat_Test(FAT_HANDLE hFat, char *pDumpFile){
                     if (*pData8)
                         printf("%c", *pData8);
                     pData8++;
-                    //
                     pData16++;
                 }
                 printf("\n");
@@ -40,6 +123,8 @@ bool Fat_Test(FAT_HANDLE hFat, char *pDumpFile){
             nCount++;
         }
     }
+
+    //read and dump contents of file
     if (bSuccess && pDumpFile && strlen(pDumpFile)){
         FAT_FILE_HANDLE hFile;
         hFile =  Fat_FileOpen(hFat, pDumpFile);
@@ -71,7 +156,7 @@ bool Fat_Test(FAT_HANDLE hFat, char *pDumpFile){
             Fat_FileClose(hFile);
         }else{
             bSuccess = FALSE;
-            printf("Cannot find the file \"%s\"\n", pDumpFile);
+            printf("bruh moment", pDumpFile);
         }
     }
 
@@ -83,21 +168,50 @@ int main()
 {
     FAT_HANDLE hFat;
 
-    printf("========== DE2-115 SDCARD Demo ==========\n");
+    while (1)
+      {
+    	R = IORD_ALTERA_AVALON_PIO_DATA(RED_BASE);
+    	G = IORD_ALTERA_AVALON_PIO_DATA(GREEN_BASE);
+    	B = IORD_ALTERA_AVALON_PIO_DATA(BLUE_BASE);
+    	SWITCHES = IORD_ALTERA_AVALON_PIO_DATA(SW_BASE);
 
-    while(1){
-        printf("Processing...\r\n");
-        hFat = Fat_Mount(FAT_SD_CARD, 0);
-        if (hFat){
-            printf("sdcard mount success!\n");
-            printf("Root Directory Item Count:%d\n", Fat_FileCount(hFat));
-            Fat_Test(hFat, "test.txt");
-            Fat_Unmount(hFat);
+    	if(R >= 0 && G >= 0 && B >= 0){
+    		if (SWITCHES == 1){
+    			redFilter(&G, &B);
+    		}
+    		else if (SWITCHES == 2){
+    			greenFilter(&R, &B);
+    		}
+    		else if (SWITCHES == 4){
+    			blueFilter(&R, &G);
+    		}
+    		else if (SWITCHES == 8){
+    			grayScale(&R, &G, &B);
+    		}
+    		else if (SWITCHES == 16){
+    			// SOBEL
+    		}
+    		IOWR_ALTERA_AVALON_PIO_DATA(RED_BASE, R);
+    		IOWR_ALTERA_AVALON_PIO_DATA(GREEN_BASE, G);
+    		IOWR_ALTERA_AVALON_PIO_DATA(BLUE_BASE, B);
+    		IOWR_ALTERA_AVALON_PIO_DATA(SW_BASE, SWITCHES);
+    	}
 
-            printf("===== Test Done =====\r\nPress KEY3 to test again.\r\n");
-        }else{
-            printf("Failed to mount the SDCARD!\r\nPlease insert the SDCARD into DE2-115 board and press KEY3.\r\n");
-        }
+    	//mount sd card and dump file contents
+		if (SWITCHES == 5){
+			printf("Processing...\r\n");
+			hFat = Fat_Mount(FAT_SD_CARD, 0);
+			if (hFat){
+				printf("sdcard mounted\n");
+				//look for and dump contents of specified file
+				Fat_Test(hFat, "raw.txt");
+				Fat_Unmount(hFat);
+
+				printf("Dumped contents of raw text");
+			}else{
+				printf("sd card not mounted, pls check for proper partition");
+			}
+		}
     }
 
 
