@@ -157,6 +157,7 @@ void Sobel(int image[640][480], int out[640][480]){
 		}
 	}
 
+
 	return;
 }
 

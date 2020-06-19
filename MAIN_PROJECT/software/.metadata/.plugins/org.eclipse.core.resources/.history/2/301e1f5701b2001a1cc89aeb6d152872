@@ -93,12 +93,6 @@ int SWITCHES;
 short int sd_fileh;
 char buffer[512] = "WELCOME TO THE INTERFACE!!\r\n\0";
 
-/**
- * SOBEL OPERATORS
- */
-int sobel_h[3][3] = {-1, -2, -1, 0, 0, 0, 1, 2, 1}; //Horizontal
-int sobel_v[3][3] = {-1, 0, 1, -2, 0, 2, -1, 0, 1}; //Vertical
-
 /***
  * FUNCTIONS TO USE
  */
@@ -126,37 +120,6 @@ void grayScale(uint *R, uint *G, uint *B){
 	 * This value then replaces the old RGB value;	 *
 	 */
 	*R = *G = *B = ((*R + *G + *B) / 3);
-	return;
-}
-
-void Sobel(int image[640][480], int out[640][480]){
-	int r, c, j, i, accx, accy;
-	int ox[640][480];
-	int oy[640][480];
-	for (r = 0; r < 640; r++){
-		for(c = 0; c< 480; c++){
-			accx = 0;
-			accy = 0;
-			for (j=0; j< 3; j++){
-				for(i = 0; i < 3; i++){
-					accx += sobel_h[j][i] * image[r + (j-1)][c + (i-1)];
-					accy += sobel_v[j][i] * image[r + (j-1)][c + (i-1)];
-				}
-			}
-			ox[r][c] = accx;
-			oy[r][c] = accy;
-		}
-	}
-
-	/**
-	 * Calculate the gradient for all pixels and place them in the array
-	 */
-	for(r = 0; r < 640; r++){
-		for(c = 0; c < 480; c++){
-			out[r][c] = sqrt(pow(ox[r][c], 2) + pow(oy[r][c], 2));
-		}
-	}
-
 	return;
 }
 
@@ -219,9 +182,6 @@ int main()
 		}
 		else if (SWITCHES == 8){
 			grayScale(&R, &G, &B);
-		}
-		else if (SWITCHES == 16){
-			// SOBEL
 		}
 		IOWR_ALTERA_AVALON_PIO_DATA(RED_BASE, R);
 		IOWR_ALTERA_AVALON_PIO_DATA(GREEN_BASE, G);

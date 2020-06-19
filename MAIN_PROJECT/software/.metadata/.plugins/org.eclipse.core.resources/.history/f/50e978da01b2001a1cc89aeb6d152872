@@ -156,8 +156,6 @@ void Sobel(int image[640][480], int out[640][480]){
 			out[r][c] = sqrt(pow(ox[r][c], 2) + pow(oy[r][c], 2));
 		}
 	}
-
-	return;
 }
 
 int main()

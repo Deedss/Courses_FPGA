@@ -139,25 +139,11 @@ void Sobel(int image[640][480], int out[640][480]){
 			accy = 0;
 			for (j=0; j< 3; j++){
 				for(i = 0; i < 3; i++){
-					accx += sobel_h[j][i] * image[r + (j-1)][c + (i-1)];
-					accy += sobel_v[j][i] * image[r + (j-1)][c + (i-1)];
+					accx += sobel_h[j][i] * image[r + (j-1)][c + (i-1)])
 				}
 			}
-			ox[r][c] = accx;
-			oy[r][c] = accy;
 		}
 	}
-
-	/**
-	 * Calculate the gradient for all pixels and place them in the array
-	 */
-	for(r = 0; r < 640; r++){
-		for(c = 0; c < 480; c++){
-			out[r][c] = sqrt(pow(ox[r][c], 2) + pow(oy[r][c], 2));
-		}
-	}
-
-	return;
 }
 
 int main()
@@ -219,9 +205,6 @@ int main()
 		}
 		else if (SWITCHES == 8){
 			grayScale(&R, &G, &B);
-		}
-		else if (SWITCHES == 16){
-			// SOBEL
 		}
 		IOWR_ALTERA_AVALON_PIO_DATA(RED_BASE, R);
 		IOWR_ALTERA_AVALON_PIO_DATA(GREEN_BASE, G);
