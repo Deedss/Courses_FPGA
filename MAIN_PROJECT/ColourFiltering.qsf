@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY VGA_Controller_trig
+set_global_assignment -name TOP_LEVEL_ENTITY colourfiltering
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:01:58  JUNE 05, 2020"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.1 Lite Edition"
@@ -222,6 +222,17 @@ set_location_assignment PIN_AE14 -to SD_DAT[0]
 set_location_assignment PIN_AF14 -to SD_WP_N
 
 #============================================================
+# SDCARD
+#============================================================
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_CMD
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_WP_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DAT[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DAT[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DAT[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DAT[3]
+
+#============================================================
 # GPIO, GPIO connect to D8M-GPIO
 #============================================================
 set_location_assignment PIN_AG22 -to CAMERA_I2C_SCL
@@ -287,6 +298,9 @@ set_global_assignment -name SDC_FILE colourfiltering.sdc
 set_global_assignment -name QIP_FILE int_line.qip
 set_global_assignment -name QIP_FILE Video/pll_test.qip
 set_global_assignment -name QIP_FILE Video/fifo_pll.qip
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK2_50
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK3_50
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
@@ -446,7 +460,4 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_HS
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_VS
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_REFCLK
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_RESET_n
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

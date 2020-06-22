@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Fri Jun 19 18:17:33 2020
+Analysis & Synthesis Status : Successful - Mon Jun 22 11:24:51 2020
 Quartus Prime Version : 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 Revision Name : colourfiltering
-Top-level Entity Name : VGA_Controller_trig
+Top-level Entity Name : colourfiltering
 Family : Cyclone IV E
-Total logic elements : 2,116
-    Total combinational functions : 1,816
-    Dedicated logic registers : 1,125
-Total registers : 1125
-Total pins : 132
+Total logic elements : 4,207
+    Total combinational functions : 3,848
+    Dedicated logic registers : 1,797
+Total registers : 1797
+Total pins : 170
 Total virtual pins : 0
-Total memory bits : 273,408
+Total memory bits : 396,288
 Embedded Multiplier 9-bit elements : 0
-Total PLLs : 1
+Total PLLs : 2

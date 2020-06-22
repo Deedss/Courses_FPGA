@@ -7,10 +7,6 @@ module VGA_Controller_trig(
     input		[7:0]	iRed,
     input		[7:0]	iGreen,
     input		[7:0]	iBlue,
-	inout   [3:0] SD_DAT,
-	input   SD_WP_N,
-	inout   SD_CMD, 
-	output  SD_CLK,
     output		[7:0]	oVGA_R,
     output		[7:0]	oVGA_G,
     output		[7:0]	oVGA_B,
@@ -19,8 +15,6 @@ module VGA_Controller_trig(
     output				oVGA_SYNC,
     output				oVGA_BLANK,
 	 output 				READ_Request,
-	 input		[17:0]SW,
-    output		[17:0]LEDR,
     //	Control Signal
     input				   iCLK,
     input				   iRST_N,
@@ -33,9 +27,6 @@ parameter V_MARK =9  ;
 //=============================================================================
 // REG/WIRE declarations
 //=============================================================================
-wire		[7:0] nVGA_R;
-wire		[7:0]	nVGA_G;
-wire		[7:0]	nVGA_B;
 wire		[9:0]	mVGA_R;
 wire		[9:0]	mVGA_G;
 wire		[9:0]	mVGA_B;
@@ -63,22 +54,6 @@ assign  oVGA_CLOCK	 = iCLK ;
 
 assign	 READ_Request	= ((H_Cont > H_BLANK         && H_Cont<H_SYNC_TOTAL  )	&&
 						        ( V_Cont> V_BLANK+V_MARK  && V_Cont<V_SYNC_TOTAL));
-					
-nios nios1(
-	.clk_clk 			(CLOCK_50),   				// clk.clk
-	.blue_in_port		(iBlue), 				// blue.in_port
-	.blue_out_port		(nVGA_B),  				// .out_port
-	.green_in_port		(iGreen), 				// green.in_port
-	.green_out_port	(nVGA_G), 				// .out_port
-	.red_in_port		(iRed), 					// red.in_port
-	.red_out_port    	(nVGA_R),				// .out_port
-	.sw_in_port			(SW[17:0]),				// SWITCHES
-	.sw_out_port		(LEDR[17:0]),			// LEDR
-	.sd_clk_external_connection_export  (SD_CLK),  //  sd_clk_external_connection.export
-   .sd_cmd_external_connection_export  (SD_CMD),  //  sd_cmd_external_connection.export
-   .sd_dat_external_connection_export  (SD_DAT[3:0]),  //  sd_dat_external_connection.export
-   .sd_wp_n_external_connection_export (SD_WP_N), // sd_wp_n_external_connection.export
-);		
 						  
 								  
 
@@ -88,35 +63,35 @@ assign	oVGA_BLANK	=	~((H_Cont < H_BLANK ) || ( V_Cont < V_BLANK ));
 
 assign	mVGA_R	=	(	H_Cont>=X_START 	&& H_Cont<X_START+H_SYNC_ACT &&
 						    V_Cont>=Y_START	&& V_Cont<Y_START+V_SYNC_ACT )
-						?	nVGA_R	:	0;
+						?	iRed	:	0;
 assign	mVGA_G	=	(	H_Cont>=X_START 	&& H_Cont<X_START+H_SYNC_ACT &&
 						V_Cont>=Y_START 	&& V_Cont<Y_START+V_SYNC_ACT )
-						?	nVGA_G	:	0;
+						?	iGreen	:	0;
 assign	mVGA_B	=	(	H_Cont>=X_START 	&& H_Cont<X_START+H_SYNC_ACT &&
 						V_Cont>=Y_START 	&& V_Cont<Y_START+V_SYNC_ACT )
-						?	nVGA_B :	0;
+						?	iBlue :	0;
 
 				
 assign mVGA_H_SYNC =	( ( H_Cont > (H_SYNC_FRONT ) )  &&  ( H_Cont <= (H_SYNC_CYC + H_SYNC_FRONT)))?0 :1 ; 
 assign mVGA_V_SYNC =	( ( V_Cont > (V_SYNC_FRONT ) )  &&  ( V_Cont <= (V_SYNC_CYC + V_SYNC_FRONT)))?0 :1 ; 
 
 endmodule
-
-module SDC_Top (    
-            input   CLOCK_50, 
-            inout   SD_DAT, 
-            inout   SD_CMD, 
-            inout   SD_DAT3, 
-            output  SD_CLOCK
-        );
- 
-    sdc_sys0 u0 (
-        .clk_clk            (CLOCK_50),
-        .reset_reset_n      (1'b1),
-        .bro_b_SD_dat   (SD_DAT),
-        .bro_o_SD_clock (SD_CLOCK),
-        .bro_b_SD_cmd   (SD_CMD),
-        .bro_b_SD_dat3  (SD_DAT3)
-    );
- 
-endmodule
+//
+//module SDC_Top (    
+//            input   CLOCK_50, 
+//            inout   SD_DAT, 
+//            inout   SD_CMD, 
+//            inout   SD_DAT3, 
+//            output  SD_CLOCK
+//        );
+// 
+//    sdc_sys0 u0 (
+//        .clk_clk            (CLOCK_50),
+//        .reset_reset_n      (1'b1),
+//        .bro_b_SD_dat   (SD_DAT),
+//        .bro_o_SD_clock (SD_CLOCK),
+//        .bro_b_SD_cmd   (SD_CMD),
+//        .bro_b_SD_dat3  (SD_DAT3)
+//    );
+// 
+//endmodule

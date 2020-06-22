@@ -3,14 +3,8 @@ module colourfiltering(
 	//////////// CLOCK //////////
 	input 		          		CLOCK2_50,
 	input 		          		CLOCK3_50,
-	input   							CLOCK_50, 
-	
-	//sd
-	inout   [3:0] SD_DAT,
-	input   SD_WP_N,
-	inout   SD_CMD, 
-	output  SD_CLK,
-	
+	input 		          		CLOCK_50,
+
 	//////////// LED //////////
 	output		     [8:0]		LEDG,
 	output		    [17:0]		LEDR,
@@ -30,6 +24,12 @@ module colourfiltering(
 	
 	//////////// SW //////////
 	input 		    [17:0]		SW,
+
+//////////// SDCARD //////////
+output		          		SD_CLK,
+inout		          			SD_CMD,
+inout		        [3:0]		SD_DAT,
+input		          			SD_WP_N,
 
 	//////////// RS232 //////////
 	input 		          		UART_CTS,
@@ -178,7 +178,6 @@ D8M_SET   ccd (
 
 //--- By Trigged VGA Controller --  
 VGA_Controller_trig	u1	(
-	  .CLOCK_50   (CLOCK_50),
 	  .iCLK       ( VGA_CLK_25M ), 
      .H_Cont		(H_Cont),  
      .V_Cont		(V_Cont),  
@@ -186,22 +185,34 @@ VGA_Controller_trig	u1	(
      .iRed       ( sCCD_R ),
 	  .iGreen     ( sCCD_G  ),
 	  .iBlue      ( sCCD_B ),		
-	  .oVGA_R     ( VGA_R ),
-	  .oVGA_G     ( VGA_G ),
-	  .oVGA_B     ( VGA_B ),
+	  .oVGA_R     ( VGA_R_A ),
+	  .oVGA_G     ( VGA_G_A ),
+	  .oVGA_B     ( VGA_B_A ),
      .oVGA_H_SYNC( VGA_HS ),
      .oVGA_V_SYNC( VGA_VS ),	  
 	  .oVGA_SYNC  ( VGA_SYNC_N  ),
 	  .oVGA_BLANK ( VGA_BLANK_N ),
 	  .oVGA_CLOCK ( VGA_CLK     ),
-	  .iRST_N     ( RESET_N )	,	
-	  .SW				(SW[17:0]),
-	  .LEDR			(LEDR[17:0]),
-	  .SD_DAT (SD_DAT[3:0]),
-	  .SD_WP_N (SD_WP_N),
-	  .SD_CMD (SD_CMD), 
-	  .SD_CLK (SD_CLK)
+	  .iRST_N     ( RESET_N )	
 );
+
+					
+nios nios1(
+	.clk_clk 			(CLOCK_50),   				// clk.clk
+	.blue_in_port		(VGA_B_A), 				// blue.in_port
+	.blue_out_port		(VGA_B),  				// .out_port
+	.green_in_port		(VGA_G_A), 				// green.in_port
+	.green_out_port	(VGA_G), 				// .out_port
+	.red_in_port		(VGA_R_A), 					// red.in_port
+	.red_out_port    	(VGA_R),				// .out_port
+	.sw_in_port			(SW[17:0]),				// SWITCHES
+	.sw_out_port		(LEDR[17:0]),			// LEDR
+	.sd_clk_external_connection_export (SD_CLK),  //  sd_clk_external_connection.export
+	.sd_cmd_external_connection_export (SD_CMD),  //  sd_cmd_external_connection.export
+	.sd_dat_external_connection_export (SD_DAT[3:0]),  //  sd_dat_external_connection.export
+	.sd_wp_n_external_connection_export (SD_WPN), // sd_wp_n_external_connection.export
+);								  
+								  
 
 //--Frame Counter -- 
  FpsMonitor uFps2(

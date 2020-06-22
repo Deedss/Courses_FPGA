@@ -151,8 +151,6 @@ C_SRCS += terasic/debug.c
 C_SRCS += terasic/sd_hal.c
 C_SRCS += terasic/sd_lib.c
 C_SRCS += terasic/sd_protocol.c
-CXX_SRCS :=
-ASM_SRCS :=
 
 
 # Path to root of object file tree.
