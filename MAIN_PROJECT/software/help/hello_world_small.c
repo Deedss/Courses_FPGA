@@ -91,77 +91,77 @@ void Sobel(int image[640][480], int out[640][480]){
  */
 //test if partition on sd card is fat and readable
 
-//bool Fat_Test(FAT_HANDLE hFat, char *pDumpFile){
-//    bool bSuccess;
-//    int nCount = 0;
-//    FAT_BROWSE_HANDLE hBrowse;
-//    FILE_CONTEXT FileContext;
-//
-//    //get files stored on the sd card
-//    bSuccess = Fat_FileBrowseBegin(hFat, &hBrowse);
-//    if (bSuccess){
-//        while(Fat_FileBrowseNext(&hBrowse, &FileContext)){
-//            if (FileContext.bLongFilename){
-//                alt_u16 *pData16;
-//                alt_u8 *pData8;
-//                pData16 = (alt_u16 *)FileContext.szName;
-//                pData8 = FileContext.szName;
-//                printf("[%d]", nCount);
-//                while(*pData16){
-//                    if (*pData8)
-//                        printf("%c", *pData8);
-//                    pData8++;
-//                    if (*pData8)
-//                        printf("%c", *pData8);
-//                    pData8++;
-//                    pData16++;
-//                }
-//                printf("\n");
-//            }else{
-//                printf("[%d]%s\n", nCount, FileContext.szName);
-//            }
-//            nCount++;
-//        }
-//    }
-//
-//    //read and dump contents of file
-//    if (bSuccess && pDumpFile && strlen(pDumpFile)){
-//        FAT_FILE_HANDLE hFile;
-//        hFile =  Fat_FileOpen(hFat, pDumpFile);
-//        if (hFile){
-//            char szRead[256];
-//            int nReadSize, nFileSize, nTotalReadSize=0;
-//            nFileSize = Fat_FileSize(hFile);
-//            if (nReadSize > sizeof(szRead))
-//                nReadSize = sizeof(szRead);
-//            printf("%s dump:\n", pDumpFile);
-//            while(bSuccess && nTotalReadSize < nFileSize){
-//                nReadSize = sizeof(szRead);
-//                if (nReadSize > (nFileSize - nTotalReadSize))
-//                    nReadSize = (nFileSize - nTotalReadSize);
-//                //
-//                if (Fat_FileRead(hFile, szRead, nReadSize)){
-//                    int i;
-//                    for(i=0;i<nReadSize;i++){
-//                        printf("%c", szRead[i]);
-//                    }
-//                    nTotalReadSize += nReadSize;
-//                }else{
-//                    bSuccess = FALSE;
-//                    printf("\nFaied to read the file \"%s\"\n", pDumpFile);
-//                }
-//            } // while
-//            if (bSuccess)
-//                printf("\n");
-//            Fat_FileClose(hFile);
-//        }else{
-//            bSuccess = FALSE;
-//            printf("bruh moment", pDumpFile);
-//        }
-//    }
-//
-//    return bSuccess;
-//}
+bool Fat_Test(FAT_HANDLE hFat, char *pDumpFile){
+    bool bSuccess;
+    int nCount = 0;
+    FAT_BROWSE_HANDLE hBrowse;
+    FILE_CONTEXT FileContext;
+
+    //get files stored on the sd card
+    bSuccess = Fat_FileBrowseBegin(hFat, &hBrowse);
+    if (bSuccess){
+        while(Fat_FileBrowseNext(&hBrowse, &FileContext)){
+            if (FileContext.bLongFilename){
+                alt_u16 *pData16;
+                alt_u8 *pData8;
+                pData16 = (alt_u16 *)FileContext.szName;
+                pData8 = FileContext.szName;
+                printf("[%d]", nCount);
+                while(*pData16){
+                    if (*pData8)
+                        printf("%c", *pData8);
+                    pData8++;
+                    if (*pData8)
+                        printf("%c", *pData8);
+                    pData8++;
+                    pData16++;
+                }
+                printf("\n");
+            }else{
+                printf("[%d]%s\n", nCount, FileContext.szName);
+            }
+            nCount++;
+        }
+    }
+
+    //read and dump contents of file
+    if (bSuccess && pDumpFile && strlen(pDumpFile)){
+        FAT_FILE_HANDLE hFile;
+        hFile =  Fat_FileOpen(hFat, pDumpFile);
+        if (hFile){
+            char szRead[256];
+            int nReadSize, nFileSize, nTotalReadSize=0;
+            nFileSize = Fat_FileSize(hFile);
+            if (nReadSize > sizeof(szRead))
+                nReadSize = sizeof(szRead);
+            printf("%s dump:\n", pDumpFile);
+            while(bSuccess && nTotalReadSize < nFileSize){
+                nReadSize = sizeof(szRead);
+                if (nReadSize > (nFileSize - nTotalReadSize))
+                    nReadSize = (nFileSize - nTotalReadSize);
+                //
+                if (Fat_FileRead(hFile, szRead, nReadSize)){
+                    int i;
+                    for(i=0;i<nReadSize;i++){
+                        printf("%c", szRead[i]);
+                    }
+                    nTotalReadSize += nReadSize;
+                }else{
+                    bSuccess = FALSE;
+                    printf("\nFaied to read the file \"%s\"\n", pDumpFile);
+                }
+            } // while
+            if (bSuccess)
+                printf("\n");
+            Fat_FileClose(hFile);
+        }else{
+            bSuccess = FALSE;
+            printf("bruh moment", pDumpFile);
+        }
+    }
+
+    return bSuccess;
+}
 
 
 int main()
@@ -198,20 +198,20 @@ int main()
     	}
 
     	//mount sd card and dump file contents
-//		if (SWITCHES == 5){
-//			printf("Processing...\r\n");
-//			hFat = Fat_Mount(FAT_SD_CARD, 0);
-//			if (hFat){
-//				printf("sdcard mounted\n");
-//				//look for and dump contents of specified file
-//				Fat_Test(hFat, "raw.txt");
-//				Fat_Unmount(hFat);
-//
-//				printf("Dumped contents of raw text/n");
-//			}else{
-//				printf("sd card not mounted, pls check for proper partition/n");
-//			}
-//		}
+		if (SWITCHES == 5){
+			printf("Processing...\r\n");
+			hFat = Fat_Mount(FAT_SD_CARD, 0);
+			if (hFat){
+				printf("sdcard mounted\n");
+				//look for and dump contents of specified file
+				Fat_Test(hFat, "raw.txt");
+				Fat_Unmount(hFat);
+
+				printf("Dumped contents of raw text/n");
+			}else{
+				printf("sd card not mounted, pls check for proper partition/n");
+			}
+		}
 
 
     }
