@@ -1,5 +1,9 @@
 Flow report for colourfiltering
+<<<<<<< HEAD
 Mon Jun 22 11:25:23 2020
+=======
+Tue Jun 16 17:12:30 2020
+>>>>>>> parent of 9167a04... 👍😁🔫
 Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 
 
@@ -41,7 +45,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
+<<<<<<< HEAD
 ; Flow Status                        ; Successful - Mon Jun 22 11:25:18 2020       ;
+=======
+; Flow Status                        ; Successful - Tue Jun 16 17:12:26 2020       ;
+>>>>>>> parent of 9167a04... 👍😁🔫
 ; Quartus Prime Version              ; 18.1.1 Build 646 04/11/2019 SJ Lite Edition ;
 ; Revision Name                      ; colourfiltering                             ;
 ; Top-level Entity Name              ; colourfiltering                             ;
@@ -65,12 +73,17 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
+<<<<<<< HEAD
 ; Start date & time ; 06/22/2020 11:23:57 ;
+=======
+; Start date & time ; 06/16/2020 17:11:21 ;
+>>>>>>> parent of 9167a04... 👍😁🔫
 ; Main task         ; Compilation         ;
 ; Revision Name     ; colourfiltering     ;
 +-------------------+---------------------+
 
 
+<<<<<<< HEAD
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 ; Flow Non-Default Global Settings                                                                                                        ;
 +-------------------------------------+--------------------------------------------------------+---------------+-------------+------------+
@@ -98,6 +111,36 @@ https://fpgasoftware.intel.com/eula.
 ; SOPCINFO_FILE                       ; nios/synthesis/../../nios.sopcinfo                     ; --            ; --          ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                     ; --            ; --          ; --         ;
 +-------------------------------------+--------------------------------------------------------+---------------+-------------+------------+
+=======
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                  ;
++-------------------------------------+--------------------------------------------------------+-----------------+---------------------+------------+
+; Assignment Name                     ; Value                                                  ; Default Value   ; Entity Name         ; Section Id ;
++-------------------------------------+--------------------------------------------------------+-----------------+---------------------+------------+
+; COMPILER_SIGNATURE_ID               ; 10995770589203.159232028115048                         ; --              ; --                  ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                     ; --              ; --                  ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                      ; --              ; --                  ; --         ;
+; MISC_FILE                           ; nios/synthesis/../nios.cmp                             ; --              ; --                  ; --         ;
+; MISC_FILE                           ; nios/synthesis/../../nios.qsys                         ; --              ; --                  ; --         ;
+; MISC_FILE                           ; int_line_bb.v                                          ; --              ; --                  ; --         ;
+; MISC_FILE                           ; Video/pll_test_bb.v                                    ; --              ; --                  ; --         ;
+; MISC_FILE                           ; Video/pll_test.ppf                                     ; --              ; --                  ; --         ;
+; MISC_FILE                           ; Video/fifo_pll_bb.v                                    ; --              ; --                  ; --         ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                                   ; --              ; --                  ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)                 ; --              ; VGA_Controller_trig ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                 ; --              ; VGA_Controller_trig ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                 ; --              ; VGA_Controller_trig ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                    ; --              ; --                  ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                  ; --              ; --                  ; --         ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                           ; --              ; --                  ; --         ;
+; SLD_FILE                            ; nios/synthesis/nios.regmap                             ; --              ; --                  ; --         ;
+; SLD_FILE                            ; nios/synthesis/nios.debuginfo                          ; --              ; --                  ; --         ;
+; SLD_INFO                            ; QSYS_NAME nios HAS_SOPCINFO 1 GENERATION_ID 1592320164 ; --              ; nios                ; --         ;
+; SOPCINFO_FILE                       ; nios/synthesis/../../nios.sopcinfo                     ; --              ; --                  ; --         ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                     ; --              ; --                  ; --         ;
+; TOP_LEVEL_ENTITY                    ; VGA_Controller_trig                                    ; colourfiltering ; --                  ; --         ;
++-------------------------------------+--------------------------------------------------------+-----------------+---------------------+------------+
+>>>>>>> parent of 9167a04... 👍😁🔫
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -105,11 +148,19 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
+<<<<<<< HEAD
 ; Analysis & Synthesis ; 00:00:51     ; 1.0                     ; 4969 MB             ; 00:01:08                           ;
 ; Fitter               ; 00:00:19     ; 1.1                     ; 5905 MB             ; 00:00:32                           ;
 ; Assembler            ; 00:00:03     ; 1.0                     ; 4711 MB             ; 00:00:03                           ;
 ; Timing Analyzer      ; 00:00:04     ; 1.2                     ; 4924 MB             ; 00:00:04                           ;
 ; Total                ; 00:01:17     ; --                      ; --                  ; 00:01:47                           ;
+=======
+; Analysis & Synthesis ; 00:00:35     ; 1.0                     ; 4930 MB             ; 00:00:54                           ;
+; Fitter               ; 00:00:20     ; 1.0                     ; 5868 MB             ; 00:00:34                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 4708 MB             ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.1                     ; 4903 MB             ; 00:00:03                           ;
+; Total                ; 00:01:02     ; --                      ; --                  ; 00:01:35                           ;
+>>>>>>> parent of 9167a04... 👍😁🔫
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

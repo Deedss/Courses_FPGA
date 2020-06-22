@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 12:18:30 **** Build of configuration Nios II for project help_bsp ****
 make all 
 [BSP build complete]
 
 12:18:31 Build Finished (took 671ms)
+=======
+17:13:40 **** Build of configuration Nios II for project help_bsp ****
+make all 
+[BSP build complete]
+
+17:13:41 Build Finished (took 719ms)
+>>>>>>> parent of 9167a04... 👍😁🔫
 

@@ -2,8 +2,13 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
+<<<<<<< HEAD
         <BspGeneratedTimeStamp>Jun 22, 2020 12:18:08 PM</BspGeneratedTimeStamp>
         <BspGeneratedUnixTimeStamp>1592821089028</BspGeneratedUnixTimeStamp>
+=======
+        <BspGeneratedTimeStamp>Jun 16, 2020 5:12:55 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1592320375341</BspGeneratedUnixTimeStamp>
+>>>>>>> parent of 9167a04... 👍😁🔫
         <BspGeneratedLocation>C:\Users\sidoi\Desktop\shit\fpga\Courses_FPGA\MAIN_PROJECT\software\help_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\nios.sopcinfo</SopcDesignFile>

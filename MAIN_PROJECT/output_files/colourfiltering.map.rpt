@@ -1,5 +1,9 @@
 Analysis & Synthesis report for colourfiltering
+<<<<<<< HEAD
 Mon Jun 22 11:24:51 2020
+=======
+Tue Jun 16 17:11:59 2020
+>>>>>>> parent of 9167a04... 👍😁🔫
 Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 
 
@@ -323,7 +327,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
+<<<<<<< HEAD
 ; Analysis & Synthesis Status        ; Successful - Mon Jun 22 11:24:51 2020       ;
+=======
+; Analysis & Synthesis Status        ; Successful - Tue Jun 16 17:11:58 2020       ;
+>>>>>>> parent of 9167a04... 👍😁🔫
 ; Quartus Prime Version              ; 18.1.1 Build 646 04/11/2019 SJ Lite Edition ;
 ; Revision Name                      ; colourfiltering                             ;
 ; Top-level Entity Name              ; colourfiltering                             ;
@@ -8111,7 +8119,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
+<<<<<<< HEAD
 ; Top            ; 00:00:20     ;
+=======
+; Top            ; 00:00:04     ;
+>>>>>>> parent of 9167a04... 👍😁🔫
 +----------------+--------------+
 
 
@@ -8121,7 +8133,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
+<<<<<<< HEAD
     Info: Processing started: Mon Jun 22 11:23:57 2020
+=======
+    Info: Processing started: Tue Jun 16 17:11:20 2020
+>>>>>>> parent of 9167a04... 👍😁🔫
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ColourFiltering -c colourfiltering
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -8691,7 +8707,11 @@ Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "nios
 Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "nios:nios1|altera_reset_controller:rst_controller_001" File: C:/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/nios/synthesis/nios.v Line: 488
 Info (12128): Elaborating entity "FpsMonitor" for hierarchy "FpsMonitor:uFps2" File: C:/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/colourfiltering.v Line: 224
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
+<<<<<<< HEAD
 Info (11172): 2020.06.22.11:24:17 Progress: Loading sld1041b92a/alt_sld_fab_wrapper_hw.tcl
+=======
+Info (11172): 2020.06.16.17:11:41 Progress: Loading sld1041b92a/alt_sld_fab_wrapper_hw.tcl
+>>>>>>> parent of 9167a04... 👍😁🔫
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -8799,6 +8819,7 @@ Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "CLOCK_DELAY:del1|l0" File: C:/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/Video/CLOCK_DELAY.v Line: 9
 Info (144001): Generated suppressed messages file C:/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/output_files/colourfiltering.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+<<<<<<< HEAD
     Info (16011): Adding 2 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 7 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "CLOCK3_50" File: C:/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/colourfiltering.v Line: 5
@@ -8820,6 +8841,23 @@ Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 151 warnings
     Info: Processing ended: Mon Jun 22 11:24:52 2020
     Info: Elapsed time: 00:00:55
     Info: Total CPU time (on all processors): 00:01:11
+=======
+    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "iRST_N" File: C:/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/Video/VGA_Controller_trig.v Line: 26
+Info (21057): Implemented 2449 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 81 input pins
+    Info (21059): Implemented 50 output pins
+    Info (21060): Implemented 5 bidirectional pins
+    Info (21061): Implemented 2167 logic cells
+    Info (21064): Implemented 144 RAM segments
+    Info (21065): Implemented 1 PLLs
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
+    Info: Peak virtual memory: 4930 megabytes
+    Info: Processing ended: Tue Jun 16 17:11:59 2020
+    Info: Elapsed time: 00:00:39
+    Info: Total CPU time (on all processors): 00:00:57
+>>>>>>> parent of 9167a04... 👍😁🔫
 
 
 +------------------------------------------+

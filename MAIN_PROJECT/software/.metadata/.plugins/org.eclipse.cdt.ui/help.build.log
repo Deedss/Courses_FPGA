@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 12:19:43 **** Incremental Build of configuration Nios II for project help ****
+=======
+17:14:03 **** Incremental Build of configuration Nios II for project help ****
+>>>>>>> parent of 9167a04... 👍😁🔫
 make all 
 Info: Building ../help_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../help_bsp/
 [BSP build complete]
 [help build complete]
 
+<<<<<<< HEAD
 12:19:44 Build Finished (took 1s.226ms)
+=======
+17:14:04 Build Finished (took 1s.136ms)
+>>>>>>> parent of 9167a04... 👍😁🔫
 
