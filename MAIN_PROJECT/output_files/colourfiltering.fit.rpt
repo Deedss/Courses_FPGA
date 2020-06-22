@@ -1,9 +1,5 @@
 Fitter report for colourfiltering
-<<<<<<< HEAD
 Mon Jun 22 11:25:13 2020
-=======
-Tue Jun 16 17:12:20 2020
->>>>>>> parent of 9167a04... 👍😁🔫
 Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 
 
@@ -78,11 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-<<<<<<< HEAD
 ; Fitter Status                      ; Successful - Mon Jun 22 11:25:12 2020       ;
-=======
-; Fitter Status                      ; Successful - Tue Jun 16 17:12:20 2020       ;
->>>>>>> parent of 9167a04... 👍😁🔫
 ; Quartus Prime Version              ; 18.1.1 Build 646 04/11/2019 SJ Lite Edition ;
 ; Revision Name                      ; colourfiltering                             ;
 ; Top-level Entity Name              ; colourfiltering                             ;
@@ -4069,7 +4061,6 @@ Info (176215): I/O bank details before I/O pin placement
     Info (176214): Statistics of I/O banks
         Info (176213): I/O bank number 1 does not use VREF pins and has undetermined VCCIO pins. 8 total pin(s) used --  52 pins available
         Info (176213): I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  62 pins available
-<<<<<<< HEAD
         Info (176213): I/O bank number 3 does not use VREF pins and has 3.3V VCCIO pins. 9 total pin(s) used --  64 pins available
         Info (176213): I/O bank number 4 does not use VREF pins and has 3.3V VCCIO pins. 55 total pin(s) used --  16 pins available
         Info (176213): I/O bank number 5 does not use VREF pins and has 3.3V VCCIO pins. 34 total pin(s) used --  31 pins available
@@ -4080,161 +4071,20 @@ Warning (15058): PLL "pll_test:ref|altpll:altpll_component|pll_test_altpll:auto_
 Warning (15064): PLL "pll_test:ref|altpll:altpll_component|pll_test_altpll:auto_generated|pll1" output port clk[0] feeds output pin "MIPI_REFCLK~output" via non-dedicated routing -- jitter performance depends on switching rate of other design elements. Use PLL dedicated clock outputs to ensure jitter performance File: C:/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/db/pll_test_altpll.v Line: 47
 Warning (15064): PLL "pll_test:ref|altpll:altpll_component|pll_test_altpll:auto_generated|pll1" output port clk[1] feeds output pin "VGA_CLK~output" via non-dedicated routing -- jitter performance depends on switching rate of other design elements. Use PLL dedicated clock outputs to ensure jitter performance File: C:/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/db/pll_test_altpll.v Line: 47
 Info (171121): Fitter preparation operations ending: elapsed time is 00:00:04
-=======
-        Info (176213): I/O bank number 3 does not use VREF pins and has 2.5V VCCIO pins. 7 total pin(s) used --  66 pins available
-        Info (176213): I/O bank number 4 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  71 pins available
-        Info (176213): I/O bank number 5 does not use VREF pins and has undetermined VCCIO pins. 18 total pin(s) used --  47 pins available
-        Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  57 pins available
-        Info (176213): I/O bank number 7 does not use VREF pins and has 2.5V VCCIO pins. 18 total pin(s) used --  54 pins available
-        Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  71 pins available
-Warning (15705): Ignored locations or region assignments to the following nodes
-    Warning (15706): Node "CAMERA_I2C_SCL" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "CAMERA_I2C_SDA" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "CAMERA_PWDN_n" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "CLOCK2_50" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "CLOCK3_50" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX0[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX0[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX0[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX0[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX0[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX0[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX0[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX1[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX1[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX1[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX1[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX1[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX1[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX1[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX2[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX2[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX2[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX2[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX2[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX2[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX2[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX3[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX3[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX3[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX3[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX3[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX3[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX3[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX4[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX4[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX4[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX4[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX4[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX4[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX4[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX5[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX5[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX5[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX5[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX5[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX5[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX5[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX6[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX6[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX6[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX6[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX6[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX6[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX6[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX7[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX7[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX7[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX7[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX7[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX7[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "HEX7[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "KEY[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "KEY[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "KEY[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "KEY[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDG[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDG[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDG[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDG[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDG[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDG[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDG[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDG[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDG[8]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "MIPI_CS_n" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "MIPI_I2C_SCL" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "MIPI_I2C_SDA" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "MIPI_MCLK" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "MIPI_PIXEL_CLK" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "MIPI_PIXEL_D[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "MIPI_PIXEL_D[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "MIPI_PIXEL_D[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "MIPI_PIXEL_D[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "MIPI_PIXEL_D[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "MIPI_PIXEL_D[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "MIPI_PIXEL_D[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "MIPI_PIXEL_D[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "MIPI_PIXEL_D[8]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "MIPI_PIXEL_D[9]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "MIPI_PIXEL_HS" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "MIPI_PIXEL_VS" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "MIPI_REFCLK" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "MIPI_RESET_n" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_BLANK_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_B[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_B[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_B[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_B[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_B[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_B[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_B[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_B[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_CLK" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_G[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_G[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_G[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_G[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_G[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_G[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_G[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_G[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_HS" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_R[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_R[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_R[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_R[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_R[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_R[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_R[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_R[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_SYNC_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "VGA_VS" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:03
->>>>>>> parent of 9167a04... 👍😁🔫
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-<<<<<<< HEAD
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:02
-=======
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:07
->>>>>>> parent of 9167a04... 👍😁🔫
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 1% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 24% of the available device resources in the region that extends from location X46_Y37 to location X57_Y48
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-<<<<<<< HEAD
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
 Info (11888): Total time spent on timing analysis during the Fitter is 0.73 seconds.
-=======
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.32 seconds.
->>>>>>> parent of 9167a04... 👍😁🔫
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -4294,19 +4144,11 @@ Warning (169064): Following 2 pins have no output enable or a GND or VCC output 
     Info (169065): Pin CAMERA_I2C_SCL has a permanently enabled output enable File: C:/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/colourfiltering.v Line: 51
     Info (169065): Pin MIPI_I2C_SCL has a permanently enabled output enable File: C:/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/colourfiltering.v Line: 55
 Info (144001): Generated suppressed messages file C:/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/output_files/colourfiltering.fit.smsg
-<<<<<<< HEAD
 Info: Quartus Prime Fitter was successful. 0 errors, 51 warnings
     Info: Peak virtual memory: 5905 megabytes
     Info: Processing ended: Mon Jun 22 11:25:14 2020
     Info: Elapsed time: 00:00:21
     Info: Total CPU time (on all processors): 00:00:33
-=======
-Info: Quartus Prime Fitter was successful. 0 errors, 171 warnings
-    Info: Peak virtual memory: 5868 megabytes
-    Info: Processing ended: Tue Jun 16 17:12:21 2020
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:34
->>>>>>> parent of 9167a04... 👍😁🔫
 
 
 +----------------------------+
