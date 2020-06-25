@@ -83,15 +83,19 @@
 #include "altera_avalon_pio_regs.h"
 #include <altera_up_sd_card_avalon_interface.h>
 #include "stdio.h"
+#include "string.h"
 
 /****
  * VARIABLES
  */
 uint R, G, B;
+char Red[10], Green[10], Blue[10];
 int SWITCHES;
 
+int WRITE_SD;
+
 short int sd_fileh;
-char buffer[512] = "WELCOME TO THE INTERFACE!!\r\n\0";
+char buffer[512];
 
 /**
  * SOBEL OPERATORS
@@ -169,9 +173,26 @@ void Sobel(int image[640][480], int out[640][480]){
 
 int main()
 {
-  alt_putstr("Hello from Nios II!\n");
-  /* Event loop never exits. */
+	printf("SD Card Access Test\n");
 
+  alt_up_sd_card_dev *sd_card_dev = alt_up_sd_card_open_dev(ALTERA_UP_SD_CARD_AVALON_INTERFACE_0_NAME);
+
+  if(sd_card_dev != 0)
+  {
+	  printf("SD Card dev %d\n", sd_card_dev);
+	  if(alt_up_sd_card_is_Present())
+	  {
+		  if(alt_up_sd_card_is_FAT16())
+			  printf("Card is FAT16\n");
+		  else
+			  printf("Card is not FAT16\n");
+
+		  sd_fileh = alt_up_sd_card_fopen("file.txt", true);
+
+		  if (sd_fileh < 0)
+			  printf("Problem creating file. Error %i", sd_fileh);
+	  }
+  }
   while (1)
   {
 	R = IORD_ALTERA_AVALON_PIO_DATA(RED_BASE);
@@ -193,13 +214,34 @@ int main()
 			grayScale(&R, &G, &B);
 		}
 		else if (SWITCHES == 16){
-			// SOBEL
+			//Sobel()
 		}
+
+		snprintf(Red, sizeof(Red), "%d", R);
+		snprintf(Green, sizeof(Green), "%d", G);
+		snprintf(Blue, sizeof(Blue), "%d", B);
+
+		strcat(buffer, Red);
+		strcat(buffer, Blue);
+		strcat(buffer, Green);
+		strcat(buffer, "\0");
+		int index = 0;
+		while (buffer[index] < sizeof(buffer))
+		{
+			alt_up_sd_card_write(sd_fileh, buffer[index]);
+			index = index + 1;
+		}
+
+
 		IOWR_ALTERA_AVALON_PIO_DATA(RED_BASE, R);
 		IOWR_ALTERA_AVALON_PIO_DATA(GREEN_BASE, G);
 		IOWR_ALTERA_AVALON_PIO_DATA(BLUE_BASE, B);
 		IOWR_ALTERA_AVALON_PIO_DATA(SW_BASE, SWITCHES);
+
+
 	}
+	  alt_up_sd_card_fclose(sd_fileh);
+
   }
   return 0;
 }

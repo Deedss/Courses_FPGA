@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="nios" kind="nios" version="1.0" fabric="QSYS">
  <!-- Format version 18.1 646 (Future versions may contain additional information.) -->
- <!-- 2020.06.19.11:01:26 -->
+ <!-- 2020.06.25.13:21:21 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1592557285</value>
+  <value>1593084080</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -9329,7 +9329,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.memoryInfo.MEM_INIT_DATA_WIDTH</name>
-   <value>128</value>
+   <value>32</value>
   </assignment>
   <assignment>
    <name>embeddedsw.memoryInfo.MEM_INIT_FILENAME</name>
@@ -9361,7 +9361,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataWidth">
    <type>int</type>
-   <value>128</value>
+   <value>32</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -9572,7 +9572,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="derived_set_addr_width">
    <type>int</type>
-   <value>11</value>
+   <value>13</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -9580,7 +9580,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="derived_set_addr_width2">
    <type>int</type>
-   <value>11</value>
+   <value>13</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -9588,7 +9588,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="derived_set_data_width">
    <type>int</type>
-   <value>128</value>
+   <value>32</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -9596,7 +9596,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="derived_set_data_width2">
    <type>int</type>
-   <value>128</value>
+   <value>32</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -10016,7 +10016,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>address</name>
     <direction>Input</direction>
-    <width>11</width>
+    <width>13</width>
     <role>address</role>
    </port>
    <port>
@@ -10040,19 +10040,19 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>readdata</name>
     <direction>Output</direction>
-    <width>128</width>
+    <width>32</width>
     <role>readdata</role>
    </port>
    <port>
     <name>writedata</name>
     <direction>Input</direction>
-    <width>128</width>
+    <width>32</width>
     <role>writedata</role>
    </port>
    <port>
     <name>byteenable</name>
     <direction>Input</direction>
-    <width>16</width>
+    <width>4</width>
     <role>byteenable</role>
    </port>
   </interface>

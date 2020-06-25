@@ -3,15 +3,15 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'MIPI_PIXEL_CLK'
-Slack : 29.442
+Slack : 30.616
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Setup 'altera_reserved_tck'
-Slack : 46.278
+Slack : 45.966
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'MIPI_PIXEL_CLK'
-Slack : 0.352
+Slack : 0.348
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'altera_reserved_tck'
@@ -19,27 +19,27 @@ Slack : 0.402
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'altera_reserved_tck'
-Slack : 48.197
+Slack : 47.511
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'altera_reserved_tck'
-Slack : 1.026
+Slack : 1.383
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'MIPI_PIXEL_CLK'
-Slack : 19.678
+Slack : 19.677
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 49.633
+Slack : 49.629
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'MIPI_PIXEL_CLK'
-Slack : 30.140
+Slack : 31.156
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'altera_reserved_tck'
-Slack : 46.741
+Slack : 46.381
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'altera_reserved_tck'
@@ -47,35 +47,35 @@ Slack : 0.354
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'MIPI_PIXEL_CLK'
-Slack : 0.360
+Slack : 0.373
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 48.449
+Slack : 47.785
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'altera_reserved_tck'
-Slack : 0.927
+Slack : 1.278
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'MIPI_PIXEL_CLK'
-Slack : 19.555
+Slack : 19.565
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 49.578
+Slack : 49.576
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'MIPI_PIXEL_CLK'
-Slack : 34.459
+Slack : 35.096
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'altera_reserved_tck'
-Slack : 48.307
+Slack : 48.222
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'MIPI_PIXEL_CLK'
-Slack : 0.147
+Slack : 0.155
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'altera_reserved_tck'
@@ -83,19 +83,19 @@ Slack : 0.180
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 49.303
+Slack : 48.937
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'altera_reserved_tck'
-Slack : 0.500
+Slack : 0.656
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'MIPI_PIXEL_CLK'
-Slack : 19.021
+Slack : 19.005
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 49.474
+Slack : 49.473
 TNS   : 0.000
 
 ------------------------------------------------------------

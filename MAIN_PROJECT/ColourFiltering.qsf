@@ -406,14 +406,14 @@ set_location_assignment PIN_AE13 -to SD_CLK
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_CLK
 set_location_assignment PIN_AF14 -to SD_WP_N
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_WP_N
-set_location_assignment PIN_AE14 -to SD_DAT[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DAT[0]
-set_location_assignment PIN_AF13 -to SD_DAT[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DAT[1]
-set_location_assignment PIN_AB14 -to SD_DAT[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DAT[2]
-set_location_assignment PIN_AC14 -to SD_DAT[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DAT[3]
+set_location_assignment PIN_AE14 -to SD_DAT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DAT
+#set_location_assignment PIN_AF13 -to SD_DAT[1]
+#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DAT[1]
+#set_location_assignment PIN_AB14 -to SD_DAT[2]
+#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DAT[2]
+set_location_assignment PIN_AC14 -to SD_DAT3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DAT3
 
 
 #============================================================

@@ -26,7 +26,7 @@ module colourfiltering(
 	input 		    [17:0]		SW,
 
 	//////////// SD //////////
-	inout   			[3:0] SD_DAT, 
+	inout   			SD_DAT, 
 	inout   			SD_CMD, 
 	inout   			SD_DAT3, 
 	output  			SD_CLOCK,	
@@ -208,8 +208,8 @@ nios nios1(
 	.sw_in_port			(SW[17:0]),				// SWITCHES
 	.sw_out_port		(LEDR[17:0]),			// LEDR
 	.sd_card_b_sd_cmd	(SD_CMD),   // sd_card.b_sd_cmd
-	.sd_card_b_sd_dat	(SD_DAT[0]),   //        .b_sd_dat
-	.sd_card_b_sd_dat3(SD_DAT[3]),  //        .b_sd_dat3
+	.sd_card_b_sd_dat	(SD_DAT),   //        .b_sd_dat
+	.sd_card_b_sd_dat3(SD_DAT3),  //        .b_sd_dat3
 	.sd_card_o_sd_clock	(SD_CLK), //        .o_sd_clock
 );								  
 								  

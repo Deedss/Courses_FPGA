@@ -143,3 +143,230 @@ Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING
 	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
 	... 9 more
+!SESSION 2020-06-25 13:16:48.949 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2020-06-25 13:17:09.816
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:20:22.659
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:20:24.806
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:20:25.064
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:20:27.749
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --accept-bad-sysid, /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:20:27.755
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:24:30.422
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:24:32.712
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:24:32.923
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:25:33.487
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:25:34.123
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:25:36.267
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:25:36.480
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:28:43.813
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:28:45.921
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:28:46.128
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:35:11.216
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:35:13.318
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:35:13.534
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:35:45.632
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:35:46.372
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:35:48.775
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:35:48.988
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:38:41.037
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:38:43.135
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:38:43.348
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:39:00.424
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:39:02.491
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:39:02.706
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:42:40.766
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:42:42.910
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:42:43.119
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:42:45.365
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --accept-bad-sysid, /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:42:45.367
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:43:19.831
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:43:21.909
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:43:22.126
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:43:24.795
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --accept-bad-sysid, /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:43:24.797
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:44:01.686
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:44:03.827
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:44:04.032
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:44:06.397
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --accept-bad-sysid, /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:44:06.399
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:44:15.389
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:44:17.466
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:44:17.674
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:44:20.114
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --accept-bad-sysid, /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:44:20.115
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:44:43.629
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:44:45.842
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:44:46.054
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:44:48.385
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --accept-bad-sysid, /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:44:48.387
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:46:15.612
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:46:17.670
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:46:17.881
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:50:10.068
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:50:10.788
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:50:12.975
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:50:13.193
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:50:54.296
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:50:56.404
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:50:56.624
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:51:14.745
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:51:15.489
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-06-25 13:51:17.657
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2020-06-25 13:51:17.879
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/sidoi/Desktop/shit/fpga/Courses_FPGA/MAIN_PROJECT/software/colour_nios/colour_nios.elf]

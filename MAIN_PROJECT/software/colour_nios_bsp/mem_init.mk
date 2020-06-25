@@ -184,8 +184,8 @@ $(MEM_0)_START := 0x00008000
 $(MEM_0)_END := 0x0000ffff
 $(MEM_0)_SPAN := 0x00008000
 $(MEM_0)_HIERARCHICAL_PATH := onchip_memory2_0
-$(MEM_0)_WIDTH := 128
-$(MEM_0)_HEX_DATA_WIDTH := 128
+$(MEM_0)_WIDTH := 32
+$(MEM_0)_HEX_DATA_WIDTH := 32
 $(MEM_0)_ENDIANNESS := --little-endian-mem
 $(MEM_0)_CREATE_LANES := 0
 

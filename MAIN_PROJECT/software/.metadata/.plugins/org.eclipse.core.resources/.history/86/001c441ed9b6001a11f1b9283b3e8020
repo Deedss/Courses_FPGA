@@ -1,0 +1,239 @@
+/* 
+ * "Small Hello World" example. 
+ * 
+ * This example prints 'Hello from Nios II' to the STDOUT stream. It runs on
+ * the Nios II 'standard', 'full_featured', 'fast', and 'low_cost' example 
+ * designs. It requires a STDOUT  device in your system's hardware. 
+ *
+ * The purpose of this example is to demonstrate the smallest possible Hello 
+ * World application, using the Nios II HAL library.  The memory footprint
+ * of this hosted application is ~332 bytes by default using the standard 
+ * reference design.  For a more fully featured Hello World application
+ * example, see the example titled "Hello World".
+ *
+ * The memory footprint of this example has been reduced by making the
+ * following changes to the normal "Hello World" example.
+ * Check in the Nios II Software Developers Manual for a more complete 
+ * description.
+ * 
+ * In the SW Application project (small_hello_world):
+ *
+ *  - In the C/C++ Build page
+ * 
+ *    - Set the Optimization Level to -Os
+ * 
+ * In System Library project (small_hello_world_syslib):
+ *  - In the C/C++ Build page
+ * 
+ *    - Set the Optimization Level to -Os
+ * 
+ *    - Define the preprocessor option ALT_NO_INSTRUCTION_EMULATION 
+ *      This removes software exception handling, which means that you cannot 
+ *      run code compiled for Nios II cpu with a hardware multiplier on a core 
+ *      without a the multiply unit. Check the Nios II Software Developers 
+ *      Manual for more details.
+ *
+ *  - In the System Library page:
+ *    - Set Periodic system timer and Timestamp timer to none
+ *      This prevents the automatic inclusion of the timer driver.
+ *
+ *    - Set Max file descriptors to 4
+ *      This reduces the size of the file handle pool.
+ *
+ *    - Check Main function does not exit
+ *    - Uncheck Clean exit (flush buffers)
+ *      This removes the unneeded call to exit when main returns, since it
+ *      won't.
+ *
+ *    - Check Don't use C++
+ *      This builds without the C++ support code.
+ *
+ *    - Check Small C library
+ *      This uses a reduced functionality C library, which lacks  
+ *      support for buffering, file IO, floating point and getch(), etc. 
+ *      Check the Nios II Software Developers Manual for a complete list.
+ *
+ *    - Check Reduced device drivers
+ *      This uses reduced functionality drivers if they're available. For the
+ *      standard design this means you get polled UART and JTAG UART drivers,
+ *      no support for the LCD driver and you lose the ability to program 
+ *      CFI compliant flash devices.
+ *
+ *    - Check Access device drivers directly
+ *      This bypasses the device file system to access device drivers directly.
+ *      This eliminates the space required for the device file system services.
+ *      It also provides a HAL version of libc services that access the drivers
+ *      directly, further reducing space. Only a limited number of libc
+ *      functions are available in this configuration.
+ *
+ *    - Use ALT versions of stdio routines:
+ *
+ *           Function                  Description
+ *        ===============  =====================================
+ *        alt_printf       Only supports %s, %x, and %c ( < 1 Kbyte)
+ *        alt_putstr       Smaller overhead than puts with direct drivers
+ *                         Note this function doesn't add a newline.
+ *        alt_putchar      Smaller overhead than putchar with direct drivers
+ *        alt_getchar      Smaller overhead than getchar with direct drivers
+ *
+ */
+
+#include "sys/alt_stdio.h"
+#include "system.h"
+#include "altera_avalon_pio_regs.h"
+#include <altera_up_sd_card_avalon_interface.h>
+#include "stdio.h"
+
+/****
+ * VARIABLES
+ */
+uint R, G, B;
+int SWITCHES;
+
+short int sd_fileh;
+char buffer[512] = "WELCOME TO THE INTERFACE!!\r\n\0";
+
+/**
+ * SOBEL OPERATORS
+ */
+int sobel_h[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}}; //Horizontal
+int sobel_v[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}}; //Vertical
+
+/***
+ * FUNCTIONS TO USE
+ */
+void redFilter(uint *G, uint *B){
+	*G = 0;
+	*B = 0;
+	return;
+}
+
+void greenFilter(uint *R, uint *B){
+	*R = 0;
+	*B = 0;
+	return;
+}
+
+void blueFilter(uint *R, uint *G){
+	*R = 0;
+	*G = 0;
+	return;
+}
+
+void grayScale(uint *R, uint *G, uint *B){
+	/**
+	 * GRAYSCALE is calculated by forming a weighted sum of the Red, Green, and Blue colour and dividing it by 3
+	 * This value then replaces the old RGB value;	 *
+	 */
+	// Calculating Average Gray
+	*R = *G = *B = (*R + *B + *G) / 3;
+
+	/* Calculating by Luminosity */
+//	*R = 0.2989 * *R;
+//  *G = 0.5870 * *G;
+//	*B = 0.1140 * *B;
+	return;
+}
+
+void Sobel(int image[640][480], int out[640][480]){
+	int r, c, j, i, accx, accy;
+	int ox[640][480];
+	int oy[640][480];
+	for (r = 0; r < 640; r++){
+		for(c = 0; c< 480; c++){
+			accx = 0;
+			accy = 0;
+			for (j=0; j< 3; j++){
+				for(i = 0; i < 3; i++){
+					accx += sobel_h[j][i] * image[r + (j-1)][c + (i-1)];
+					accy += sobel_v[j][i] * image[r + (j-1)][c + (i-1)];
+				}
+			}
+			ox[r][c] = accx;
+			oy[r][c] = accy;
+		}
+	}
+
+	/**
+	 * Calculate the gradient for all pixels and place them in the array
+	 */
+	for(r = 0; r < 640; r++){
+		for(c = 0; c < 480; c++){
+//			out[r][c] = sqrt(pow(ox[r][c], 2) + pow(oy[r][c], 2));
+		}
+	}
+
+	return;
+}
+
+
+int main()
+{
+
+  while (1)
+  {
+	R = IORD_ALTERA_AVALON_PIO_DATA(RED_BASE);
+	G = IORD_ALTERA_AVALON_PIO_DATA(GREEN_BASE);
+	B = IORD_ALTERA_AVALON_PIO_DATA(BLUE_BASE);
+	SWITCHES = IORD_ALTERA_AVALON_PIO_DATA(SW_BASE);
+
+	if(R >= 0 && G >= 0 && B >= 0){
+		if (SWITCHES == 1){
+			redFilter(&G, &B);
+		}
+		else if (SWITCHES == 2){
+			greenFilter(&R, &B);
+		}
+		else if (SWITCHES == 4){
+			blueFilter(&R, &G);
+		}
+		else if (SWITCHES == 8){
+			grayScale(&R, &G, &B);
+		}
+		else if (SWITCHES == 16){
+			  printf("SD Card Access Test\n");
+
+			  alt_up_sd_card_dev *sd_card_dev = alt_up_sd_card_open_dev(ALTERA_UP_SD_CARD_AVALON_INTERFACE_0_NAME);
+
+			  if(sd_card_dev != 0)
+			  {
+				  printf("SD Card dev %d\n", sd_card_dev);
+			      if(alt_up_sd_card_is_Present())
+			      {
+			    	  printf("SD Card present %d\n", alt_up_sd_card_is_Present());
+
+			          if(alt_up_sd_card_is_FAT16())
+			              printf("Card is FAT16\n");
+			          else
+			              printf("Card is not FAT16\n");
+
+			          sd_fileh = alt_up_sd_card_fopen("file.txt", true);
+
+			          if (sd_fileh < 0)
+			              printf("Problem creating file. Error %i", sd_fileh);
+			          else
+			          {
+			              printf("SD Accessed Successfully, writing data...");
+			              int index = 0;
+			              while (buffer[index] != '\0')
+			              {
+			                  alt_up_sd_card_write(sd_fileh, buffer[index]);
+			                  index = index + 1;
+			              }
+			              printf("Done!\n");
+
+			              printf("Closing File...");
+			              alt_up_sd_card_fclose(sd_fileh);
+			              printf("Done!\n");
+			          }
+			      }
+			  }
+		}
+		IOWR_ALTERA_AVALON_PIO_DATA(RED_BASE, R);
+		IOWR_ALTERA_AVALON_PIO_DATA(GREEN_BASE, G);
+		IOWR_ALTERA_AVALON_PIO_DATA(BLUE_BASE, B);
+		IOWR_ALTERA_AVALON_PIO_DATA(SW_BASE, SWITCHES);
+	}
+  }
+  return 0;
+}

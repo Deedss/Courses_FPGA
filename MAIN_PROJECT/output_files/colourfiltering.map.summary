@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Fri Jun 19 11:10:15 2020
+Analysis & Synthesis Status : Successful - Thu Jun 25 13:33:48 2020
 Quartus Prime Version : 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 Revision Name : colourfiltering
 Top-level Entity Name : colourfiltering
 Family : Cyclone IV E
-Total logic elements : 6,221
-    Total combinational functions : 5,384
-    Dedicated logic registers : 2,906
-Total registers : 2906
-Total pins : 170
+Total logic elements : 5,752
+    Total combinational functions : 4,980
+    Dedicated logic registers : 2,682
+Total registers : 2682
+Total pins : 167
 Total virtual pins : 0
 Total memory bits : 400,384
 Embedded Multiplier 9-bit elements : 0

@@ -49,14 +49,14 @@ module nios_mm_interconnect_0_router_001_default_decode
                DEFAULT_RD_CHANNEL = -1,
                DEFAULT_DESTID = 7 
    )
-  (output [83 - 80 : 0] default_destination_id,
+  (output [81 - 78 : 0] default_destination_id,
    output [9-1 : 0] default_wr_channel,
    output [9-1 : 0] default_rd_channel,
    output [9-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
-    DEFAULT_DESTID[83 - 80 : 0];
+    DEFAULT_DESTID[81 - 78 : 0];
 
   generate
     if (DEFAULT_CHANNEL == -1) begin : no_default_channel_assignment
@@ -93,7 +93,7 @@ module nios_mm_interconnect_0_router_001
     // Command Sink (Input)
     // -------------------
     input                       sink_valid,
-    input  [97-1 : 0]    sink_data,
+    input  [95-1 : 0]    sink_data,
     input                       sink_startofpacket,
     input                       sink_endofpacket,
     output                      sink_ready,
@@ -102,7 +102,7 @@ module nios_mm_interconnect_0_router_001
     // Command Source (Output)
     // -------------------
     output                          src_valid,
-    output reg [97-1    : 0] src_data,
+    output reg [95-1    : 0] src_data,
     output reg [9-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
@@ -114,11 +114,11 @@ module nios_mm_interconnect_0_router_001
     // -------------------------------------------------------
     localparam PKT_ADDR_H = 52;
     localparam PKT_ADDR_L = 36;
-    localparam PKT_DEST_ID_H = 83;
-    localparam PKT_DEST_ID_L = 80;
-    localparam PKT_PROTECTION_H = 87;
-    localparam PKT_PROTECTION_L = 85;
-    localparam ST_DATA_W = 97;
+    localparam PKT_DEST_ID_H = 81;
+    localparam PKT_DEST_ID_L = 78;
+    localparam PKT_PROTECTION_H = 85;
+    localparam PKT_PROTECTION_L = 83;
+    localparam ST_DATA_W = 95;
     localparam ST_CHANNEL_W = 9;
     localparam DECODER_TYPE = 0;
 
